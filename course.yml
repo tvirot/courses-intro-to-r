@@ -1,16 +1,10 @@
-id: 58
-title: Introduction to R
+title: Introduction to R (Thai)
 instructors:
- - jonathan+author@datacamp.com
+ - virot.ch@gmail.com
 time_needed: 4 hours
 difficulty_level: 1
-description: "In this introduction to R, you will master the basics of this beautiful
-  open source language, including factors, lists and data frames. With the knowledge
-  gained in this course, you will be ready to undertake your first very own data
-  analysis. With over 2 million users worldwide R is rapidly becoming the leading
-  programming language in statistics and data science. Every year, the number of R
-  users grows by 40% and an increasing number of organizations are using it in their
-  day-to-day activities. Leverage the power of R by completing this free R online
-  course today!"
+description: "ในบทเรียน R เบื้องต้นนี้ คุณจะได้ฝึกฝนการใช้งานภาษา R ขึ้นพื้นฐาน รวมไปถึงการใช้ factors, lists และ data frames 
+  ความรู้ที่ได้จากบทเรียนนี้จะเตรียมคุณให้พร้อมสำหรับการวิเคราะห์ข้อมูล ด้วยจำนวนผูัใช้งานกว่าสองล้านคนทั่วโลก ทำให้ R กลายเป็นภาษาสำหรับงานสถิติ
+  และวิทยาศาสตร์ข้อมูล (data science) ที่ได้รับความนิยมสูงสุดอย่างรวดเร็ว จำนวนผู้ใช้งาน R เพิ่มขึ้นกว่า 40% 
+  ในทุกๆปี และองค์กรจำนวนมากก็เริ่มนำมาใช้กันแพร่หลายมากขึ้น เริ่มใช้ประโยชน์จาก R ได้แล้ววันนี้ ด้วยคอร์สออนไลน์ฟรี!"
 from: "r-base-prod:10"
-
