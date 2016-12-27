@@ -62,19 +62,20 @@ R สามารถนำมาใช้เป็นเครื่องคิ
 - มอดุโล (modulo): `%%`
 
 ตัวดำเนินการสองตัวสุดท้ายอาจจะต้องขยายความสักหน่อย:
+
 - ตัวดำเนินการ `^` จะนำเลขฐานที่อยู่ทางด้านซ้ายของมัน มายกกำลังด้วยเลขชี้กำลังที่อยู่ทางด้านขวาของมัน เช่น `3^2` ได้ 9
 - ตัวดำเนินการมอดุโล เป็นการหาเศษเหลือจากการหารตัวเลขทางด้านซ้ายด้วยตัวเลขทางด้านขวาของมัน เช่น 5 มอดุโล 3 หรือ `5 %% 3` ได้ 2
 
-With this knowledge, follow the instructions below to complete the exercise.
+ด้วยความรู้ข้างต้น จงทำแบบฝึกหัดตามคำสั่งด้านล่างนี้
 
 *** =instructions
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Click 'Submit Answer' and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- พิมพ์ `2^5` ใน editor เพื่อคำนวณ 2 ยกกำลัง 5
+- พิมพ์ `28 %% 6` เพื่อคำนวณ 28 มอดุโล 6
+- กด 'Submit Answer' และดูผลลัพธ์ใน console
+- สังเกตว่าสัญลักษณ์ `#` ถูกนำมาใช้ในการเขียนคอมเมนต์ในโค้ดอย่างไร 
 
 *** =hint
-Another example of the modulo operator: `9 %% 2` equals `1`.
+อีกตัวอย่างของตัวดำเนินการมอดุโล: `9 %% 2` เท่ากับ `1`
 
 *** =pre_exercise_code
 ```{r}
@@ -83,52 +84,52 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 *** =sample_code
 ```{r}
-# An addition
+# บวก
 5 + 5 
 
-# A subtraction
+# ลบ
 5 - 5 
 
-# A multiplication
+# คูณ
 3 * 5
 
- # A division
+# หาร
 (5 + 5) / 2 
 
-# Exponentiation
+# ยกกำลัง
 
 
-# Modulo
+# มอดุโล
 
 ```
 
 *** =solution
 ```{r}
-# An addition
-5 + 5
+# บวก
+5 + 5 
 
-# A subtraction
+# ลบ
 5 - 5 
 
-# A multiplication
+# คูณ
 3 * 5
 
- # A division
+# หาร
 (5 + 5) / 2 
 
-# Exponentiation
+# ยกกำลัง
 2 ^ 5
 
-# Modulo
+# มอดุโล
 28 %% 6
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-test_output_contains("2^5", incorrect_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
-test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+msg = "อย่าลบตัวอย่างที่ให้มาออกไป!"
+test_output_contains("2^5", incorrect_msg = "ตัวอย่างการยกกำลังยังไม่ถูกต้อง พิมพ์ `2 ^ 5` ลงในบรรทัดใหม่")
+test_output_contains("28 %% 6", incorrect_msg = "ดูเหมือนจะมีปัญหากับตัวอย่างการใช้มอดุโล พิมพ์ `28 %% 6` ลงในบรรทัดใหม่")
+success_msg("เยี่ยม! ไปแบบฝึกหัดต่อไปได้เลย!")
 ```
 
 
