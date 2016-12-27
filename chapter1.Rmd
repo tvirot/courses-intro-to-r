@@ -4,12 +4,13 @@ title       : แนะนำการใช้งานเบื้องต้
 description : "ในบทเรียนนี้คุณณจะได้เริ่มต้นใช้งานภาษา R คุณจะได้เรียนรู้การใช้งาน console เป็นเครื่องคิดเลข และการใส่ค่าให้กับตัวแปร นอกจากนี้คุณจะได้รู้จักกับชนิดของข้อมูลพื้นฐานในภาษา R เรามาเริ่มเรียนกันเถอะ!"
 
 --- type:NormalExercise xp:100 skills:1 key:15d729634a
-## การใช้งาน
+## เริ่มต้นใช้งาน
 
 คุณจะต้องพิมพ์โค้ดภาษา R ลงใน editor ทางด้านขวาเพื่อตอบแบบฝึกหัด เมื่อคุณกดปุ่ม 'Submit Answer' โค้ดทุกๆบรรทัดจะถูกประมวลผล และคุณจะได้รับข้อความว่าโค้ดของคุณนั้นถูกต้องหรือไม่ ผลลัพธ์ของโค้ดจะถูกแสดงอยู่ใน console ที่มุมขวาล่าง
 
 R ใช้เครื่องหมาย `#` ในการคอมเมนต์เพื่ออธิบายการทำงานของโค้ด คอมเมนต์จะไม่ถูกประมวลผลเหมือนกับโค้ด และส่งผลใดๆต่อผลลัพธ์ ตัวอย่างเช่น _คำนวณ 3 + 4_ ใน editor ด้านขวานั้น ถือว่าเป็นคอมเมนต์
 
+คุณสามารถ
 You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
 
 *** =instructions
@@ -44,7 +45,7 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 *** =sct
 ```{r}
-test_output_contains("18", incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+test_output_contains("18", incorrect_msg = "ตรวจสอบให้แน่ใจว่าคุณได้พิมพ์ `6 + 12` ลงในบรรทัดใหม่ อย่าเริ่มต้นบรรทัดด้วยเครื่องหมาย `#` ไม่เช่นนั้นโค้ด R ของคุณจะไม่ถูกประมวลผล!")
 success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
 ```
 
