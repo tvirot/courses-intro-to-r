@@ -138,7 +138,7 @@ success_msg("เยี่ยม! ไปแบบฝึกหัดต่อไ�
 
 
 --- type:NormalExercise xp:100 skills:1 key:5f200ffd43
-## Variable assignment 
+## การกำหนดค่าตัวแปร
 
 A basic concept in (statistical) programming is called a **variable**. 
 
