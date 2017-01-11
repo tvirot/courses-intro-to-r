@@ -144,7 +144,7 @@ A basic concept in (statistical) programming is called a **variable**.
 
 A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
 
-You can assign a value 4 to a variable `my_var` with the command
+คุณสามารถกำหนดค่าของตัวแปร `my_var` ให้เป็น 4 ได้ด้วยคำสั่ง 
 
 ```
 my_var <- 4
@@ -163,7 +163,7 @@ Look at how the value 4 was assigned to `my_variable` in the exercise's assignme
 
 *** =sample_code
 ```{r}
-# Assign the value 42 to x
+# กำหนดค่า x ให้เป็น 42 
 x <- 
 
 # Print out the value of the variable x
