@@ -1,20 +1,20 @@
 --- 
-title_meta  : Chapter 2
+title_meta  : บทที่ 2
 title       : Vectors
-description : "In this free R course, we'll take you on a trip to Vegas, where you will learn how to analyze your gambling results using vectors in R! After completing this chapter, you will be able to create vectors in R, name them, select elements from them and compare different vectors."
+description : "ในบทนี้ เราจะพาคุณไปยังเวกัสเพื่อเรียนรู้วิธีการวิเคราะห์ผลการพนันโดยใช้ R! เมื่อคุณเรียนรู้เนื้อหาทั้งหมดแล้ว คุณจะสามารถสร้าง vectors และเปรียบเทียบ vectors ที่แตกต่างกันได้!"
 
 --- type:NormalExercise xp:100 skills:1 key:d9b453dbdd
-## Create a vector
+## การสร้าง vector
 
 Feeling lucky? You better, because this chapter takes you on a trip to the City of Sins, also known as *Statisticians Paradise*!
 
 Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next stop, Vegas Baby... VEGAS!!
 
 *** =instructions
-- Do you still remember what you have learned in the first chapter? Assign the value `"Go!"` to the variable `vegas`. Remember: R is case sensitive!
+- ยังจำสิ่งที่ได้เรียนไปในบทที่ 1 ได้ไหม? ให้คุณกำหนดให้ตัวแปร `vegas` มีค่าเป็น `"Go!"` อย่าลืมว่า R เป็นภาษาที่มีความเป็น case-sensitive! (มองว่าตัวอักษรพิมพ์เล็กและพิมพ์ใหญ่มีค่าไม่เท่ากัน)
 
 *** =hint
-Just type the following line in the editor:
+แค่พิมพ์โค้ดนี้ลงไปใน editor:
 ```
 vegas <- "Go!"
 ```
@@ -38,13 +38,19 @@ vegas <- "Go!"
 
 *** =sct
 ```{r}
-test_object("vegas", incorrect_msg = "Make sure that you assign the correct value to `vegas`. Do not forget that R is case sensitive!")
-success_msg("Great! Head over to the next exercise.")
+incorrect_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`vegas`", "&#40;&#3605;&#3633;&#3623;&#3614;&#3636;&#3617;&#3614;&#3660;&#3648;&#3621;&#3655;&#3585;&#3607;&#3633;&#3657;&#3591;&#3627;&#3617;&#3604;&#41;")
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าที่ถูกต้องให้กับตัวแปร `vegas` (ตัวพิมพ์เล็กทั้งหมด)
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3612;&#3656;&#3634;&#3609;&#3652;&#3611;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3652;&#3604;&#3657;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! ผ่านไปแบบฝึกหัดต่อไปได้เลย
+
+test_object("vegas", incorrect_msg = incorrect_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:fd427db76f
-## Create a vector (2)
+## การสร้าง vector (2)
 
 Let us focus first! 
 
