@@ -260,15 +260,15 @@ success_msg("Well done! Continue to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:6858c65a4a
 ## การตั้งชื่อให้ข้อมูลภายใน vector (2)
 
-ถ้าคุณอยากเป็นนักสถิติที่ดี บางครั้งคุณก็ต้องทำงานอย่างขี้เกียจบ้าง (แต่ใช้วิธีที่ฉลาดนะ)If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.)
+ถ้าคุณอยากเป็นนักสถิติที่ดี บางครั้งคุณก็ต้องทำงานอย่างขี้เกียจบ้าง (แต่ต้องใช้วิธีที่ฉลาดนะ!)
 
-ก่อนหน้านี้ In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when you look at it from a higher perspective, there is a more efficient way to do this, namely, to assign the days of the week vector to a **variable**! 
+ในแบบฝึกหัดก่อนหน้านี้ การต้องมานั่งพิมพ์ชื่อวันทีละวันอาจทำให้คุณรู้สึกเบื่อ แต่ไม่ต้องห่วง! จริงๆแล้วเรามีวิธีที่สะดวกกว่านั้นซึ่งจะช่วยให้คุณไม่ต้องพิมพ์ชื่อวันซ้ำๆ ที่คุณต้องทำก็เพียงแค่เก็บรายชื่อวันในสัปดาห์(แบบเป็น vector) เอาไว้ใน**ตัวแปร**! 
 
-Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
+ยังจำตอนที่คุณสร้าง vector สำหรับผลการเล่นเกม poker และ roulette ได้ไหม? คุณสามารถสร้างตัวแปรสำหรับเก็บรายชื่อวันในสัปดาห์ได้ด้วยวิธีเดียวกัน เพียงแค่นี้คุณก็จะสามารถเรียกรายชื่อวันในสัปดาห์มาใช้เมื่อไรก็ได้!
 
 *** =instructions
-- A variable `days_vector` that contains the days of the week has already been created for you.
-- Use `days_vector` to set the names of `poker_vector` and `roulette_vector`.
+- เราได้สร้างตัวแปร `days_vector` พร้อมรายชื่อวันในสัปดาห์รอไว้ให้แล้ว
+- ใช้ตัวแปร `days_vector` ในการตั้งชื่อให้กับข้อมูลภายในตัวแปร `poker_vector` และ `roulette_vector`.
 
 *** =hint
 You can use `names(poker_vector) <- days_vector` to set the names of the elements `poker_vector`. Do a similar thing for `roulette_vector`.
@@ -312,35 +312,39 @@ names(roulette_vector) <- days_vector
 
 *** =sct
 ```{r}
-msg <- "Do not changes the predefined variables `poker_vector`, `roulette_vector` or `days_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`, `roulette_vector`", "&#3627;&#3619;&#3639;&#3629;", "`days_vector`")
+# อย่าเปลี่ยนแปลงตัวแปร `poker_vector`, `roulette_vector` หรือ `days_vector`
+
 test_object("poker_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("poker_vector",
-            eq_condition = "equal",
-            incorrect_msg = "Make sure that you assign `days_vector` to the names of `poker_vector`.")
-test_object("roulette_vector",
-            eq_condition = "equal",
-            incorrect_msg = "Make sure that you assign `days_vector` to the names of `roulette_vector`.")
-success_msg("Nice one! A word of advice: try to avoid code duplication at all times. Continue to the next exercise and learn how to do arithmetic with vectors!")
+incorrect_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3594;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`days_vector`", "&#3651;&#3609;&#3585;&#3634;&#3619;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3616;&#3634;&#3618;&#3651;&#3609;")
+# ตรวจสอบให้แน่ใจว่าคุณได้ใช้ตัวแปร `days_vector` ในการตั้งชื่อให้กับข้อมูลภายใน
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3652;&#3611;&#3648;&#3621;&#3618;&#33;&#32;&#3592;&#3635;&#3652;&#3623;&#3657;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3588;&#3623;&#3619;&#3627;&#3621;&#3637;&#3585;&#3648;&#3621;&#3637;&#3656;&#3618;&#3591;&#3585;&#3634;&#3619;&#3614;&#3636;&#3617;&#3614;&#3660;&#3650;&#3588;&#3657;&#3604;&#3648;&#3604;&#3636;&#3617;&#3595;&#3657;&#3635;&#3654;&#3650;&#3604;&#3618;&#3652;&#3617;&#3656;&#3592;&#3635;&#3648;&#3611;&#3655;&#3609;&#32;&#3606;&#3657;&#3634;&#3614;&#3619;&#3657;&#3629;&#3617;&#3649;&#3621;&#3657;&#3623;&#3585;&#3655;&#3652;&#3611;&#3648;&#3619;&#3637;&#3618;&#3609;&#3619;&#3641;&#3657;&#3648;&#3619;&#3639;&#3656;&#3629;&#3591;&#3585;&#3634;&#3619;&#3588;&#3635;&#3609;&#3623;&#3603;&#3650;&#3604;&#3618;&#3651;&#3594;&#3657;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3651;&#3609;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3652;&#3604;&#3657;&#3648;&#3621;&#3618;"
+# เยี่ยมไปเลย! จำไว้ว่าคุณควรหลีกเลี่ยงการพิมพ์โค้ดเดิมซ้ำๆโดยไม่จำเป็น ถ้าพร้อมแล้วก็ไปเรียนรู้เรื่องการคำนวณโดยใช้ vector ในแบบฝึกหัดต่อไปได้เลย
+
+test_object("poker_vector", eq_condition = "equal", incorrect_msg = paste(incorrect_msg, "`poker_vector`"))
+test_object("roulette_vector", eq_condition = "equal", incorrect_msg = paste(incorrect_msg, "`roulette_vector`"))
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:da995f099f
-## Calculating total winnings
+## การคำนวณผลแพ้ชนะทั้งหมด
 
-Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. 
+ตอนนี้คุณก็รู้จักวิธีการตั้งชื่อให้กับข้อมูลภายใน vector เรียบร้อย เราจะไปต่อกันที่การคำนวณทางคณิตศาสตร์ด้วย vector กันเลย
 
-You want to find out the following type of information:
+ถ้าเกิดคุณอยากจะรู้ว่า:
 
-- How much has been your overall profit or loss per day of the week?
-- Have you lost money over the week in total?
-- Are you winning/losing money on poker or on roulette?
+- โดยรวมแล้ว กำไร / ขาดทุน ต่อวันของคุณมีค่าเป็นเท่าไร?
+- เมื่อรวมกำไรและขาดทุนตลอดสัปดาห์ที่ผ่านมา สรุปแล้วคุณขาดทุนหรือไม่?
+- เมื่อพิจารณาเกม poker กับ roulette แยกกัน สรุปคุณได้กำไรหรือขาดทุนในแต่ละเกม?
 
-To get the answers, you have to do arithmetic calculations on vectors. 
+ในการหาคำตอบของคำถามเหล่านี้ คุณจะต้องทำการคำนวณทางคณิตศาสตร์ด้วย vector
 
-It is important to know is that if you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:
+คุณจำเป็นจะต้องรู้ว่า ถ้าคุณนำ vector สองตัวมาบวกกันใน R นั่นมีค่าเท่ากับการนำข้อมูลภายใน vector มาบวกกันทีละคู่ เพื่อให้เห็นภาพได้ง่ายขึ้น คำสั่งที่แสดงอยู่ด้านล่างทั้ง 3 คำสั่งถือว่ามีค่าเท่ากันทั้งหมด:
 
 ```
 c(1, 2, 3) + c(4, 5, 6)
@@ -348,7 +352,7 @@ c(1 + 4, 2 + 5, 3 + 6)
 c(5, 7, 9)
 ```
 
-You can also do the calculations with variables that represent vectors:
+คุณสามารถทำการคำนวณโดยใช้ตัวแปรที่มีการเก็บค่า vector เอาไว้ได้เช่นกัน:
 
 ```
 a <- c(1, 2, 3) 
@@ -357,11 +361,11 @@ c <- a + b
 ```
 
 *** =instructions
-- Take the sum of the variables `A_vector` and `B_vector` and it assign to `total_vector`.
-- Inspect the result by printing out `total_vector`.
+- นำตัวแปร `A_vector` และ `B_vector` มาบวกกัน แล้วเก็บผลลัพธ์ไว้ในตัวแปร `total_vector`.
+- ลองดูว่าผลลัพธ์เป็นอย่างไรโดยการสั่งให้ R แสดงค่า `total_vector`.
 
 *** =hint
-Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the result to `total_vector`.
+ใช้เครื่องหมาย `+` ในการบวก `A_vector` ด้วย `B_vector` จากนั้นใช้คำสั่ง `<-` เพื่อกำหนดค่าผลลัพธ์ให้กับ `total_vector`.
 
 *** =pre_exercise_code
 ```{r}
@@ -394,7 +398,18 @@ total_vector
 
 *** =sct
 ```{r}
-msg <- "Do not change the contents of `A_vector` or `B_vector`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3605;&#3633;&#3657;&#3591;&#3652;&#3623;&#3657;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;", "`A_vector`", "&#3649;&#3621;&#3632;", "`B_vector`!")
+# อย่าเปลี่ยนแปลงค่าที่เราตั้งไว้ให้กับ `A_vector` และ `B_vector`!"
+
+incorrect_msg_obj <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;", "`total_vector`", "&#3651;&#3627;&#3657;&#3648;&#3607;&#3656;&#3634;&#3585;&#3633;&#3610;&#3612;&#3621;&#3610;&#3623;&#3585;&#3619;&#3632;&#3627;&#3623;&#3656;&#3634;&#3591;", "`A_vector`", "&#3649;&#3621;&#3632;", "`B_vector`")
+# ตรวจสอบให้แน่ใจว่าได้กำหนดค่า `total_vector` ให้เท่ากับผลบวกระหว่าง `A_vector` และ `B_vector`
+
+incorrect_msg_output <- paste("&#3588;&#3640;&#3603;&#3605;&#3657;&#3629;&#3591;&#3626;&#3633;&#3656;&#3591;&#3651;&#3627;&#3657;&#32;&#82;&#32;&#3649;&#3626;&#3604;&#3591;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;", "`total_vector`", "&#3604;&#3657;&#3623;&#3618;&#33;&#32;&#3649;&#3588;&#3656;&#3614;&#3636;&#3617;&#3614;&#3660;", "`total_vector`", "&#3621;&#3591;&#3652;&#3611;&#3610;&#3609;&#3610;&#3619;&#3619;&#3607;&#3633;&#3604;&#3651;&#3627;&#3617;&#3656;&#3585;&#3655;&#3614;&#3629;")
+# คุณต้องสั่งให้ R แสดงค่าของ `total_vector` ด้วย! แค่พิมพ์ `total_vector` ลงไปบนบรรทัดใหม่ก็พอ
+
+success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# ทำได้ดีมาก! ไปดูแบบฝึกหัดต่อไปกันเลย
+
 test_object("A_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("B_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("total_vector", incorrect_msg = "Make sure that `total_vector` contains the sum of `A_vector` and `B_vector`.")
