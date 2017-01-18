@@ -268,7 +268,7 @@ success_msg("Well done! Continue to the next exercise.")
 
 *** =instructions
 - เราได้สร้างตัวแปร `days_vector` พร้อมรายชื่อวันในสัปดาห์รอไว้ให้แล้ว
-- ใช้ตัวแปร `days_vector` ในการตั้งชื่อให้กับข้อมูลภายในตัวแปร `poker_vector` และ `roulette_vector`.
+- ใช้ตัวแปร `days_vector` ในการตั้งชื่อให้กับข้อมูลภายในตัวแปร `poker_vector` และ `roulette_vector`
 
 *** =hint
 คุณสามารถใช้คำสั่ง `names(poker_vector) <- days_vector` ในการตั้งชื่อให้กับข้อมูลแต่ะตัวที่อยู่ใน `poker_vector` ซึ่งคำสั่งนี้สามารถนำไปประยุกต์ใช้กับ `roulette_vector` ได้เช่นกัน
@@ -361,11 +361,11 @@ c <- a + b
 ```
 
 *** =instructions
-- นำตัวแปร `A_vector` และ `B_vector` มาบวกกัน แล้วเก็บผลลัพธ์ไว้ในตัวแปร `total_vector`.
-- ลองดูว่าผลลัพธ์เป็นอย่างไรโดยการสั่งให้ R แสดงค่า `total_vector`.
+- นำตัวแปร `A_vector` และ `B_vector` มาบวกกัน แล้วเก็บผลลัพธ์ไว้ในตัวแปร `total_vector`
+- ลองดูว่าผลลัพธ์เป็นอย่างไรโดยการสั่งให้ R แสดงค่า `total_vector`
 
 *** =hint
-ใช้เครื่องหมาย `+` ในการบวก `A_vector` ด้วย `B_vector` จากนั้นใช้คำสั่ง `<-` เพื่อกำหนดค่าผลลัพธ์ให้กับ `total_vector`.
+ใช้เครื่องหมาย `+` ในการบวก `A_vector` ด้วย `B_vector` จากนั้นใช้คำสั่ง `<-` เพื่อกำหนดค่าผลลัพธ์ให้กับ `total_vector`
 
 *** =pre_exercise_code
 ```{r}
@@ -426,10 +426,10 @@ success_msg(success_msg)
 ที่คุณต้องทำไม่ใช่เรื่องยากเลย แค่นำตัวแปร `roulette_vector` กับ `poker_vector` มาบวกกันก็ได้คำตอบแล้ว
 
 *** =instructions
-กำหนดให้ตัวแปร `total_daily` มีค่าเท่ากับผลกำไร / ขาดทุนทั้งหมดต่อวัน (เกม poker และ roulette รวมกัน).
+กำหนดให้ตัวแปร `total_daily` มีค่าเท่ากับผลกำไร / ขาดทุนทั้งหมดต่อวัน (เกม poker และ roulette รวมกัน)
 
 *** =hint
-สิ่งที่คุณต้องทำก็คล้ายๆกับแบบฝึกหัดที่แล้ว แค่นำ vector มาบวกกันแล้วเก็บค่าผลลัพธ์ไว้ในตัวแปร `total_daily`.
+สิ่งที่คุณต้องทำก็คล้ายๆกับแบบฝึกหัดที่แล้ว แค่นำ vector มาบวกกันแล้วเก็บค่าผลลัพธ์ไว้ในตัวแปร `total_daily`
 
 *** =pre_exercise_code
 ```{r}
@@ -495,7 +495,7 @@ total_poker <- sum(poker_vector)
 ```
 
 *** =instructions
-- คำนวณจำนวนเงินทั้งหมดที่คุณได้จากเกม roulette และเก็บค่าของมันไว้ในตัวแปร `total_roulette`.
+- คำนวณจำนวนเงินทั้งหมดที่คุณได้จากเกม roulette และเก็บค่าของมันไว้ในตัวแปร `total_roulette`
 - คราวนี้คุณก็มีทั้งจำนวนเงินที่คุณได้จากเกม roulette และจากเกม poker คุณก็สามารถคำนวณจำนวนเงินทั้งหมดที่คุณได้ในสัปดาห์นี้ได้แล้ว อย่าลืมเก็บผลลัพธ์สุดท้ายนี้ไว้ในตัวแปร `total_week` ด้วย
 - สั่งให้ R แสดงค่าของตัวแปร `total_week` ซึ่งเป็นคำตอบที่เรากำลังมองหาอยู่
 
@@ -1051,7 +1051,7 @@ poker_vector[selection_vector]
 การใส่ `selection_vector` (ซึ่งเป็น vector ของข้แมูลแบบตรรกะ) ลงไปใน square brackets คือการบอก R ว่าคุณต้องการข้อมูลภายใน `poker_vector` เฉพาะตำแหน่งเดียวกับข้อมูลตรรกะใน `selection_vector` ที่มีค่าเป็น `TRUE`
 
 *** =instructions
-ใส่ `selection_vector` ลงไปใน square brackets เพื่อให้ R ดึงข้อมูลออกมาเฉพาะวันที่คุณได้กำไร จากนั้นเก็บข้อมูลดังกล่าวไว้ในตัวแปร `poker_winning_days`.
+ใส่ `selection_vector` ลงไปใน square brackets เพื่อให้ R ดึงข้อมูลออกมาเฉพาะวันที่คุณได้กำไร จากนั้นเก็บข้อมูลดังกล่าวไว้ในตัวแปร `poker_winning_days`
 
 *** =hint
 ใช้คำสั่ง `poker_vector[selection_vector]` ในการเลือกข้อมูลตัวที่คุณต้องการจาก `poker_vector` แล้วเก็บผลลัพธ์ไว้ในตัวแปร `poker_winning_days`
