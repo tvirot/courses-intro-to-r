@@ -1,30 +1,30 @@
 --- 
-title_meta  : Chapter 3
+title_meta  : บทที่ 3
 title       : Matrices
-description : In this chapter you will learn how to work with matrices in R. By the end of the chapter, you will be able to create matrices and to understand how you can do basic computations with them. You will analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May the force be with you!
+description : ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับการใช้ matrix ใน R เมื่อคุณทำแบบฝึกหัดในบทนี้ครบแล้ว คุณจะรู้จักวิธีการสร้าง matrix และใช้มันในการคำนวณได้ เราจะให้คุณฝึกใช้ matrix โดยการวิเคราะห์ตัวเลขรายได้ของภาพยนตร์เรื่อง Star Wars ขอพลังจงสถิตอยู่กับท่าน!
 
 --- type:NormalExercise xp:100 skills:1 key:d61aeba84c
-## What's a matrix?
+## Matrix คืออะไร?
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+ใน R matrix คือการเก็บข้อมูลประเภทเดียวกัน (numeric, character, หรือ logical) หลายๆตัวไว้ในรูปของตารางซึ่งประกอบไปด้วยแถวและคอลัมน์(ลองนึกภาพ vector หลายๆอันมาต่อกัน) และเนื่องจากเราสามารถระบุตำแหน่งของข้อมูลแต่ละตัวได้ด้วยเลขแถวและคอลัมน์ matrix จึงมี 2 มิติ! 
 
-You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example:
+คุณสามารถสร้าง matrix ได้ด้วยการใช้ function [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) ลองดูโค้ดด้านล่างเป็นตัวอย่าง:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-In the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function:
+เมื่อคุณใช้ function [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix):
 
-- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
-- The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
-- The third argument `nrow` indicates that the matrix should have three rows.
+- argument ตัวแรกหมายถึงข้อมูลที่เราจะใช้เข้าไปเพื่อจัดเรียงให้เป็นแถวและคอลัมน์เพื่อสร้าง matrix ในที่นี้เราใช้ `1:9` ซึ่งมีค่าเท่ากับ `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`
+- argument ตัวที่สอง `byrow` เป็นการบอกว่าจะสร้าง matrix นี้โดยการเรียงข้อมูลตามแนวแถว(คือเรียงข้อมูลไล่จากซ้ายไปขวา) หรือไม่ ถ้าคุณต้องการให้เรียงตามแนวคอลัมน์(คือเรียงข้อมูลไล่จากบนลงล่าง) ให้คุณใส่ argument นี้ว่า `byrow = FALSE` แทน 
+- argument ตัวที่สาม `nrow` เป็นการบอก R ว่าเราต้องการ matrix ที่มีขนาดกี่แถว
 
 *** =instructions
-Construct a matrix with 3 rows containing the numbers 1 up to 9, filled row-wise.
+ลองสร้าง matrix ที่มี 3 แถว โดยการใส่เลข 1 ถึง 9 และเรียงข้อมูลตามแนวแถว
 
 *** =hint
-Read the assignment carefully, the answer is already given!
+ลองอ่านคำสั่งดูดีๆ คำตอบอยู่ในนั้นแล้ว!
 
 *** =pre_exercise_code
 ```{r}
@@ -44,30 +44,37 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 
 *** =sct
 ```{r}
-test_function("matrix", c("data", "byrow", "nrow"),
-              incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-test_output_contains("matrix(1:9, byrow=TRUE, nrow=3)",
-                     incorrect_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
-success_msg("Great! Continue to the next exercise.")
+function_msg <- "&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#32;&#109;&#97;&#116;&#114;&#105;&#120;&#32;&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3656;&#3634;&#63;&#32;&#3621;&#3629;&#3591;&#3604;&#3641;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;&#3629;&#3637;&#3585;&#3588;&#3619;&#3633;&#3657;&#3591;&#32;&#3588;&#3635;&#3605;&#3629;&#3610;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#3609;&#3633;&#3657;&#3609;&#3649;&#3627;&#3621;&#3632;"
+# คุณได้สร้าง matrix อย่างถูกต้องหรือเปล่า? ลองดูคำสั่งอีกครั้ง คำตอบอยู่ในนั้นแหละ
+
+output_msg <- "&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3588;&#3640;&#3603;&#3592;&#3632;&#3617;&#3637;&#3611;&#3633;&#3597;&#3627;&#3634;&#3585;&#3633;&#3610;&#3585;&#3634;&#3619;&#3626;&#3619;&#3657;&#3634;&#3591;&#32;&#109;&#97;&#116;&#114;&#105;&#120;&#32;&#3609;&#3632;&#32;&#3621;&#3629;&#3591;&#3604;&#3641;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;&#3629;&#3637;&#3585;&#3588;&#3619;&#3633;&#3657;&#3591;&#32;&#3588;&#3635;&#3605;&#3629;&#3610;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#3609;&#3633;&#3657;&#3609;&#3649;&#3621;&#3657;&#3623;"
+# เหมือนคุณจะมีปัญหากับการสร้าง matrix นะ ลองดูคำสั่งอีกครั้ง คำตอบอยู่ในนั้นแล้ว
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! ไปแบบฝึกหัดต่อไปกันเลย
+
+test_function("matrix", c("data", "byrow", "nrow"), incorrect_msg = function_msg)
+test_output_contains("matrix(1:9, byrow=TRUE, nrow=3)", incorrect_msg = output_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:effc2fb945
-## Analyzing matrices, you shall
+## การสร้าง matrix
 
-It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
+มาถึงของจริงกันบ้าง เราจะให้คุณได้ลองเริ่มวิเคราะห์รายได้ box office ของภาพยนตร์เรื่อง Star Wars โดยใช้ matrix ขอพลังจงสถิตอยู่กับท่าน! 
 
-In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
+ใน editor vectors ทั้ง 3 ตัวถูกสร้างรอไว้แล้ว โดยเราให้แต่ละตัวแทนรายได้จากภาพยนตร์ Star Wars 3 ภาคแรก ข้อมูลตัวแรกใน vector แทนรายได้จาก US box office ตัวที่สองแทนรายได้จาก box office อื่นๆที่ไม่ใช่ US (แหล่งข้อมูล: Wikipedia).
 
-In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.
+ในแบบฝึกหัดนี้ ให้คุณรวมตัวเลขใน vector เหล่านี้เข้าด้วยกันเป็น vector เดียว จากนั้นสร้าง matrix จาก vector ดังกล่าว
 
 *** =instructions
-- Use `c(new_hope, empire_strikes, return_jedi)` to combine the three vectors into one vector. Call this vector `box_office`.
-- Construct a matrix with 3 rows, where each row represents a movie. Use the `matrix()` function to this. The first argument is the vector `box_office`, containing all box office figures. Next, you'll have to specify `nrow = 3` and `byrow = TRUE`. Name the resulting matrix `star_wars_matrix`.
+- ใช้คำสั่ง `c(new_hope, empire_strikes, return_jedi)` ในการรวม vector ทั้งสามเข้าด้วยกันเป็นหนึ่ง แล้วให้ vector ใหม่นี้มีชื่อว่า `box_office`
+- ใช้ function `matrix()` ในการสร้าง matrix ที่มี 3 แถว แต่ละแถวแทนข้อมูลของภาพยนตร์แต่ละภาค โดยให้ argument ตัวแรกเป็น vector `box_office` ซึ่งเก็บข้อมูลรายได้ภาพยนตร์ทั้งหมดไว้ จากนั้่นคุณต้องกำหนดให้ `nrow = 3` และ `byrow = TRUE` ตั้งชื่อ matrix ว่า `star_wars_matrix`.
 
 *** =hint
-- `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
-- `matrix(box_office, nrow = ..., by_row ...)` is a template for the solution to the second instruction.
+- คำสั่ง `box_office <- c(new_hope, empire_strikes, return_jedi)` จะทำการรวม vector เข้าด้วยกันเป็นอันเดียว ซึ่ง vector ใหม่จะมีข้อมูล 6 ตัวด้วยกัน
+- ลองดูคำสั่ง `matrix(box_office, nrow = ..., by_row ...)` แล้วนำไปปรับใช้ให้ถูกต้อง
 
 *** =pre_exercise_code
 ```{r}
@@ -104,44 +111,53 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`new_hope`", "`empire_strikes`", "&#3649;&#3621;&#3632;", "`return_jedi`!")
+# อย่าเปลี่ยนแปลงตัวแปร `new_hope`, `empire_strikes` และ `return_jedi`!
+
+box_office_msg <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3609;&#3635;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3592;&#3634;&#3585;", "`new_hope` `empire_strikes`", "&#3649;&#3621;&#3632;", "`return_jedi`", "&#3617;&#3634;&#3619;&#3623;&#3617;&#3585;&#3633;&#3609;&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3648;&#3611;&#3655;&#3609;", "`box_office`", "&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;")
+# คุณได้นำข้อมูลจาก `new_hope` `empire_strikes` และ `return_jedi` มารวมกันอย่างถูกต้องเป็น vector `box_office` หรือยัง?
+
+matrix_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3626;&#3656;&#32;&#97;&#114;&#103;&#117;&#109;&#101;&#110;&#116;&#32;&#3605;&#3656;&#3634;&#3591;&#3654;&#3651;&#3627;&#3657;", "`matrix()`", "&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;", "(`box_office`, `nrow = 3`, `by_row = TRUE`)")
+# ตรวจสอบให้แน่ใจว่าคุณได้ใส่ argument ต่างๆให้ function `matrix()` อย่างถูกต้อง (`box_office`, `nrow = 3`, `by_row = TRUE`)
+
+star_wars_matrix <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;", "`star_wars_matrix`", "&#3617;&#3637;&#3588;&#3656;&#3634;&#3648;&#3607;&#3656;&#3634;&#3585;&#3633;&#3610;&#32;&#109;&#97;&#116;&#114;&#105;&#120;&#32;&#3607;&#3637;&#3656;&#3588;&#3640;&#3603;&#3626;&#3619;&#3657;&#3634;&#3591;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3656;&#3634;&#63;")
+# คุณได้กำหนดให้ `star_wars_matrix` มีค่าเท่ากับ matrix ที่คุณสร้างหรือเปล่า?
+
+success_msg <- "&#3586;&#3629;&#3614;&#3621;&#3633;&#3591;&#3592;&#3591;&#3626;&#3606;&#3636;&#3605;&#3629;&#3618;&#3641;&#3656;&#3585;&#3633;&#3610;&#3607;&#3656;&#3634;&#3609;&#33;&#32;&#3648;&#3619;&#3634;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# ขอพลังจงสถิตอยู่กับท่าน! เราไปดูแบบฝึกหัดต่อไปกันเลย
+
 test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("box_office", incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
-
-test_function("matrix", c("data", "nrow", "byrow"),
-              incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-
-test_object("star_wars_matrix",
-            incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
-
-success_msg("The force is actually with you! Continue to the next exercise.")
+test_object("box_office", incorrect_msg = box_office_msg)
+test_function("matrix", c("data", "nrow", "byrow"), incorrect_msg = matrix_msg)
+test_object("star_wars_matrix", incorrect_msg = star_wars_matrix)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:f734e8bf74
-## Naming a matrix
+## การตั้งชื่อให้กับข้อมูลใน matrix
 
-To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix. 
+การตั้งชื่อของภาพยนตร์ให้กับแต่ละแถวใน matrix `star_wars_matrix` จะช่วยให้คุณอ่านข้อมูลได้ง่ายขึ้น แถมยังมีประโยชน์เวลาคุณจะเรียกใช้ข้อมูลอีกด้วย! 
 
-Similar to vectors, you can add names for the rows and the columns of a matrix
+คล้ายๆกับตอนที่เราตั้งชื่อให้กับข้อมูลใน vector คุณสามารถตั้งชื่อให้กับแถวและคอลัมน์ของ matrix ได้
 
 ```
 rownames(my_matrix) <- row_names_vector
 colnames(my_matrix) <- col_names_vector
 ```
 
-We went ahead and prepared two vectors for you: `region`, and `titles`. You will need these vectors to name the columns and rows of `star_wars_matrix`, respectively.
+เราเตรียม vector สองอันนี้ไว้ให้คุณ: `region` และ `titles` ให้คุณใช้ vector ทั้งสองในการตั้งชื่อให้กับคอลัมน์และแถวของ `star_wars_matrix` (เรียงตามลำดับ)
 
 *** =instructions
-- Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
-- Use `rownames()` to name the rows of `star_wars_matrix` with the `titles` vector.
-- Print out `star_wars_matrix` to see the result of your work.
+- ใช้คำสั่ง `colnames()` ในการตั้งชื่อแต่ละคอลัมน์ของ `star_wars_matrix` ด้วย `region` vector
+- ใช้คำสั่ง `rownames()` ในการตั้งชื่อแต่ละแถวของ `star_wars_matrix` ด้วย `titles` vector
+- ลองสั่งแสดงค่า `star_wars_matrix` แล้วดูว่าผลลัพธ์เป็นอย่างไร
 
 *** =hint
-You can use `colnames(star_wars_matrix) <- region` to name the columns of `star_wars_matrix`. Do a similar thing to name the rows.
+คุณสามารถใช้คำสั่ง `colnames(star_wars_matrix) <- region` ในการตั้งชื่อให้กับแต่ละคอลัมน์ของ `star_wars_matrix` ลองปรับเปลี่ยนคำสั่งนี้และนำไปตั้งชื่อให้กับแต่ละแถวดูบ้าง
 
 *** =pre_exercise_code
 ```{r}
@@ -197,24 +213,40 @@ star_wars_matrix
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`new_hope`", "`empire_strikes`", "&#3649;&#3621;&#3632;", "`return_jedi`!")
+# อย่าเปลี่ยนแปลงตัวแปร `new_hope`, `empire_strikes` และ `return_jedi`!
+
 test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Don't change the contents of `star_wars_matrix`; only the names of the rows and columns!" 
+
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3616;&#3634;&#3618;&#3651;&#3609;", "`star_wars_matrix`", "&#3651;&#3627;&#3657;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3588;&#3656;&#3594;&#3639;&#3656;&#3629;&#3586;&#3629;&#3591;&#3649;&#3606;&#3623;&#3649;&#3621;&#3632;&#3588;&#3629;&#3621;&#3633;&#3617;&#3609;&#3660;&#3648;&#3607;&#3656;&#3634;&#3609;&#3633;&#3657;&#3609;")
+# อย่าเปลี่ยนแปลงค่าภายใน `star_wars_matrix` ให้เปลี่ยนแค่ชื่อของแถวและคอลัมน์เท่านั้น
+
 test_object("star_wars_matrix", incorrect_msg = msg)
-msg <- "Don't change anything about the `region` and `titles` vectors that have been defined for you."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`region`", "&#3649;&#3621;&#3632;", "`titles`")
+# อย่าเปลี่ยนแปลงตัวแปร `region` และ `titles`
+
 test_object("region", undefined_msg = msg, incorrect_msg = msg)
 test_object("titles", undefined_msg = msg, incorrect_msg = msg)
-test_object("star_wars_matrix", eq_condition = "equal",
-            incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
-test_output_contains("star_wars_matrix", incorrect_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
-success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
+
+object_msg <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3651;&#3627;&#3657;&#3649;&#3606;&#3623;&#3649;&#3621;&#3632;&#3588;&#3629;&#3621;&#3633;&#3617;&#3609;&#3660;&#3586;&#3629;&#3591;", "`star_wars_matrix`", "&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3656;&#3634;&#63;&#32;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`colnames(star_wars_matrix) <- region`", "&#3651;&#3609;&#3585;&#3634;&#3619;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3588;&#3629;&#3621;&#3633;&#3617;&#3609;&#3660;&#32;&#3649;&#3621;&#3632;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;&#3588;&#3621;&#3657;&#3634;&#3618;&#3654;&#3585;&#3633;&#3609;&#3651;&#3609;&#3585;&#3634;&#3619;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3651;&#3627;&#3657;&#3649;&#3606;&#3623;")
+# คุณได้ตั้งชื่อให้แถวและคอลัมน์ของ `star_wars_matrix` อย่างถูกต้องหรือเปล่า? ใช้คำสั่ง `colnames(star_wars_matrix) <- region` ในการตั้งชื่อคอลัมน์ และใช้คำสั่งคล้ายๆกันในการตั้งชื่อให้แถว
+
+output_msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3626;&#3633;&#3656;&#3591;&#3651;&#3627;&#3657;&#32;&#82;&#32;&#3649;&#3626;&#3604;&#3591;&#3588;&#3656;&#3634;", "`star_wars_matrix`", "&#3627;&#3621;&#3633;&#3591;&#3592;&#3634;&#3585;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3649;&#3606;&#3623;&#3649;&#3621;&#3632;&#3588;&#3629;&#3621;&#3633;&#3617;&#3609;&#3660;&#3649;&#3621;&#3657;&#3623;")
+# อย่าลืมสั่งให้ R แสดงค่า `star_wars_matrix` หลังจากคุณได้ตั้งชื่อให้กับแถวและคอลัมน์แล้ว
+
+success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3588;&#3640;&#3603;&#3585;&#3635;&#3621;&#3633;&#3591;&#3629;&#3618;&#3641;&#3656;&#3610;&#3609;&#3648;&#3626;&#3657;&#3609;&#3607;&#3634;&#3591;&#3649;&#3627;&#3656;&#3591;&#3585;&#3634;&#3619;&#3648;&#3611;&#3655;&#3609;&#3612;&#3641;&#3657;&#3648;&#3594;&#3637;&#3656;&#3618;&#3623;&#3594;&#3634;&#3597;&#32;&#82;&#32;&#3649;&#3621;&#3657;&#3623;&#33;&#32;&#3652;&#3611;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# ทำได้ดีมาก! คุณกำลังอยู่บนเส้นทางแห่งการเป็นผู้เชี่ยวชาญ R แล้ว! ไปแบบฝึกหัดต่อไปกันเลย
+
+test_object("star_wars_matrix", eq_condition = "equal", incorrect_msg = object_msg)
+test_output_contains("star_wars_matrix", incorrect_msg = output_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:3fd7499a12
-## Calculating the worldwide box office 
+## การคำนวณรายได้จาก box office ทั่วโลก
 
 The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
 
@@ -263,6 +295,9 @@ worldwide_vector <- rowSums(star_wars_matrix)
 
 *** =sct
 ```{r}
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`box_office_all`", "&#3649;&#3621;&#3632;", "`star_wars_marix`!")
+# อย่าเปลี่ยนแปลงตัวแปร `box_office_all` และ `star_wars_marix`!
+
 msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
 test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
@@ -325,7 +360,9 @@ all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`box_office_all`", "&#3649;&#3621;&#3632;", "`star_wars_marix`!")
+# อย่าเปลี่ยนแปลงตัวแปร `box_office_all` และ `star_wars_marix`!
+
 test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("worldwide_vector",
