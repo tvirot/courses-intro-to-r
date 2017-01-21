@@ -1,24 +1,24 @@
 ---
-title_meta  : Chapter 4
+title_meta  : บทที่ 4
 title       : Factors
-description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
+description : มีอยู่บ่อยครั้งที่ข้อมูลของเราถูกเก็บอยู่ในรูปของข้อมูลที่ใช้แบ่งกลุ่ม (categorical data) ยกตัวอย่างเช่น มนุษย์นั้นมี 2 เพศคือชายและหญิง ใน R ข้อมูลที่แสดงถึงการแบ่งกลุ่มจะถูกเก็บในรูปแบบที่เรียกว่า factor ซึ่งเราจะให้คุณได้เรียนรู้ถึงวิธีการสร้างและจัดการกับข้อมูลประเภทนี้ในบทนี้
 
 --- type:NormalExercise xp:100 skills:1 key:05273321916d99bb9c0deadf75c6834d25a47244
-## What's a factor and why would you use it?
+## factor คืออะไรและทำไมเราถึงต้องใช้มัน?
 
-In this chapter you dive into the wonderful world of **factors**.
+ในบทนี้ เราจะให้คุณได้เรียนรู้เกี่ยวกับข้อมูลอีกแบบหนึ่งซึ่งเรียกว่า **factor**
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+คำว่า factor นั้นอ้างอิงถึงข้อมูลในทางสถิติที่ใช้ในการแบ่งกลุ่มข้อมูล ข้อแตกต่างระหว่างข้อมูลที่ใช้แบ่งกลุ่ม(categorical data) กับข้อมูลอื่นๆทั่วไปหรือแบบต่อเนื่อง (continuous data) คือ ข้อมูลที่ใช้แบ่งกลุ่มนั้นจะใช้**ข้อมูลเพียงไม่กี่ตัว**(เช่น เพศชาย เพศหญิง) ในขณะที่ข้อมูลอื่นๆทั่วไปสามารถมีค่าได้หลากหลายกว่าจนอาจจะไม่สามารถนับได้(เช่น เลข 1 ถึง 1,000)
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+การที่เราระบุประเภทข้อมูลให้ R รู้อย่างชัดเจนว่า ข้อมูลนี้คือ categorical หรือ continuous จะช่วยให้ R สามารถทำงานได้ดีขึ้นในการสร้าง model ทางสถิติซึ่งสามารถนำมาใช้วิเคราะห์ข้อมูบได้ในอนาคต (เนื่องจาก R จะปฏิบัติต่อ categorical data แตกต่างจาก continuous data)
 
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+ตัวอย่างที่ดีของตัวแปรที่ใช้แบ่งกลุ่มคือ 'เพศ' เนื่องจากมนุษย์ทุกคนสามารถถูกแบ่งเป็นกลุ่มได้ตามเพศแค่ "ชาย" หรือ "หญิง" เท่านั้น เราจึงสามารถใช้ 'เพศ' เป็นตัวแปรในการแบ่งกลุ่มได้
 
 *** =instructions
-Assign to variable `theory` the value `"factors for categorical variables"`.
+กำหนดให้ตัวแปร `theory` มีค่าเป็น `"factors for categorical variables"`.
 
 *** =hint
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+แค่ใช้คำสั่งกำหนดค่า (`<-`) และตรวจสอบให้แน่ใจว่าคุณได้พิมพ์ตัวพิมพ์เล็กและตัวพิมพ์ใหญ่อย่างถูกต้องแล้ว
 
 *** =pre_exercise_code
 ```{r}
@@ -44,41 +44,49 @@ theory <- "factors for categorical variables"
 #    lapply(bad_names, test_object, eval=FALSE)
 #    })
 
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
+msg_undef <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3618;&#3633;&#3591;&#3652;&#3617;&#3656;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`theory`")
+# ดูเหมือนว่าคุณยังไม่ได้สร้างตัวแปร `theory`
+
+msg_incor <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`theory`", "&#3651;&#3627;&#3657;&#3648;&#3607;&#3656;&#3634;&#3585;&#3633;&#3610;", "`\"factors for categorical variables\"`", "&#40;&#3605;&#3657;&#3629;&#3591;&#3648;&#3611;&#3655;&#3609;&#3605;&#3633;&#3623;&#3614;&#3636;&#3617;&#3614;&#3660;&#3648;&#3621;&#3655;&#3585;&#3607;&#3633;&#3657;&#3591;&#3627;&#3617;&#3604;&#41;")
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าของตัวแปร `theory` ให้เท่ากับ `\"factors for categorical variables\"` (ต้องเป็นตัวพิมพ์เล็กทั้งหมด)
+
+msg_err <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`theory", "&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3650;&#3604;&#3618;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`<-`", "&#3651;&#3609;&#3585;&#3634;&#3619;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;")
+# ตรวจสอบให้แน่ใจว่าคุณได้สร้างตัวแปร `theory` อย่างถูกต้องโดยใช้คำสั่ง `<-` ในการกำหนดค่าตัวแปร
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3614;&#3619;&#3657;&#3629;&#3617;&#3607;&#3637;&#3656;&#3592;&#3632;&#3648;&#3619;&#3637;&#3618;&#3609;&#3619;&#3641;&#3657;&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;&#32;&#3648;&#3619;&#3634;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! พร้อมที่จะเรียนรู้หรือยัง? เราไปดูแบบฝึกหัดต่อไปกันเลย
 
 # If get error and theory is undefined, point out the error
 test_or(test_error(msg_err), test_object("theory", eval = FALSE))
 
 test_object("theory", undefined_msg = msg_undef, incorrect_msg = msg_incor)
-success_msg("Good job! Ready to start? Continue to the next exercise!")
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:6cc21c842b075347926bb1b244782213df32e370
-## What's a factor and why would you use it? (2)
+## factor คืออะไรและทำไมเราถึงต้องใช้มัน? (2)
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals:
+คุณสามารถใช้ function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) ในการสร้าง factor ใน R ได้ สิ่งแรกที่คุณต้องทำก็คือสร้าง vector ของตัวแปรที่ใช้ในการแบ่งกลุ่ม ยกตัวอย่างเช่น `gender_vector` ที่เก็บข้อมูลเพศของคน 5 คนเอาไว้ดังตัวอย่าง:
 
 ```
 gender_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Male" and "Female".
+เราสามารถเห็นได้อย่างชัดเจนว่าข้อมูลถูกแบ่งออกเป็น 2 กลุ่มด้วยกัน (หรือในภาษา R เรียกว่า **'factor levels'**) ได้แก่ "Male" และ "Female".
 
-The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor:
+function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) จะทำการเปลี่ยนข้อมูลใน vector ให้เป็น factor:
 
 ```
 factor_gender_vector <- factor(gender_vector)
 ```
 
 *** =instructions
-- Convert the character vector `gender_vector` to a factor with `factor()` and assign the result to `factor_gender_vector`
-- Print out `factor_gender_vector` and assert that R prints out the factor levels below the actual values.
+- แปลง vector ของข้อมูลแบบตัวอักษร `gender_vector` ให้เป็นข้อมูลแบบ factor ด้วย function `factor()` จากนั้นเก็บผลลัพธ์ไว้ในตัวแปร `factor_gender_vector`
+- แสดงค่า `factor_gender_vector` และลองตรวจสอบดูว่า R ได้แสดง factor levels ไว้ใต้ค่าที่ถูกแสดงออกมา
 
 *** =hint
-Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `gender_vector`. Have a look at the assignment, the answer is already there somewhere...
+แค่ใช้ function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) กับ `gender_vector` เท่านั้น คุณก็จะได้ส่วนหนึ่งของคำตอบ ลองดูที่แบบฝึกหัดให้ดีๆอีกครั้ง คำตอบอยู่ในนั้นแล้ว...
 
 *** =pre_exercise_code
 ```{r}
@@ -111,10 +119,18 @@ factor_gender_vector
 
 *** =sct
 ```{r}
-test_object("factor_gender_vector",
-            incorrect_msg = "Did you assign the factor of `gender_vector` to `factor_gender_vector`?")
-test_output_contains("factor_gender_vector", incorrect_msg = "Don't forget to print out `factor_gender_vector`!")
-success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
+object_msg <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`factor_gender_vector`", "&#3617;&#3637;&#3588;&#3656;&#3634;&#3648;&#3607;&#3656;&#3634;&#3585;&#3633;&#3610;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3649;&#3610;&#3610;&#32;&#102;&#97;&#99;&#116;&#111;&#114;&#32;&#3592;&#3634;&#3585;", "`gender_vector`", "&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;")
+# คุณได้กำหนดให้ตัวแปร `factor_gender_vector` มีค่าเท่ากับข้อมูลแบบ factor จาก `gender_vector` หรือยัง?
+
+output_msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3626;&#3633;&#3656;&#3591;&#3649;&#3626;&#3604;&#3591;&#3588;&#3656;&#3634;", "`factor_gender_vector`!")
+# อย่าลืมสั่งแสดงค่า `factor_gender_vector`!
+
+success_msg <- paste("&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#33;&#32;&#3606;&#3657;&#3634;&#3588;&#3640;&#3603;&#3605;&#3657;&#3629;&#3591;&#3585;&#3634;&#3619;&#3588;&#3635;&#3629;&#3608;&#3636;&#3610;&#3634;&#3618;&#3648;&#3614;&#3636;&#3656;&#3617;&#3648;&#3605;&#3636;&#3617;&#3648;&#3585;&#3637;&#3656;&#3618;&#3623;&#3585;&#3633;&#3610;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`factor()`", "&#3649;&#3588;&#3656;&#3588;&#3640;&#3603;&#3614;&#3636;&#3617;&#3614;&#3660;", "`?factor`", "&#3621;&#3591;&#3652;&#3611;&#3651;&#3609;&#32;&#67;&#111;&#110;&#115;&#111;&#108;&#101;&#32;&#3585;&#3655;&#3592;&#3632;&#3648;&#3611;&#3655;&#3609;&#3585;&#3634;&#3619;&#3648;&#3611;&#3636;&#3604;&#3627;&#3609;&#3657;&#3634;&#32;&#104;&#101;&#108;&#112;&#32;&#3595;&#3638;&#3656;&#3591;&#3592;&#3632;&#3617;&#3637;&#3588;&#3635;&#3629;&#3608;&#3636;&#3610;&#3634;&#3618;&#3648;&#3614;&#3636;&#3656;&#3617;&#3648;&#3605;&#3636;&#3617;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#3609;&#3633;&#3657;&#3609;&#32;&#3649;&#3605;&#3656;&#3605;&#3629;&#3609;&#3609;&#3637;&#3657;&#32;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3604;&#3637;&#3585;&#3623;&#3656;&#3634;")
+# เยี่ยม! ถ้าคุณต้องการคำอธิบายเพิ่มเติมเกี่ยวกับ function `factor()` แค่คุณพิมพ์ `?factor` ลงไปใน Console ก็จะเป็นการเปิดหน้า help ซึ่งจะมีคำอธิบายเพิ่มเติมอยู่ในนั้น แต่ตอนนี้ ไปดูแบบฝึกหัดต่อไปกันดีกว่า
+
+test_object("factor_gender_vector", incorrect_msg = object_msg)
+test_output_contains("factor_gender_vector", incorrect_msg = output_msg)
+success_msg(success_msg);
 ```
 
 
