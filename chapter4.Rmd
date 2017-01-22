@@ -8,7 +8,7 @@ description : มีอยู่บ่อยครั้งที่ข้อม
 
 ในบทนี้ เราจะให้คุณได้เรียนรู้เกี่ยวกับข้อมูลอีกแบบหนึ่งซึ่งเรียกว่า **factor**
 
-คำว่า factor นั้นอ้างอิงถึงข้อมูลในทางสถิติที่ใช้ในการแบ่งกลุ่มข้อมูล ข้อแตกต่างระหว่างข้อมูลที่ใช้แบ่งกลุ่ม(categorical data) กับข้อมูลอื่นๆทั่วไปหรือแบบต่อเนื่อง (continuous data) คือ ข้อมูลที่ใช้แบ่งกลุ่มนั้นจะใช้**ข้อมูลเพียงไม่กี่ตัว**(เช่น เพศชาย เพศหญิง) ในขณะที่ข้อมูลอื่นๆทั่วไปสามารถมีค่าได้หลากหลายกว่าจนอาจจะไม่สามารถนับได้(เช่น เลข 1 ถึง 1,000)
+คำว่า factor นั้นหมายถึงข้อมูลในทางสถิติที่ใช้ในการแบ่งกลุ่มข้อมูล ข้อแตกต่างระหว่างข้อมูลที่ใช้แบ่งกลุ่ม(categorical data) กับข้อมูลอื่นๆทั่วไปหรือแบบต่อเนื่อง (continuous data) คือ ข้อมูลที่ใช้แบ่งกลุ่มนั้นจะใช้**ข้อมูลเพียงไม่กี่ตัว**(เช่น เพศชาย เพศหญิง) ในขณะที่ข้อมูลอื่นๆทั่วไปสามารถมีค่าได้หลากหลายกว่าจนอาจจะไม่สามารถนับได้(เช่น เลข 1 ถึง 1,000)
 
 การที่เราระบุประเภทข้อมูลให้ R รู้อย่างชัดเจนว่า ข้อมูลนี้คือ categorical หรือ continuous จะช่วยให้ R สามารถทำงานได้ดีขึ้นในการสร้าง model ทางสถิติซึ่งสามารถนำมาใช้วิเคราะห์ข้อมูบได้ในอนาคต (เนื่องจาก R จะปฏิบัติต่อ categorical data แตกต่างจาก continuous data)
 
@@ -135,19 +135,19 @@ success_msg(success_msg);
 
 
 --- type:NormalExercise xp:100 skills:1 key:5bd4f50afc2c2dbc881e16b8ca94ca56960dff42
-## What's a factor and why would you use it? (3)
+## factor คืออะไรและทำไมเราถึงต้องใช้มัน? (3)
 
-There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
+ตัวแปรที่ใช้ในการแบ่งกลุ่มมีอยู่ 2 ประเภทด้วยกัน ได้แก่ **nominal** และ **ordinal**.
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).
+ตัวแปรแบบ nominal คือตัวแปรในการแบ่งกลุ่มที่ไม่แสดงถึงลำดับ(คือการที่เราไม่สามารถบอกได้ว่ากลุ่มหนึ่งมีค่ามากกว่าอีกกลุ่มหนึ่งหรือไม่) ยกตัวอย่างเช่น ข้อมูลชนิดของสัตว์ในตัวแปร `animals_vector` ซึ่งประกอบด้วย `"Elephant"`, `"Giraffe"`, `"Donkey"` และ `"Horse"` ซึ่งจะเห็นได้ว่าเราไม่สามารถเรียงลำดับข้อมูลเหล่านี้ได้เพราะไม่สามารถบอกได้ว่าสัตว์ประเภทหนึ่งมีค่ามากกว่าอีกประเภทหนึ่งหรือไม่
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+ในทางตรงกันข้าม เราสามารถเรียงลำดับตัวแปรแบบ ordinal ได้ ยกตัวอย่างเช่น ข้อมูลอุณหภูมิในตัวแปร `temperature_vector` ซึ่งประกอบด้วย `"Low"`, `"Medium"` และ `"High"` ซึ่งจากข้อมูลชุดนี้เราเห็นได้ชัดเจนว่า `"Medium"` มีค่ามากกว่า `"Low"` และ `"High"` มีค่ามากกว่า `"Medium"`
 
 *** =instructions
-Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+กดปุ่ม 'Submit Answer' เพื่อดูว่า R สร้างและแสดงค่าตัวแปรแบบ nominal และ ordinal อย่างไร ไม่ต้องห่วงถ้าคุณยังไม่เข้าใจโค้ดทั้งหมด เราจะอธิบายเพิ่มเติมให้ทีหลัง
 
 *** =hint
-Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+แค่กดปุ่ม 'Submit Answer' แล้วดูที่ Console แล้วลองดูว่า R แสดงการเรียงลำดับของ factor levels สำหรับตัวแปรแบบ ordinal อย่างไร
 
 *** =pre_exercise_code
 ```{r}
@@ -182,42 +182,47 @@ factor_temperature_vector
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
+msg <- "&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3650;&#3588;&#3657;&#3604;&#3605;&#3633;&#3623;&#3629;&#3618;&#3656;&#3634;&#3591;&#3607;&#3637;&#3656;&#3648;&#3605;&#3619;&#3637;&#3618;&#3617;&#3652;&#3623;&#3657;&#3651;&#3627;&#3657;&#32;&#3649;&#3588;&#3656;&#3585;&#3604;&#3611;&#3640;&#3656;&#3617;&#32;&#39;&#83;&#117;&#98;&#109;&#105;&#116;&#32;&#65;&#110;&#115;&#119;&#101;&#114;&#39;&#32;&#3585;&#3655;&#3614;&#3629;&#33;"
+# อย่าเปลี่ยนโค้ดตัวอย่างที่เตรียมไว้ให้ แค่กดปุ่ม 'Submit Answer' ก็พอ!
+
+success_msg <- "&#3626;&#3633;&#3591;&#3648;&#3585;&#3605;&#3652;&#3627;&#3617;&#3623;&#3656;&#3634;&#3648;&#3585;&#3636;&#3604;&#3629;&#3632;&#3652;&#3619;&#3586;&#3638;&#3657;&#3609;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;&#3649;&#3610;&#3610;&#32;&#111;&#114;&#100;&#105;&#110;&#97;&#108;&#63;&#32;&#3621;&#3629;&#3591;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3648;&#3585;&#3637;&#3656;&#3618;&#3623;&#3585;&#3633;&#3610;&#32;&#102;&#97;&#99;&#116;&#111;&#114;&#32;&#108;&#101;&#118;&#101;&#108;&#115;&#32;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# สังเกตไหมว่าเกิดอะไรขึ้นกับตัวแปรแบบ ordinal? ลองไปดูแบบฝึกหัดต่อไปเกี่ยวกับ factor levels กันเลย
+
 test_object("animals_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("temperature_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_animals_vector", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("factor_animals_vector", incorrect_msg = msg)
 test_object("factor_temperature_vector", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("factor_temperature_vector", incorrect_msg = msg)
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:1aa698978d32d1a0befa4700d7da85a648e1d69e
 ## Factor levels
 
-When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
+ในบางครั้งคุณอาจจะอยากเปลี่ยนค่าของ factor ต่างๆเพื่อเพิ่มความชัดเจนของข้อมูลหรือเพื่อให้อ่านได้ง่ายขึ้น โดยคุณสามารถใช้ function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels) ในการเปลี่ยนค่า factor ต่างๆได้ ตัวอย่างโค้ด เช่น:
 
 ```
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the gender of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`.
+ลองนึกภาพเวลาที่คุณเก็บข้อมูลจากการทำแบบสำรวจ คำถามทั่วๆไปที่มักจะมีอยู่ในแบบสำรวจคือ เพศของผู้ตอบแบบสำรวจ ซึ่งเป็น factor และมักมี levels เป็น `"M"` และ `"F"`.
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Next, when you want to start your data analysis, your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` to make your life easier.
+ต่อมา เมื่อคุณจะทำการวิเคราะห์ข้อมูล คุณอยากให้ตัวแปรที่อยู่ในข้อมูลอ่านเข้าใจได้ง่ายขึ้น คุณจึงต้องการเปลี่ยน factor levels จาก `"M"` และ `"F"` ไปเป็น `"Male"` และ `"Female"`
 
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order order.
+**ข้อควรระวัง:** ลำดับของการกำหนด factor levels ใหม่มีความสำคัญ ถ้าคุณลองพิมพ์คำสั่ง `levels(factor_survey_vector)` ลงไปใน Console คุณจะเห็นค่าที่แสดงออกมาเป็น `[1] "F" "M"` นั่นเป็นเพราะเมื่อคุณสร้าง factor โดยไม่ได้กำหนดลำดับให้กับ factor levels `R` จะทำการเรียงลำดับ factor ต่างๆตามตัวอักษร และในการที่จะเปลี่ยน `"F"` เป็น `"Female"` และ `"M"` เป็น `"Male"` ได้อย่างถูกต้อง คุณจึงต้องเรียงลำดับ factor levels ที่กำหนดขึ้นใหม่ให้เป็น `c("Female", "Male")` ตามลำดับเดิมของ `"F"` และ `"M"`
 
 *** =instructions
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+- ลองดูโค้ดที่ใช้สร้าง vector ของข้อมูล factor และเก็บไว้ใน `survey_vector` ดู
+- เปลี่ยน factor levels ของ `factor_survey_vector` ให้เป็น `c("Female", "Male")` อย่าลืมว่าคุณต้องเรียงตามลำดับตามตัวอักษรด้วย
 
 *** =hint
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+ลำดับของ factor levels นั้นเป็นเรื่องสำคัญ ลองดูลำดับของ factor levels ดูตอนที่คุณพิมพ์ `levels(factor_survey_vector)` ลงไปใน Console
 
 *** =pre_exercise_code
 ```{r}
@@ -252,7 +257,9 @@ factor_survey_vector
 
 *** =sct
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
+msg = paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;", "`survey_vector`!")
+# อย่าเปลี่ยนแปลงค่าของ `survey_factor`!
+
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 msg = "Do not change or remove the code to create the factor vector."
 test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
@@ -262,30 +269,34 @@ test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
 # MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
 # test_student_typed('c("Male", "Female")')
 
-test_object("factor_survey_vector", eq_condition = "equal",
-            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+object_msg <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#32;&#102;&#97;&#99;&#116;&#111;&#114;&#32;&#108;&#101;&#118;&#101;&#108;&#115;&#32;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;", "`factor_survey_vector`", "&#3650;&#3604;&#3618;&#3585;&#3634;&#3619;&#3651;&#3594;&#3657;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`levels(factor_survey_vector) <- c(\"Female\", \"Male\")`", "&#3649;&#3621;&#3657;&#3623;&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;&#32;&#3649;&#3621;&#3632;&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3623;&#3656;&#3634;&#32;&#82;&#32;&#3648;&#3611;&#3655;&#3609;&#3616;&#3634;&#3625;&#3634;&#3607;&#3637;&#3656;&#3617;&#3637;&#3621;&#3633;&#3585;&#3625;&#3603;&#3632;&#3648;&#3611;&#3655;&#3609;&#32;&#99;&#97;&#115;&#101;&#32;&#115;&#101;&#110;&#115;&#105;&#116;&#105;&#118;&#101;&#33;")
+# คุณได้กำหนด factor levels ที่ถูกต้องให้กับ `factor_survey_vector` โดยการใช้ใช้คำสั่ง `levels(factor_survey_vector) <- c(\"Female\", \"Male\")` แล้วหรือยัง? และอย่าลืมว่า R เป็นภาษาที่มีลักษณะเป็น case sensitive!
 
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! ไปดูแบบฝึกหัดต่อไปกันเลย
 
-success_msg("Wonderful! Proceed to the next exercise.")
+test_object("factor_survey_vector", eq_condition = "equal", incorrect_msg = object_msg)
+
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:a549f13c0644ccc89cd39a10aa48706754637ed0
-## Summarizing a factor
+## การสรุปข้อมูล factor
 
-After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contents of a variable:
+หลังจากจบบทนี้ รับรองว่า function [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) จะกลายเป็น 1 ใน function โปรดของคุณ เพราะ function นี้จะช่วยให้คุณเห็นภาพรวมของตัวแปรต่างๆก่อนจะทำการวิเคราะห์ข้อมูล:
 
 ```
 summary(my_var)
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function gives you the answer to this question.
+จากแบบฝึกหัดที่แล้ว ถ้าคุณอยากรู้ว่ามีผู้ตอบแบบสอบถามเป็นผู้ชาย(`"Male"`) และผู้หญิง(`"Female"`) กี่คน function [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) สามารถช่วยคุณได้!
 
 *** =instructions
-Ask a [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+ลองใช้ function [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) กับ `survey_vector` และ `factor_survey_vector` แล้วลองตีความผลลัพธ์ดู ผลลัพธ์จากตัวแปรที่เป็น factor และไม่ใช่ factor นั้นสามารถใช้ประโยชน์ได้เหมือนกันหรือไม่?
 
 *** =hint
-Call the [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+เรียกใช้ function [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) กับตัวแปร `survey_vector` และ `factor_survey_vector` นั่นคือทั้งหมดที่คุณต้องทำ
 
 *** =pre_exercise_code
 ```{r}
@@ -324,26 +335,36 @@ summary(factor_survey_vector)
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;", "`survey_vector`", "&#3649;&#3621;&#3632;", "`factor_survey_factor`")
+# อย่าเปลี่ยนแปลงค่าของ `survey_vector` และ `factor_survey_factor`
+
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
-test_output_contains("summary(survey_vector)", incorrect_msg = sprintf(msg, "survey_vector"))
-test_output_contains("summary(factor_survey_vector)", incorrect_msg = sprintf(msg, "factor_survey_vector"))
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+msg_1 <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3594;&#3657;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`summary()`", "&#3651;&#3609;&#3585;&#3634;&#3619;&#3626;&#3619;&#3640;&#3611;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3592;&#3634;&#3585;")
+# คุณได้ใช้ function `summary()` ในการสรุปข้อมูลจาก
+
+msg_2 <- "&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;"
+# หรือยัง?
+
+success_msg <- paste("&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#33;&#32;&#3621;&#3629;&#3591;&#3626;&#3633;&#3591;&#3648;&#3585;&#3605;&#3612;&#3621;&#3621;&#3633;&#3614;&#3608;&#3660;&#3604;&#3641;&#32;&#3585;&#3634;&#3619;&#3607;&#3637;&#3656;&#3588;&#3640;&#3603;&#3619;&#3632;&#3610;&#3640;&#32;&#102;&#97;&#99;&#116;&#111;&#114;&#32;&#108;&#101;&#118;&#101;&#108;&#115;&#32;&#3648;&#3611;&#3655;&#3609;", "`\"Male\"`", "&#3649;&#3621;&#3632;", "`\"Female\"`", "&#3651;&#3609;", "`factor_survey_vector`", "&#3594;&#3656;&#3623;&#3618;&#3651;&#3627;&#3657;&#32;&#82;&#32;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3626;&#3619;&#3640;&#3611;&#3592;&#3635;&#3609;&#3623;&#3609;&#3605;&#3633;&#3623;&#3629;&#3618;&#3656;&#3634;&#3591;&#3651;&#3609;&#3649;&#3605;&#3656;&#3621;&#3632;&#3585;&#3621;&#3640;&#3656;&#3617;&#3651;&#3627;&#3657;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;")
+# เยี่ยม! ลองสังเกตผลลัพธ์ดู การที่คุณระบุ factor levels เป็น `\"Male\"` และ `\"Female\"` ใน `factor_survey_vector` ช่วยให้ R สามารถสรุปจำนวนตัวอย่างในแต่ละกลุ่มให้คุณได้
+
+test_output_contains("summary(survey_vector)", incorrect_msg = print(msg_1, "`survey_vector`", msg_2))
+test_output_contains("summary(factor_survey_vector)", incorrect_msg = print(msg_1, "`factor_survey_vector`", msg_2))
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
-## Battle of the sexes
+## การต่อสู้กันของเพศตรงข้าม
 
-In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
+ในตัวแปร `factor_survey_vector` เรา factor อยู่ 2 แบบคือ Male และ Female เราอยากจะรู้ว่า R ให้คุณค่ากับ factor ทั้ง 2 นี้แตกต่างกันหรือไม่?
 
 *** =instructions
-Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
+ลองอ่านโค้ดใน editor แล้วกดปุ่ม 'Submit Answer' เพื่อดูว่า R ให้ค่าผู้ชายมากกว่าผู้หญิงหรือไม่
 
 *** =hint
-Just click 'Submit Answer' and have a look at output that gets printed to the console.
+แค่กดปุ่ม 'Submit Answer' แล้วดูผลลัพธ์บน Console ก็พอ
 
 *** =pre_exercise_code
 ```{r}
@@ -386,38 +407,44 @@ male > female
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
+msg = "&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3650;&#3588;&#3657;&#3604;&#32;&#3649;&#3588;&#3656;&#3585;&#3604;&#3611;&#3640;&#3656;&#3617;&#32;&#39;&#83;&#117;&#98;&#109;&#105;&#116;&#32;&#65;&#110;&#115;&#119;&#101;&#114;&#39;&#32;&#3649;&#3621;&#3657;&#3623;&#3619;&#3629;&#3604;&#3641;&#3612;&#3621;&#3621;&#3633;&#3614;&#3608;&#3660;"
+# อย่าเปลี่ยนแปลงโค้ด แค่กดปุ่ม 'Submit Answer' แล้วรอดูผลลัพธ์
+
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("male", undefined_msg = msg, incorrect_msg = msg)
 test_object("female", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("male > female", incorrect_msg = msg)
-success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to stay out of these discussions ;-).")
+
+success_msg <- "&#3650;&#3621;&#3656;&#3591;&#3629;&#3585;&#3652;&#3611;&#3607;&#3637;&#46;&#46;&#46;&#32;&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#32;&#82;&#32;&#3592;&#3632;&#3617;&#3629;&#3591;&#3623;&#3656;&#3634;&#3648;&#3614;&#3624;&#3607;&#3633;&#3657;&#3591;&#32;&#50;&#32;&#3609;&#3633;&#3657;&#3609;&#3648;&#3607;&#3656;&#3634;&#3648;&#3607;&#3637;&#3618;&#3617;&#3585;&#3633;&#3609;&#32;&#3648;&#3619;&#3634;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3604;&#3637;&#3585;&#3623;&#3656;&#3634;"
+# โล่งอกไปที... ดูเหมือน R จะมองว่าเพศทั้ง 2 นั้นเท่าเทียมกัน เราไปดูแบบฝึกหัดต่อไปกันดีกว่า
+
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:9ab0928916bf84ab225713a9a1ce40d9e322c6a0
-## Ordered factors
+## การสร้าง Factor แบบ Ordinal
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+ในตัวอย่างที่แล้ว เนื่องจาก `"Male"` และ `"Female"` เป็น factor ที่ไม่สามารถเรียงลำดับได้(nominal) R จึงส่งข้อความเตือนออกมาว่าเครื่องหมายมากกว่า (`>`) นั้นไม่มีความหมายในการเปรียบเทียบและ factor ทั้ง 2 ตัวอยู่ในระดับเดียวกัน
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
+แต่เมื่อคุณต้องทำงานกับ factor ที่สามารถเรียงลำดับได้ใน R คุณต้องแน่ใจว่าได้บอก R ให้ชัดเจนว่าลำดับของ factor เหล่านี้เป็นอย่างไร
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"fast"` or `"insane"`, and save the results in `speed_vector`.
+สมมติว่าคุณเป็นหัวหน้าทีมที่มีนักวิเคราะห์ข้อมูล 5 คน และคุณต้องการที่จะประเมินความเร็วในการทำงานของแต่ละคน คุณจึงแบ่งระดับความเร็วออกเป็น `"slow"`, `"fast"` หรือ `"insane"` และเก็บผลลัพธ์ไว้ในตัวแปร `speed_vector`.
 
 *** =instructions
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"fast"`, or `"insane"`. Use the list below:
+ขั้นแรก กำหนดให้ตัวแปร `speed_vector` มีค่าเป็น vector ที่มีข้อมูล 5 ตัวสำหรับนักวิเคราะห์ข้อมูลแต่ละคน ข้อมูลแต่ละตัวควรมีค่าเป็น `"slow"`, `"fast"` หรือ `"insane"` เท่านั้น โดยอ้างอิงตามข้อมูลด้านล่าง:
 
-- Analyst 1 is fast,
-- Analyst 2 is slow,
-- Analyst 3 is slow,
-- Analyst 4 is fast and
-- Analyst 5 is insane.
+- Analyst 1 ให้เป็น fast
+- Analyst 2 ให้เป็น slow
+- Analyst 3 ให้เป็น slow
+- Analyst 4 ให้เป็น fast
+- Analyst 5 ให้เป็น insane
 
-No need to specify these are factors yet.
+แต่ตอนนี้ยังไม่จำเป็นต้องระบุว่าข้อมูลเหล่านี้เป็น factor
 
 *** =hint
-Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow"` ...
+กำหนดให้ `speed_vector` มีค่าเป็น vector ของข้อมูลตัวอักษรที่มีค่าเป็น `"fast"`, `"slow"` ...
 
 *** =pre_exercise_code
 ```{r}
@@ -438,16 +465,21 @@ speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 
 *** =sct
 ```{r}
-test_object("speed_vector",
-            incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
-success_msg("A job well done! Continue to the next exercise.")
+incorrect_msg <- paste("`speed_vector`", "&#3588;&#3623;&#3619;&#3617;&#3637;&#3588;&#3656;&#3634;&#3648;&#3611;&#3655;&#3609;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3607;&#3637;&#3656;&#3617;&#3637;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#32;&#53;&#32;&#3605;&#3633;&#3623;&#32;&#3649;&#3605;&#3656;&#3621;&#3632;&#3605;&#3633;&#3623;&#3649;&#3607;&#3609;&#3619;&#3632;&#3604;&#3633;&#3610;&#3588;&#3623;&#3634;&#3617;&#3648;&#3619;&#3655;&#3623;&#3651;&#3609;&#3585;&#3634;&#3619;&#3607;&#3635;&#3591;&#3634;&#3609;&#3586;&#3629;&#3591;&#3609;&#3633;&#3585;&#3623;&#3636;&#3648;&#3588;&#3619;&#3634;&#3632;&#3627;&#3660;&#3649;&#3605;&#3656;&#3621;&#3632;&#3588;&#3609;&#32;&#3649;&#3621;&#3632;&#3629;&#3618;&#3656;&#3634;&#3651;&#3594;&#3657;&#3616;&#3634;&#3625;&#3634;&#3629;&#3633;&#3591;&#3585;&#3620;&#3625;&#3605;&#3633;&#3623;&#3614;&#3636;&#3617;&#3614;&#3660;&#3651;&#3627;&#3597;&#3656;&#32;&#40;&#82;&#32;&#3648;&#3611;&#3655;&#3609;&#3616;&#3634;&#3625;&#3634;&#3607;&#3637;&#3656;&#32;&#99;&#97;&#115;&#101;&#32;&#115;&#101;&#110;&#115;&#105;&#116;&#105;&#118;&#101;&#33;&#41;")
+# `speed_vector` ควรมีค่าเป็น vector ที่มีข้อมูล 5 ตัว แต่ละตัวแทนระดับความเร็วในการทำงานของนักวิเคราะห์แต่ละคน และอย่าใช้ภาษาอังกฤษตัวพิมพ์ใหญ่ (R เป็นภาษาที่ case sensitive!)
+
+success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3652;&#3604;&#3657;&#3648;&#3621;&#3618;"
+# ทำได้ดีมาก! ไปแบบฝึกหัดต่อไปได้เลย
+
+test_object("speed_vector", incorrect_msg = incorrect_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:279077d10248ce03d5f972939ef8576430a16683
-## Ordered factors (2)
+## การสร้าง Factor แบบ Ordinal (2)
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+`speed_vector` ควรถูกแปลงเป็น factor แบบ ordinal เนื่องจากเราสามารถเรียงลำดับระดับความเร็วในการทำงานได้ โดยปกติแล้ว function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) จะทำการเปลี่ยน `speed_vector` เป็น factor แบบที่ไม่มีการเรียงลำดับ(nominal) ดังนั้นในการสร้าง factor แบบ ordinal คุณจึงต้องเพิ่ม argument ใหม่เข้าไป 2 ตัว ได้แก่ `ordered` และ `levels` ลองดูตัวอย่างโค้ดได้ด้านล่าง:
 
 ```
 factor(some_vector,
@@ -455,13 +487,13 @@ factor(some_vector,
        levels = c("lev1", "lev2" ...))
 ```
 
-By setting the argument `ordered` to `TRUE` in the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor), you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+การตั้งค่า argument `ordered` ให้เป็น `TRUE` ใน function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) คือการบอก R ว่า factor ที่กำลังจะสร้างนั้นเป็นแบบที่สามารถเรียงลำดับได้ และคุณจะบอกลำดับที่ถูกต้องของ factor เหล่านั้นลงไปใน argument `levels`
 
 *** =instructions
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "fast", "insane")`.
+จากตัวแปร `speed_vector` ให้คุณสร้าง factor แบบ ordinal ลงไปในตัวแปร `factor_speed_vector` ตั้งค่า `ordered` เป็น `TRUE` และ `levels` ให้เป็น `c("slow", "fast", "insane")`
 
 *** =hint
-Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "fast", "insane")`.
+ใช้ function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) ในการสร้างตัวแปร `factor_speed_vector` โดยใช้ข้อมูล factor จาก `speed_character_vector` argument `ordered` ควรมีค่าเป็น `TRUE` เพื่อเป็นการบอก R ว่า factor เหล่านี้มีการเรียงลำดับ และคุณควรใส่ argument อีกตัวหนึ่งว่า `levels = c("slow", "fast", "insane")`
 
 *** =pre_exercise_code
 ```{r}
@@ -496,33 +528,46 @@ summary(factor_speed_vector)
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;", "`speed_vector`")
+# อย่าเปลี่ยนแปลงค่าของ `speed_vector`
+
+x_msg <- paste("&#97;&#114;&#103;&#117;&#109;&#101;&#110;&#116;&#32;&#3605;&#3633;&#3623;&#3649;&#3619;&#3585;&#3586;&#3629;&#3591;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`factor()`", "&#3588;&#3623;&#3619;&#3648;&#3611;&#3655;&#3609;", "`speed_vector`")
+# argument ตัวแรกของ function `factor()` ควรเป็น `speed_vector`
+
+ordered_msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3605;&#3633;&#3657;&#3591;&#3588;&#3656;&#3634;&#3651;&#3627;&#3657;", "`ordered = TRUE`", "&#3651;&#3609;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`factor()`")
+# อย่าลืมตั้งค่าให้ `ordered = TRUE` ใน function `factor()`
+
+levels_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3626;&#3656;", "`levels = c(\"slow\", \"fast\", \"insane\")`", "&#3621;&#3591;&#3652;&#3611;&#3651;&#3609;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`factor()`")
+# ตรวจสอบให้แน่ใจว่าคุณได้ใส่ `levels = c(\"slow\", \"fast\", \"insane\")` ลงไปใน function `factor()`
+
+incorrect_msg <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3623;&#3656;&#3634;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`factor_speed_vector`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3612;&#3636;&#3604;&#3629;&#3618;&#3641;&#3656;&#32;&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3626;&#3656;&#32;&#97;&#114;&#103;&#117;&#109;&#101;&#110;&#116;", "`speed_vector`, `ordered = TRUE`", "&#3649;&#3621;&#3632;", "`levels = c(\"slow\", \"fast\", \"insane\")`", "&#3621;&#3591;&#3652;&#3611;&#3651;&#3609;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`factor()`", "&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;")
+# ดูเหมือนว่าตัวแปร `factor_speed_vector` จะยังผิดอยู่ ตรวจสอบให้แน่ใจว่าคุณได้ใส่ argument `speed_vector`, `ordered = TRUE` และ `levels = c(\"slow\", \"fast\", \"insane\")` ลงไปใน function `factor()` อย่างถูกต้อง
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3621;&#3629;&#3591;&#3604;&#3641;&#3607;&#3637;&#3656;&#32;&#67;&#111;&#110;&#115;&#111;&#108;&#101;&#32;&#3588;&#3640;&#3603;&#3592;&#3632;&#3648;&#3627;&#3655;&#3609;&#3623;&#3656;&#3634;&#32;&#102;&#97;&#99;&#116;&#111;&#114;&#32;&#108;&#101;&#118;&#101;&#108;&#115;&#32;&#3617;&#3637;&#3621;&#3635;&#3604;&#3633;&#3610;&#3585;&#3635;&#3627;&#3609;&#3604;&#3652;&#3623;&#3657;&#3604;&#3657;&#3623;&#3618;&#32;&#3607;&#3637;&#3609;&#3637;&#3657;&#3588;&#3640;&#3603;&#3585;&#3655;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3651;&#3594;&#3657;&#3648;&#3588;&#3619;&#3639;&#3656;&#3629;&#3591;&#3627;&#3617;&#3634;&#3618;&#3648;&#3611;&#3619;&#3637;&#3618;&#3610;&#3648;&#3607;&#3637;&#3618;&#3610;&#3585;&#3633;&#3610;&#32;&#102;&#97;&#99;&#116;&#111;&#114;&#32;&#3652;&#3604;&#3657;&#3649;&#3621;&#3657;&#3623;&#32;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! ลองดูที่ Console คุณจะเห็นว่า factor levels มีลำดับกำหนดไว้ด้วย ทีนี้คุณก็สามารถใช้เครื่องหมายเปรียบเทียบกับ factor ได้แล้ว ไปดูแบบฝึกหัดต่อไปกันเลย
+
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_function("factor", args = c("x", "ordered", "levels"),
-              incorrect_msg = c("The first argument you pass to `factor()` should be `speed_vector`.",
-                                "Make sure to set `ordered = TRUE` inside your call of `factor()`.",
-                                "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`."))
-test_object("factor_speed_vector", eq_condition = "equal",
-            incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.")
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+test_function("factor", args = c("x", "ordered", "levels"), incorrect_msg = c(x_msg, ordered_msg, levels_msg))
+test_object("factor_speed_vector", eq_condition = "equal", incorrect_msg = incorrect_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:db16e69805625bcfde227743a8cbc985f8482a37
-## Comparing ordered factors
+## การเปรียบเทียบ Factor แบบ Ordinal
 
-Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
+นักวิเคราะห์คนที่ 2 เข้ามาหาคุณที่ออฟฟิศแล้วบอกคุณว่านักวิเคราะห์คนที่ 5 กำลังทำให้งานของพวกเขาล่าช้า แต่คุณยังไม่ปักใจเชื่อในสิ่งที่นักวิเคราะห์คนที่ 2 บอกกับคุณ คุณจึงตัดสินใจที่จะตรวจสอบความจริงเสียก่อนว่าสิ่งที่เขาพูดเป็นความจริงหรือไม่
 
-The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+ในตอนนี้เรามี `factor_speed_vector` ซึ่งเป็น factor แบบ ordinal แล้ว เราจึงสามารถเปรียบเทียบ factor แต่ละตัวได้ ซึ่งคุณสามารถทำการเปรียบเทียบได้โดยใช้เครื่องหมายเปรียบเทียบทั่วๆไป (`>`, `<`, `>=`, `<=`, `==` หรือ `!=`)
 
 *** =instructions
-- Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
-- Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- ใช้คำสั่ง `[2]` เพื่อเลือกระดับการทำงานของนักวิเคราะห์คนที่ 2 จาก `factor_speed_vector` แล้วเก็บค่าไว้ในตัวแปร `da2`.
+- ใช้คำสั่ง `[5]` เพื่อเลือกระดับการทำงานของนักวิเคราะห์คนที่ 5 จาก `factor_speed_vector` แล้วเก็บค่าไว้ในตัวแปร `da5`.
+- ลองเปรียบเทียบและแสดงผลลัพธ์ดูว่า `da2` มากกว่า `da5` หรือไม่ คุณสามารถใช้เครื่องหมาย `>` ในการเปรียบเทียบ factor ทั้ง 2 ตัวได้เลย
 
 *** =hint
-- To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
-- To compare two values, you can use `>`. For example: `da3 > da4`.
+- ในการจะดึงข้อมูลความเร็วในการทำงานของนักวิเคราะห์คนที่ 3 (แบบ factor) คุณต้องใช้คำสั่ง `factor_speed_vector[3]`
+- ในการเปรียบเทียบค่า คุณสามารถใช้คำสั่ง `>` ได้ เช่น: `da3 > da4`
 
 *** =pre_exercise_code
 ```{r}
@@ -563,16 +608,29 @@ da2 > da5
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;", "`speed_vector`", "&#3649;&#3621;&#3632;", "`factor_speed_vector`")
+# อย่าเปลี่ยนแปลงค่าของ `speed_vector` และ `factor_speed_vector`
+
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_speed_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
-test_object("da2", eq_condition = "equal", incorrect_msg = sprintf(msg, "second", "2"))
-test_object("da5", eq_condition = "equal", incorrect_msg = sprintf(msg, "fifth", "5"))
-test_output_contains("da2 > da5", incorrect_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+object_msg_1 <- "&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3648;&#3621;&#3639;&#3629;&#3585;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3588;&#3623;&#3634;&#3617;&#3648;&#3619;&#3655;&#3623;&#3651;&#3609;&#3585;&#3634;&#3619;&#3607;&#3635;&#3591;&#3634;&#3609;&#3586;&#3629;&#3591;&#3609;&#3633;&#3585;&#3623;&#3636;&#3648;&#3588;&#3619;&#3634;&#3632;&#3627;&#3660;&#3588;&#3609;&#3607;&#3637;&#3656; Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
+# คุณได้เลือกข้อมูลความเร็วในการทำงานของนักวิเคราะห์คนที่
 
-success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact he or she is the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+object_msg_2 <- "&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3656;&#3634;&#63;&#32;&#3651;&#3609;&#3585;&#3634;&#3619;&#3648;&#3621;&#3639;&#3629;&#3585;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3605;&#3633;&#3623;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3588;&#3640;&#3603;&#3605;&#3657;&#3629;&#3591;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;"
+# หรือเปล่า? ในการเลือกข้อมูลตัวถูกต้องคุณต้องใช้คำสั่ง
+
+output_msg <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3648;&#3611;&#3619;&#3637;&#3618;&#3610;&#3648;&#3607;&#3637;&#3618;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`da2`", "&#3649;&#3621;&#3632;", "`da25", "&#3650;&#3604;&#3618;&#3651;&#3594;&#3657;&#3648;&#3588;&#3619;&#3639;&#3656;&#3629;&#3591;&#3627;&#3617;&#3634;&#3618;", "`>`", "&#3652;&#3627;&#3617;&#63;&#32;&#3649;&#3621;&#3632;&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3626;&#3633;&#3656;&#3591;&#3649;&#3626;&#3604;&#3591;&#3612;&#3621;&#3621;&#3633;&#3614;&#3608;&#3660;&#3629;&#3629;&#3585;&#3617;&#3634;&#3604;&#3657;&#3623;&#3618;")
+# คุณได้เปรียบเทียบตัวแปร `da2` และ `da5` โดยใช้เครื่องหมาย `>` ไหม? และอย่าลืมสั่งแสดงผลลัพธ์ออกมาด้วย
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3618;&#3629;&#3604;&#33;&#32;&#3612;&#3621;&#3621;&#3633;&#3614;&#3608;&#3660;&#3592;&#3634;&#3585;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3609;&#3637;&#3657;&#3610;&#3629;&#3585;&#3629;&#3632;&#3652;&#3619;&#3585;&#3633;&#3610;&#3588;&#3640;&#3603;&#3610;&#3657;&#3634;&#3591;&#63;&#32;&#3609;&#3633;&#3585;&#3623;&#3636;&#3648;&#3588;&#3619;&#3634;&#3632;&#3627;&#3660;&#3588;&#3609;&#3607;&#3637;&#3656;&#32;&#50;&#32;&#3610;&#3656;&#3609;&#3623;&#3656;&#3634;&#3609;&#3633;&#3585;&#3623;&#3636;&#3648;&#3588;&#3619;&#3634;&#3632;&#3627;&#3660;&#3588;&#3609;&#3607;&#3637;&#3656;&#32;&#53;&#32;&#3607;&#3635;&#3591;&#3634;&#3609;&#3594;&#3657;&#3634;&#32;&#3607;&#3633;&#3657;&#3591;&#3591;&#3607;&#3637;&#3656;&#3592;&#3619;&#3636;&#3591;&#3649;&#3621;&#3657;&#3623;&#3605;&#3633;&#3623;&#3648;&#3586;&#3634;&#3648;&#3629;&#3591;&#3609;&#3633;&#3656;&#3609;&#3649;&#3627;&#3621;&#3632;&#3588;&#3639;&#3629;&#3588;&#3609;&#3607;&#3637;&#3656;&#3607;&#3635;&#3651;&#3627;&#3657;&#3607;&#3640;&#3585;&#3629;&#3618;&#3656;&#3634;&#3591;&#3594;&#3657;&#3634;&#3621;&#3591;&#33;&#32;&#3648;&#3607;&#3656;&#3634;&#3609;&#3637;&#3657;&#3585;&#3655;&#3648;&#3611;&#3655;&#3609;&#3629;&#3633;&#3609;&#3592;&#3610;&#3610;&#3607;&#3607;&#3637;&#3656;&#32;&#52;&#32;&#3651;&#3609;&#3605;&#3629;&#3609;&#3609;&#3637;&#3657;&#3588;&#3640;&#3603;&#3585;&#3655;&#3617;&#3637;&#3588;&#3623;&#3634;&#3617;&#3619;&#3641;&#3657;&#3614;&#3639;&#3657;&#3609;&#3600;&#3634;&#3609;&#3648;&#3585;&#3637;&#3656;&#3618;&#3623;&#3585;&#3633;&#3610;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#44;&#32;&#109;&#97;&#116;&#114;&#105;&#120;&#32;&#3649;&#3621;&#3632;&#32;&#102;&#97;&#99;&#116;&#111;&#114;&#32;&#3649;&#3621;&#3657;&#3623;&#32;&#3651;&#3609;&#3610;&#3607;&#3605;&#3656;&#3629;&#3652;&#3611;&#3648;&#3619;&#3634;&#3592;&#3632;&#3651;&#3627;&#3657;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3648;&#3619;&#3637;&#3618;&#3609;&#3619;&#3641;&#3657;&#3648;&#3585;&#3637;&#3656;&#3618;&#3623;&#3585;&#3633;&#3610;&#32;&#100;&#97;&#116;&#97;&#32;&#102;&#114;&#97;&#109;&#101;&#32;&#3595;&#3638;&#3656;&#3591;&#3648;&#3611;&#3655;&#3609;&#32;&#100;&#97;&#116;&#97;&#32;&#115;&#116;&#114;&#117;&#99;&#116;&#117;&#114;&#101;&#32;&#3619;&#3641;&#3611;&#3649;&#3610;&#3610;&#3627;&#3609;&#3638;&#3656;&#3591;&#3607;&#3637;&#3656;&#3626;&#3635;&#3588;&#3633;&#3597;&#3617;&#3634;&#3585;&#3654;&#3651;&#3609;&#32;&#82;&#33;"
+# เยี่ยมยอด! ผลลัพธ์จากแบบฝึกหัดนี้บอกอะไรกับคุณบ้าง? นักวิเคราะห์คนที่ 2 บ่นว่านักวิเคราะห์คนที่ 5 ทำงานช้า ทั้งงที่จริงแล้วตัวเขาเองนั่นแหละคือคนที่ทำให้ทุกอย่างช้าลง! เท่านี้ก็เป็นอันจบบทที่ 4 ในตอนนี้คุณก็มีความรู้พื้นฐานเกี่ยวกับ vector, matrix และ factor แล้ว ในบทต่อไปเราจะให้คุณได้เรียนรู้เกี่ยวกับ data frame ซึ่งเป็น data structure รูปแบบหนึ่งที่สำคัญมากๆใน R!
+
+test_object("da2", eq_condition = "equal", incorrect_msg = paste(object_msg_1, "2", object_msg_2, "2"))
+test_object("da5", eq_condition = "equal", incorrect_msg = paste(object_msg_1, "5", object_msg_2, "5"))
+test_output_contains("da2 > da5", incorrect_msg = output_msg)
+
+success_msg(success_msg)
 ```
 
 
