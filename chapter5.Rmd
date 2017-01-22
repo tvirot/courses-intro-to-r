@@ -1,29 +1,29 @@
 --- 
-title_meta  : Chapter 5
+title_meta  : บทที่ 5
 title       : Data frames
-description : Most data sets you will be working with will be stored as data frames. By the end of this chapter focused on R basics, you will be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables.
+description : Data set ส่วนใหญ่ที่คุณจะใช้ทำงานบน R จะถูกเก็บอยู่ในรูปของ data frames เมื่อจบบทนี้ คุณจะสามารถสร้าง data frame, เลือกข้อมูลบางส่วนจาก data frame และจัดเรียงข้อมูลตามตัวแปรบางตัวใน data frame ได้
 
 --- type:NormalExercise xp:100 skills:1 key:7f95849020a2563168920409022ce7bed20835b5
-## What's a data frame?
+## Data Frame คืออะไร?
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your data set on Star Wars only contained numeric elements. 
+ถ้าคุณยังจำเนื้อหาจากบทที่ 3 (matrix) ได้ ข้อมูลทุกตัวที่ใส่ลงไปใน matrix ควรเป็นประเภทเดียวกัน ในตอนนั้นข้อมูลเกี่ยวกับภาพยนตร์ Star Wars ของคุณจึงมีแต่ตัวเลขรายได้
 
-When doing a market research survey, however, you often have questions such as:
+แต่ในเวลาที่คุณต้องการวิเคราะห์ข้อมูลทางการตลาด บ่อยครั้งที่คุณจะต้องเจอกับคำถามเช่น:
 
-- 'Are your married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- 'คุณแต่งงานหรือยัง?' หรือพวกคำถามที่ให้ตอบ 'ใช่/ไม่' ทั้งหลาย (เป็นข้อมูลแบบ `logical`)
+- 'คุณอายุเท่าไร?' (เป็นข้อมูลแบบ `numeric`)
+- 'คุณมีความเห็นอย่างไรกับผลิตภัณฑ์นี้?' หรือ 'คำถามปลายเปิด' อื่นๆ (เป็นข้อมูลแบบ `character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a data set of different data types. You will often find yourself working with data sets that contain different data types instead of only one. 
+จะเห็นได้ว่า data set ที่เราได้มานั้นจะประกอบไปด้วยข้อมูลหลากหลายประเภทมากๆ ซึ่งทำให้ Data frame เป็นสิ่งจำเป็นสำหรับการทำงานของคุณ 
 
-A data frame has the variables of a data set as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+Data frame จะเก็บค่าแค่ละตัวแปรของ data set ไว้ในรูปของคอลัมน์ และเก็บแต่ละตัวอย่าง(observation) ไว้ในรูปของแถว นี่คือ concept หลักที่ใช้กันทั่วไปไม่ว่าคุณจะทำงานบน R หรือโปรแกรมวิเคราะห์ทางสถิติอื่นๆ เช่น SAS หรือ SPSS
 
 *** =instructions
-Click 'Submit Answer'. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
+กดปุ่ม 'Submit Answer' ข้อมูลจาก data frame ตัวอย่าง [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) จะถูกแสดงออกมาบน Console
 
 *** =hint
-Just click 'Submit Answer' and witness the magic!
+แค่กดปุ่ม 'Submit Answer' ก็พอ!
 
 *** =pre_exercise_code
 ```{r}
@@ -44,27 +44,33 @@ mtcars
 
 *** =sct
 ```{r}
+incorrect_msg <- "&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3650;&#3588;&#3657;&#3604;&#32;&#3649;&#3588;&#3656;&#3585;&#3604;&#3611;&#3640;&#3656;&#3617;&#32;&#39;&#83;&#117;&#98;&#109;&#105;&#116;&#32;&#65;&#110;&#115;&#119;&#101;&#114;&#39;&#32;&#3585;&#3655;&#3614;&#3629;&#3649;&#3621;&#3657;&#3623;"
+# อย่าเปลี่ยนแปลงโค้ด แค่กดปุ่ม 'Submit Answer' ก็พอแล้ว
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! ไปแบบฝึกหัดต่อไปกันเลย
+
 test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
 success_msg("Great! Continue to the next exercise.")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:3d0e64ecf5f69521ee538ecc713caa02b8b0ec46
-## Quick, have a look at your data set
+## ลองมองดู Data Set
 
-Wow, that is a lot of cars! 
+โอ้โห! นี่มันข้อมูลของรถเต็มไปหมด 
 
-Working with large data sets is not uncommon in data analysis. When you work with (extremely) large data sets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire data set. 
+การทำงานกับ data set ขนาดใหญ่ถือเป็นเรื่องธรรมดามากกับงานวิเคราะห์ข้อมูล สิ่งแรกที่คุณต้องทำคือการทำความเข้าใจข้อมูลเหล่านั้นเสียก่อน ดังนั้นการสั่งให้ R แสดงค่าข้อมูลแค่ส่วนเล็กๆบางส่วนออกมาจึงมักมีประโยชน์ในการทำความเข้าใจข้อมูล
 
-So how to do this in R? Well, the function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame. Similarly, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your data set.
+คุณสามารถใช้ function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) ในการแสดงตัวอย่างข้อมูลที่อยู่ด้านบนของ data frame ของคุณ หรือใช้ function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) ในการแสดงตัวอย่างข้อมูลที่อยู่ด้านล่างก็ได้
 
-Both [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) and [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) print a top line called the 'header', which contains the names of the different variables in your data set.
+ทั้ง function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) และ [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) จะแสดงชื่อคอลัมน์หรือที่เรียกว่า 'header' ออกมาด้วย ซึ่ง 'header' จะบอกคุณได้ว่าแต่ละตัวแปรในข้อมูลคืออะไร (ถ้าได้มีการกำหนดไว้)
 
 *** =instructions
-Call [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) on the [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) data set to have a look at the header and the first observations.
+ลองใช้ [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) กับ [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) และลองดูตัวอย่างข้อมูลที่ถูกแสดงออกมา
 
 *** =hint
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` จะแสดงข้อมูลแถวแรกๆจาก `mtcars` ออกมา 
 
 *** =pre_exercise_code
 ```{r}
@@ -85,30 +91,39 @@ head(mtcars)
 
 *** =sct
 ```{r}
-test_function("head", "x", incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
-test_output_contains("head(mtcars)", incorrect_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
-success_msg("Wonderful! So, what do we have in this data set? For example, `hp` for example represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+function_msg <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3594;&#3657;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`head()`", "&#3585;&#3633;&#3610;", "`mtcars`", "&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;")
+# คุณได้ใช้ function `head()` กับ `mtcars` หรือยัง?
+
+output_msg <- paste("&#3649;&#3588;&#3656;&#3649;&#3626;&#3604;&#3591;&#3612;&#3621;&#3621;&#3633;&#3614;&#3608;&#3660;&#3586;&#3629;&#3591;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`head()`", "&#3629;&#3629;&#3585;&#3617;&#3634;&#3585;&#3655;&#3614;&#3629;&#32;&#3652;&#3617;&#3656;&#3605;&#3657;&#3629;&#3591;&#3648;&#3585;&#3655;&#3610;&#3588;&#3656;&#3634;&#3652;&#3623;&#3657;&#3651;&#3609;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;&#3651;&#3604;&#3654;")
+# แค่แสดงผลลัพธ์ของ function `head()` ออกมาก็พอ ไม่ต้องเก็บค่าไว้ในตัวแปรใดๆ
+
+success_msg <- paste("&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3652;&#3611;&#3648;&#3621;&#3618;&#33;&#32;&#3648;&#3619;&#3634;&#3617;&#3634;&#3621;&#3629;&#3591;&#3604;&#3641;&#3585;&#3633;&#3609;&#3623;&#3656;&#3634;&#32;&#100;&#97;&#116;&#97;&#32;&#115;&#101;&#116;&#32;&#3609;&#3637;&#3657;&#3617;&#3637;&#3629;&#3632;&#3652;&#3619;&#3610;&#3657;&#3634;&#3591;&#32;&#3618;&#3585;&#3605;&#3633;&#3623;&#3629;&#3618;&#3656;&#3634;&#3591;&#3648;&#3594;&#3656;&#3609;", "`hp`", "&#3649;&#3626;&#3604;&#3591;&#3606;&#3638;&#3591;&#3585;&#3635;&#3621;&#3633;&#3591;&#3649;&#3619;&#3591;&#3617;&#3657;&#3634;&#3586;&#3629;&#3591;&#3619;&#3606;&#3588;&#3633;&#3609;&#3609;&#3633;&#3657;&#3609;&#3654;&#32;&#68;&#97;&#116;&#115;&#117;&#110;&#32;&#3617;&#3637;&#3585;&#3635;&#3621;&#3633;&#3591;&#3649;&#3619;&#3591;&#3617;&#3657;&#3634;&#3605;&#3656;&#3635;&#3607;&#3637;&#3656;&#3626;&#3640;&#3604;&#3592;&#3634;&#3585;&#3619;&#3606;&#3607;&#3633;&#3657;&#3591;&#32;&#54;&#32;&#3588;&#3633;&#3609;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3649;&#3626;&#3604;&#3591;&#3629;&#3629;&#3585;&#3617;&#3634;&#32;&#3651;&#3609;&#3585;&#3634;&#3619;&#3607;&#3635;&#3588;&#3623;&#3634;&#3617;&#3648;&#3586;&#3657;&#3634;&#3651;&#3592;&#3585;&#3633;&#3610;&#3588;&#3623;&#3634;&#3617;&#3627;&#3617;&#3634;&#3618;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;&#3607;&#3640;&#3585;&#3605;&#3633;&#3623;&#32;&#3588;&#3640;&#3603;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3614;&#3636;&#3617;&#3614;&#3660;", "`?mtcars`", "&#3621;&#3591;&#3652;&#3611;&#3651;&#3609;&#32;&#67;&#111;&#110;&#115;&#111;&#108;&#101;&#32;&#3648;&#3614;&#3639;&#3656;&#3629;&#3629;&#3656;&#3634;&#3609;&#3588;&#3635;&#3629;&#3608;&#3636;&#3610;&#3634;&#3618;&#3648;&#3614;&#3636;&#3656;&#3617;&#3648;&#3605;&#3636;&#3617;&#3652;&#3604;&#3657;")
+# เยี่ยมไปเลย! เรามาลองดูกันว่า data set นี้มีอะไรบ้าง ยกตัวอย่างเช่น `hp` แสดงถึงกำลังแรงม้าของรถคันนั้นๆ Datsun มีกำลังแรงม้าต่ำที่สุดจากรถทั้ง 6 คันที่ถูกแสดงออกมา ในการทำความเข้าใจกับความหมายของตัวแปรทุกตัว คุณสามารถพิมพ์ `?mtcars` ลงไปใน Console เพื่ออ่านคำอธิบายเพิ่มเติมได้
+
+test_function("head", "x", incorrect_msg = function_msg)
+test_output_contains("head(mtcars)", incorrect_msg = output_msg)
+success_msg(success_msg);
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:f4d5b1a2c4aef31645fc7e3505e699fb6e48f3e6
-## Have a look at the structure
+## ลองดูที่ Structure
 
-Another method that is often used to get a rapid overview of your data is the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). The function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) shows you the structure of your data set. For a data frame it tells you:
+อีกวิธีหนึ่งที่เป็นที่นิยมในการดูภาพรวมของข้อมูล คือการใช้ function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) ในการแสดงโครงสร้างของ data set ของคุณ ซึ่ง function นี้จะบอกคุณเกี่ยวกับ:
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- จำนวนตัวอย่าง(observation) ใน data set (เช่น มีรถยนต์ 32 ประเภท)
+- จำนวนตัวแปรทั้งหมด (เช่น มี features ทั้งหมด 11 features)
+- พร้อมด้วยชื่อของตัวแปรทั้งหมด (เช่น `mpg`, `cyl` ... )
+- ประเภทของข้อมูลของตัวแปรแต่ละตัว (เช่น `num` แสดงว่าเป็นตัวแปรประเภทตัวเลข)
+- ตัวอย่างแรกสุดใน data frame
 
-Applying the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function will often be the first thing that you do when receiving a new data set or data frame. It is a great way to get more insight in your data set before diving into the real analysis.
+การใช้ function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) กับข้อมูลอาจจะเป็นสิ่งแรกที่คุณทำเมื่อคุณได้ข้อมูลมา มันเป็นวิธีที่ดีที่จะทำความเข้าใจ data set ก่อนจะเริ่มทำการวิเคราะห์จริงๆ
 
 *** =instructions
-Investigate the structure of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). Make sure that you see the same numbers, variables and data types as mentioned above.
+ลองดูโครงสร้างของ [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) ตรวจสอบให้แน่ใจว่าคุณเห็นตัวเลขเดียวกับที่เขียนไว้ด้านบนในตัวอย่าง
 
 *** =hint
-Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function on [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+ใช้ function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) กับ [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
 
 *** =pre_exercise_code
 ```{r}
@@ -128,26 +143,32 @@ str(mtcars)
 
 *** =sct
 ```{r}
-test_output_contains("str(mtcars)", incorrect_msg = "Have you correctly called `str()` on `mtcars`?")
-success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
+output_msg <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3594;&#3657;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`str()`", "&#3585;&#3633;&#3610;", "`mtcars`", "&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;")
+# คุณได้ใช้ function `str()` กับ `mtcars` หรือยัง?
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#33;&#32;&#3652;&#3611;&#3605;&#3656;&#3629;&#3607;&#3637;&#3656;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# เยี่ยม! ไปต่อที่แบบฝึกหัดต่อไปกันเลย
+
+test_output_contains("str(mtcars)", incorrect_msg = output_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:df0b89706d90526b3c0bbe15e400b74cbd900704
-## Creating a data frame 
+## การสร้าง Data frame 
 
-Since using built-in data sets is not even half the fun of creating your own data sets, the rest of this chapter is based on your personally developed data set. Put your jet pack on because it is time for some space exploration! 
+ในแบบฝึกหัดก่อนหน้านี้ เราให้คุณได้ลองดู data frame ตัวอย่างไปแล้ว คราวนี้เราจะให้คุณลองสร้าง data frame ด้วยตัวเองบ้าง!
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+เราอยากจะให้คุณลองสร้าง data frame ที่เก็บข้อมูลลักษณะเฉพาะตัวของดาวทั้ง 8 ดวงในระบบสุริยะเอาไว้ features หลักๆของดาวแต่ละดวงได้แก่:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- ประเภทพื้นผิวของดาว (Terrestrial หรือ Gas Giant).
+- เส้นผ่านศูนย์กลางของดาวเทียบกับโลก
+- ความเร็วในการหมุนรอบดวงอาทิตย์เทียบกับโลก
+- มีวงแหวนรอบดาวหรือไม่ (TRUE หรือ FALSE).
 
-After doing some high-quality research on [Wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up on the right. The first element in each of these vectors correspond to the first observation.
+อ้างอิงจาก [Wikipedia](http://en.wikipedia.org/wiki/Planet) คุณได้สร้าง vector ที่เก็บข้อมูลต่างๆไว้ดังนี้: `name`, `type`, `diameter`, `rotation` และ `rings` vector เหล่านี้ได้ถูกเตรียมไว้ให้ในโค้ดทางขวามือแล้ว ข้อมูลตัวแรกสุดจาก vector แต่ละตัวจะประกอบกันเป็นตัวอย่างแรกใน data set ของคุณ
 
-You construct a data frame with the [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+คุณสามารถสร้าง data frame ได้ด้วย function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) คุณแค่ใส่ vector ที่ได้กล่าวไปข้างต้นเป็น argument ของ function แล้ว vector เหล่านี้จะถูกเปลี่ยนให้กลายเป็นแต่ละคอลัมน์ใน data frame Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
 
 *** =instructions
 Use the function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
