@@ -326,7 +326,7 @@ big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ใช้ function [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) เพื่อเพิ่มคอลัมน์ `worldwide_vector` ลงไปใน `star_wars_matrix` จากนั้นเก็บค่าผลลัพธ์ไว้ใน `all_wars_matrix`
 
 *** =hint
-ในแบบฝึกหัดนี้ คุณควรใส่ตัวแปร `star_wars_matrix` และ `worldwide_vector` ลงไปใน function `cbind()` ตามลำดับ จากนั้นให้เก็ผลลัพธ์ไว้ในตัวแปร `all_wars_matrix`
+ในแบบฝึกหัดนี้ คุณควรใส่ตัวแปร `star_wars_matrix` และ `worldwide_vector` ลงไปใน function `cbind()` ตามลำดับ จากนั้นให้เก็บผลลัพธ์ไว้ในตัวแปร `all_wars_matrix`
 
 *** =pre_exercise_code
 ```{r}
@@ -392,7 +392,7 @@ success_msg("success_msg");
 
 ในขณะที่เรามี function [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) ไว้เพิ่มจำนวนคอลัมน์ให้ matrix เราก็มี function [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) ไว้สำหรับเพิ่มแถวเช่นกัน (c สำหรับ column และ r สำหรับ row) 
 
-R จะทำการเก็บตัวแปรทั้งหมดที่คุณสร้างไว้ในพื้นที่ที่เรียกว่า **workspace** ([คลิกที่นี่เพื่ออ่านเพิ่มเติมเกี่ยวกับ workspace](http://www.statmethods.net/interface/workspace.html)) ซึ่งในตอนนี้ประกอบไปด้วย:
+ตามปกติแล้ว R จะทำการเก็บตัวแปรทั้งหมดที่คุณสร้างไว้ในพื้นที่ที่เรียกว่า **workspace** ([คลิกที่นี่เพื่ออ่านเพิ่มเติมเกี่ยวกับ workspace](http://www.statmethods.net/interface/workspace.html)) ซึ่งตอนนี้ ใน workspace ของคุณประกอบไปด้วย:
 
 - `star_wars_matrix` ที่เราใช้มาตลอดในตัวอย่างก่อนๆ ในตัวแปรนี้เก็บข้อมูลรายได้ของภาพยนตร์ Star Wars ทั้ง 3 ภาคแรกเอาไว้
 - `star_wars_matrix2` ซึ่งมีข้อมูลในลักษณะเดียวกัน แต่เป็นของ Star Wars อีก 3 ภาคต่อมา 
@@ -480,7 +480,7 @@ success_msg(success_msg)
 - แสดงค่า `total_revenue_vector` เพื่อดูผล
 
 *** =hint
-คุณควรใช้ function [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) กับ `star_wars_matrix` เพื่อหารายได้ box office รวมของภาพยนตร์ Star Wars ในแต่ละภูมิภาค (ใน US และนอก US)
+คุณควรใช้ function [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) กับ `star_wars_matrix` เพื่อหารายได้ box office รวมของภาพยนตร์ Star Wars ในแต่ละภูมิภาค (ทั้งใน US และนอก US)
 
 *** =pre_exercise_code
 ```{r}
@@ -554,7 +554,7 @@ success_msg(success_msg)
 - ให้คุณเลือกข้อมูลรายได้จากภูมิภาคที่ไม่ใช่ US ของภาพยนตร์แต่ละภาคออกมา (คอลัมน์ที่ 2 ทั้งคอลัมน์ของตัวแปร `all_wars_matrix`) จากนั้นเก็บผลลัพธ์ไว้ในตัวแปร `non_us_all`
 - ใช้ function `mean()` กับ `non_us_all` เพื่อหาค่าเฉลี่ยรายได้จากภูมิภาคที่ไม่ใช่ US และให้แสดงค่าผลลัพธ์ด้วย
 - คราวนี้ ให้คุณลองเลือกข้อมูลรายได้จากภูมิภาคที่ไม่ใช่ US ในตัวแปร `all_wars_matrix` แต่ให้เอามาแค่ภาพยนตร์ 2 ภาคแรก แล้วเก็บผลลัพธ์ไว้ในตัวแปร `non_us_some`
-- ใช้ function `mean()` อีกครั้งและแสดงผลค่าเฉลี่ยของข้อมูลรายได้ในตัวแปร `non_us_some`.
+- ใช้ function `mean()` อีกครั้งและแสดงผลค่าเฉลี่ยของข้อมูลรายได้ในตัวแปร `non_us_some`
 
 *** =hint
 คำสั่งสำหรับเลือกข้อมูลคอลัมน์ที่ 2 ทั้งคอลัมน์จาก matrix `my_matrix` คือคำสั่ง `my_matrix[,2]` ลองนำไปปรับใช้กับแบบฝึกหัดดู
