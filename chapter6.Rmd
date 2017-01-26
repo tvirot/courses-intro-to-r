@@ -1,24 +1,24 @@
 --- 
-title_meta  : Chapter 6
+title_meta  : บทที่ 6
 title       : Lists
-description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This intro to R chapter will teach you how to create, name and subset these lists.
+description : List นั้นไม่เหมือนกับ vector มันสามารถเก็บข้อมูลหลายประเภทไว้ด้วยกันได้ ในบทนี้เราจะสอนให้คุณรู้จักการสร้าง ตั้งชื่อ และเลือกข้อมูลจาก list!
 
 --- type:NormalExercise xp:100 skills:1 key:2afcdb6a76ec91bf266de9b2ac295d844d7bb004
-## Lists, why would you need them?
+## ทำไมคุณถึงต้องใช้ List?
 
-Congratulations! At this point in the course you are already familiar with:
+ยินดีด้วย! ณ จุดนี้คุณน่าจะมีความคุ้นเคยกับ object เหล่านี้ใน R แล้ว:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vector** (1 มิติ): สามารถเก็บข้อมูลประเภท numeric, character หรือ logical ได้ โดยที่ข้อมูลทุกตัวต้องเป็นประเภทเดียวกัน
+- **Matrix** (2 มิติ): สามารถเก็บข้อมูลประเภท numeric, character หรือ logical ได้ โดยที่ข้อมูลทุกตัวต้องเป็นประเภทเดียวกัน
+- **Data frame** (2 มิติ): สามารถเก็บข้อมูลประเภท numeric, character หรือ logical ได้ ข้อมูลทุกตัวใน 1 คอลัมน์ต้องเป็นประเภทเดียวกัน แต่สามารถเก็บคอลัมน์คนละประเภทกันไว้คนละคอลัมน์ได้
 
-Pretty sweet for an R newbie, right? ;-)
+หวังว่าคุณจะยังจำได้นะ
 
 *** =instructions
-Click 'Submit Answer' to start learning everything about lists!
+กดปุ่ม 'Submit Answer' เพื่อเริ่มเรียนรู้เกี่ยวกับ list!
 
 *** =hint
-Just click the 'Submit Answer' button.
+แค่กดปุ่ม 'Submit Answer' ก็พอ
 
 *** =pre_exercise_code
 ```{r}
@@ -37,24 +37,26 @@ Just click the 'Submit Answer' button.
 
 *** =sct
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+msg <- "&#3614;&#3619;&#3657;&#3629;&#3617;&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;&#32;&#3648;&#3619;&#3634;&#3592;&#3632;&#3648;&#3619;&#3636;&#3656;&#3617;&#3585;&#3633;&#3609;&#3649;&#3621;&#3657;&#3623;&#33;"
+# พร้อมหรือยัง? เราจะเริ่มกันแล้ว!
+success_msg(msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:68f93c5c504616bd18876da52cd123277d56fc8b
-## Lists, why would you need them? (2)
+## ทำไมคุณถึงต้องใช้ List? (2)
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, type of activity that has to do be done, ... 
+**list** ใน R ก็เหมือนกับ to-do list ที่คุณทำเพื่อเตือนตัวเองว่าแต่ละวันต้องทำอะไรบ้าง เพราะใน list แต่ละอันอาจจะประกอบไปด้วยข้อมูลที่หลากหลายต่างประเภทกัน... 
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+list ทำให้คุณสามารถเก็บและเรียงลำดับ object หลากหลายแบบไว้ด้วยกันได้ object เหล่านี้สามารถเป็นได้ทั้ง matrix, vector, data frame หรือแม้กระทั่ง list อีกอันหนึ่ง และแต่ละ object ก็ไม่จำเป็นต้องมีความเกี่ยวข้องกันด้วย
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+หรือเราอาจสามารถพูดได้ว่า list นั้นเป็นข้อมูลแบบพิเศษแบบหนึ่ง ซึ่งเราสามารถเก็บอะไรไว้ข้างในก็ได้!
 
 *** =instructions
-Click 'Submit Answer' to start the first exercise on lists.
+กดปุ่ม 'Submit Answer' เพื่อเริ่มแบบฝึกหัดแรก!
 
 *** =hint
-Click 'Submit Answer' to start the first exercise on lists.
+แค่กดปุ่ม 'Submit Answer' ก็พอ
 
 *** =pre_exercise_code
 ```{r}
@@ -73,20 +75,22 @@ Click 'Submit Answer' to start the first exercise on lists.
 
 *** =sct
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+msg <- "&#3604;&#3637;&#33;&#32;&#3588;&#3619;&#3634;&#3623;&#3609;&#3637;&#3657;&#3648;&#3619;&#3634;&#3617;&#3634;&#3648;&#3619;&#3636;&#3656;&#3617;&#3607;&#3635;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3585;&#3633;&#3609;&#3604;&#3637;&#3585;&#3623;&#3656;&#3634;"
+# ดี! คราวนี้เรามาเริ่มทำแบบฝึกหัดกันดีกว่า
+success_msg(msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:4beee9cb532c889903218b49b83ab5ef133eac83
-## Creating a list
+## การสร้าง list
 
-Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
+เรามาลองสร้าง list ตัวแรกกัน! ในการสร้าง list ให้คุณใช้ function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+arguments ของ function `list()` คือส่วนประกอบที่คุณจะใส่ลงไปใน list จำไว้ว่าส่วนประกอบเหล่านี้สามารถเป็นได้ทั้ง matrices, vectors, หรือแม้กระทั่ง list อันอื่น, ...
 
 *** =instructions
 Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
