@@ -90,13 +90,13 @@ success_msg(msg)
 my_list <- list(comp1, comp2 ...)
 ```
 
-arguments ของ function `list()` คือส่วนประกอบที่คุณจะใส่ลงไปใน list จำไว้ว่าส่วนประกอบเหล่านี้สามารถเป็นได้ทั้ง matrices, vectors, หรือแม้กระทั่ง list อันอื่น, ...
+arguments ของ function `list()` คือส่วนประกอบที่คุณจะใส่ลงไปใน list จำไว้ว่าส่วนประกอบเหล่านี้สามารถเป็นได้ทั้ง matrices, vectors, หรือแม้กระทั่ง list อันอื่นๆ เป็นต้น
 
 *** =instructions
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+สร้าง list ซึ่งประกอบไปด้วย `my_vector`, `my_matrix` และ `my_df` แล้วตั้งชื่อให้ list นั้นว่า `my_list`
 
 *** =hint
-Use the [`list()`](http://www.rdocumentation.org/packages/base/functions/list) function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+ใช้ function [`list()`](http://www.rdocumentation.org/packages/base/functions/list) โดยให้ argument แต่ละตัวเป็น `my_vector`, `my_matrix` และ `my_df` ตามลำดับ
 
 *** =pre_exercise_code
 ```{r}
@@ -135,29 +135,36 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3619;&#3634;&#3618;&#3621;&#3632;&#3648;&#3629;&#3637;&#3618;&#3604;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`my_vector`, `my_matrix`", "&#3627;&#3619;&#3639;&#3629;", "`my_df`!")
+# อย่าลบหรือเปลี่ยนแปลงรายละเอียดของตัวแปร `my_vector`, `my_matrix` หรือ `my_df`!
+
+incorrect_msg <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`my_list`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3617;&#3637;&#3588;&#3656;&#3634;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#32;&#3621;&#3629;&#3591;&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3626;&#3656;", "`my_vector`, `my_matrix`", "&#3649;&#3621;&#3632;", "`my_df`", "&#3621;&#3591;&#3652;&#3611;&#3651;&#3609;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;", "`list()`", "&#3649;&#3610;&#3610;&#3648;&#3619;&#3637;&#3618;&#3591;&#3605;&#3634;&#3617;&#3621;&#3635;&#3604;&#3633;&#3610;&#3648;&#3619;&#3637;&#3618;&#3610;&#3619;&#3657;&#3629;&#3618;&#3649;&#3621;&#3657;&#3623;")
+# ดูเหมือนตัวแปร `my_list` จะยังมีค่าไม่ถูกต้อง ลองตรวจสอบให้แน่ใจว่าคุณได้ใส่ `my_vector`, `my_matrix` และ `my_df` ลงไปใน function `list()` แบบเรียงตามลำดับเรียบร้อยแล้ว
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! ไปแบบฝึกหัดต่อไปกันเลย
+
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
-test_object("my_list",
-            incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
-success_msg("Wonderful! Head over to the next exercise.")
+test_object("my_list", incorrect_msg = incorrect_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:89dd0126568b1ff5a84033c571907a8a282245e4
-## Creating a named list
+## การสร้าง list แบบกำหนดชื่อ
 
-Well done, you're on a roll!
+คุณทำได้ดีทีเดียวในแบบฝึกหัดที่แล้ว!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+ในลำดับต่อไป คุณอาจจะไม่อยากจำว่า object แต่ละอย่างที่อยู่ใน list คืออะไรบ้าง ซึ่งคุณสามารถแก้ปัญหาโดยการตั้งชื่อให้กับมันได้ Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+ด้วยคำสั่งนี้ คุณขะทำการสร้าง list ซึ่งมีชื่อเป็น `name1` และ `name2` แต่ในกรณีที่คุณอยากตั้งชื่อให้กับส่วนประกอบของ list หลังจากที่คุณได้สร้าง list ไปแล้ว คุณสามารถใช้ function `names()` ช่วยได้ เหมือนกับที่คุณทำกับ vector ลองดูโค้ดด้านล่างเป็นตัวอย่าง: If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -165,8 +172,8 @@ names(my_list) <- c("name1", "name2")
 ```
 
 *** =instructions
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- ลองปรับเปลี่ยนโค้ดของแบบฝึกหัดก่อนหน้านี้ (ใน editor) ด้วยการเพิ่มชื่อให้กับส่วนประกอบของ `my_list` โดยให้คุณตั้งชื่อ `my_vector`, `my_matrix` และ `my_df` ว่า `vec`, `mat` และ `df` ตามลำดับ 
+- แสดงค่า `my_list` เพื่อที่คุณจะได้เห็นว่าผลลัพธ์หลังการตั้งชื่อเป็นอย่างไร
 
 *** =hint
 The first method of assigning names to your list components is the easiest. It starts like this: 
@@ -218,37 +225,49 @@ my_list
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3619;&#3634;&#3618;&#3621;&#3632;&#3648;&#3629;&#3637;&#3618;&#3604;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`my_vector`, `my_matrix`", "&#3627;&#3619;&#3639;&#3629;", "`my_df`!")
+# อย่าลบหรือเปลี่ยนแปลงรายละเอียดของตัวแปร `my_vector`, `my_matrix` หรือ `my_df`!
+
+object_msg_1 <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3626;&#3656;&#3623;&#3609;&#3611;&#3619;&#3632;&#3585;&#3629;&#3610;&#3586;&#3629;&#3591;", "`my_list`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;")
+# ดูเหมือนส่วนประกอบของ `my_list` จะยังไม่ถูกต้อง
+
+object_msg_2 <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3594;&#3639;&#3656;&#3629;&#3586;&#3629;&#3591;&#3626;&#3656;&#3623;&#3609;&#3611;&#3619;&#3632;&#3585;&#3629;&#3610;&#3651;&#3609;", "`my_list`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#32;&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3626;&#3656;&#3623;&#3609;&#3611;&#3619;&#3632;&#3585;&#3629;&#3610;&#3649;&#3605;&#3656;&#3621;&#3632;&#3605;&#3633;&#3623;&#3623;&#3656;&#3634;", "`vec`, `mat`", "&#3649;&#3621;&#3632;", "`df`", "&#3605;&#3634;&#3617;&#3621;&#3635;&#3604;&#3633;&#3610;")
+# ดูเหมือนชื่อของส่วนประกอบใน `my_list` จะยังไม่ถูกต้อง ตรวจสอบให้แน่ใจว่าคุณได้ตั้งชื่อส่วนประกอบแต่ละตัวว่า `vec`, `mat` และ `df` ตามลำดับ
+
+output_msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3626;&#3633;&#3656;&#3591;&#3649;&#3626;&#3604;&#3591;&#3588;&#3656;&#3634;", "`my_list`", "&#3610;&#3609;&#32;&#67;&#111;&#110;&#115;&#111;&#108;&#101;&#32;&#3604;&#3657;&#3623;&#3618;&#33;&#32;&#3649;&#3588;&#3656;&#3614;&#3636;&#3617;&#3614;&#3660;", "`my_list`", "&#3621;&#3591;&#3652;&#3611;&#3651;&#3609;&#32;&#101;&#100;&#105;&#116;&#111;&#114;&#32;&#3585;&#3655;&#3614;&#3629;")
+# อย่าลืมสั่งแสดงค่า `my_list` บน Console ด้วย! แค่พิมพ์ `my_list` ลงไปใน editor ก็พอ
+
+success_msg <- "&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3609;&#3629;&#3585;&#3592;&#3634;&#3585;&#3588;&#3640;&#3603;&#3592;&#3632;&#3626;&#3619;&#3657;&#3634;&#3591;&#32;&#108;&#105;&#115;&#116;&#32;&#3648;&#3611;&#3655;&#3609;&#3649;&#3621;&#3657;&#3623;&#32;&#3605;&#3629;&#3609;&#3609;&#3637;&#3657;&#3588;&#3640;&#3603;&#3618;&#3633;&#3591;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3651;&#3627;&#3657;&#3626;&#3656;&#3623;&#3609;&#3611;&#3619;&#3632;&#3585;&#3629;&#3610;&#3586;&#3629;&#3591;&#3617;&#3633;&#3609;&#3652;&#3604;&#3657;&#3604;&#3657;&#3623;&#3618;&#33;&#32;&#3652;&#3611;&#3605;&#3656;&#3629;&#3607;&#3637;&#3656;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# ดีมาก! นอกจากคุณจะสร้าง list เป็นแล้ว ตอนนี้คุณยังสามารถตั้งชื่อให้ส่วนประกอบของมันได้ด้วย! ไปต่อที่แบบฝึกหัดต่อไปกันเลย
+
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
-test_object("my_list",
-            incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
-test_object("my_list", eq_condition = "equal",
-            incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.");
-test_output_contains("my_list", incorrect_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+test_object("my_list", incorrect_msg = object_msg_1)
+test_object("my_list", eq_condition = "equal", incorrect_msg = object_msg_2);
+test_output_contains("my_list", incorrect_msg = output_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:19fd17cc792ef870c1558b3a9bae08c1d1e3acae
-## Creating a named list (2)
+## การสร้าง list แบบกำหนดชื่อ (2)
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+อยู่มาวันหนึ่ง คุณก็เกิดอยากที่จะเก็บข้อมูลเกี่ยวกับภาพยนตร์ดีๆไว้ใน list ขึ้นมา
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+เริ่มจากการสร้าง list สำหรับเก็บข้อมูลเกี่ยวกับภาพยนตร์เรื่อง "The Shining" กันก่อน เราได้สร้างตัวแปร `mov`, `act` และ `rev` ไว้ให้คุณใน workspace แล้ว คุณสามารถลองเช็คค่าของตัวแปรเหล่านี้ได้ใน Console
 
 *** =instructions
-Complete the code on the right to create `shining_list`; it contains three elements:
+พิมพ์โค้ดสำหรับสร้างตัวแปร `shining_list` โดยมีส่วนประกอบ 3 ตัวดังต่อไปนี้:
 
-- moviename: a character string with the movie title (stored in `mov`)
-- actors: a vector with the main actors' names (stored in `act`)
-- reviews: a data frame that contains some reviews (stored in `rev`)
+- moviename: ข้อมูลแบบตัวอักษร แสดงถึงชื่อภาพยนตร์ (ถูกเก็บไว้ในตัวแปร `mov` แล้ว)
+- actors: vector ที่เก็บรายชื่อนักแสดงหลักเอาไว้ (ถูกเก็บไว้ในตัวแปร `act` แล้ว)
+- reviews: data frame ที่มีข้อมูล review จากผู้ชม (ถูกเก็บไว้ในตัวแปร `rev` แล้ว)
 
-Do not forget to name the list components accordingly (names are moviename, actors and reviews).
+อย่าลืมตั้งชื่อให้กับ object แต่ละตัวตามที่กำหนดให้ด้วย (ชื่อที่กำหนด ได้แก่ moviename, actors และ reviews).
 
 *** =hint
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+คำสั่ง `shining_list <- list(moviename = mov)` เป็นแค่ส่วนหนึ่งของการสร้าง list ที่สมบูรณ์ แต่คุณต้องเพิ่ม `act` และ `rev` ลงไปใน list ด้วยชื่อที่เหมาะสมด้วย
 
 *** =pre_exercise_code
 ```{r}
@@ -279,37 +298,46 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg <- "&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3619;&#3634;&#3618;&#3621;&#3632;&#3648;&#3629;&#3637;&#3618;&#3604;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3651;&#3627;&#3657;&#3649;&#3621;&#3657;&#3623;&#33;"
+# อย่าลบหรือเปลี่ยนแปลงรายละเอียดของตัวแปรที่ถูกสร้างไว้ให้แล้ว! "Do not remove or change the definition of the pre-set variables!"
 lapply(c("mov", "rev", "act"), test_object, undefined_msg = msg, incorrect_msg = msg)
-test_object("shining_list",
-            incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
-test_object("shining_list", eq_condition = "equal",
-            incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.");
+
+object_msg_1 <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3626;&#3656;&#3623;&#3609;&#3611;&#3619;&#3632;&#3585;&#3629;&#3610;&#3586;&#3629;&#3591;", "`shining_list`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#32;&#3651;&#3609;&#3585;&#3634;&#3619;&#3626;&#3619;&#3657;&#3634;&#3591;&#32;&#108;&#105;&#115;&#116;&#32;&#3604;&#3633;&#3591;&#3585;&#3621;&#3656;&#3634;&#3623;&#32;&#3588;&#3640;&#3603;&#3588;&#3623;&#3619;&#3651;&#3626;&#3656;", "`mov`, `act`", "&#3649;&#3621;&#3632;", "`rev`", "&#3621;&#3591;&#3652;&#3611;&#3605;&#3634;&#3617;&#3621;&#3635;&#3604;&#3633;&#3610;")
+# ดูเหมือนส่วนประกอบของ `shining_list` จะยังไม่ถูกต้อง ในการสร้าง list ดังกล่าว คุณควรใส่ `mov`, `act` และ `rev` ลงไปตามลำดับ
+
+object_msg_2 <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3594;&#3639;&#3656;&#3629;&#3586;&#3629;&#3591;&#3626;&#3656;&#3623;&#3609;&#3611;&#3619;&#3632;&#3585;&#3629;&#3610;&#3616;&#3634;&#3618;&#3651;&#3609;", "`shining_list`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#32;&#3588;&#3640;&#3603;&#3605;&#3657;&#3629;&#3591;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3651;&#3627;&#3657;&#3626;&#3656;&#3623;&#3609;&#3611;&#3619;&#3632;&#3585;&#3629;&#3610;&#3649;&#3605;&#3656;&#3621;&#3632;&#3605;&#3633;&#3623;&#3623;&#3656;&#3634;", "`moviename`, `actors`", "&#3649;&#3621;&#3632;", "`reviews`", "&#3605;&#3634;&#3617;&#3621;&#3635;&#3604;&#3633;&#3610;")
+# ดูเหมือนชื่อของส่วนประกอบภายใน `shining_list` จะยังไม่ถูกต้อง คุณต้องตั้งชื่อให้ส่วนประกอบแต่ละตัวว่า `moviename`, `actors` และ `reviews` ตามลำดับ
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3605;&#3629;&#3609;&#3609;&#3637;&#3657;&#3588;&#3640;&#3603;&#3585;&#3655;&#3619;&#3641;&#3657;&#3623;&#3636;&#3608;&#3637;&#3585;&#3634;&#3619;&#3626;&#3619;&#3657;&#3634;&#3591;&#32;&#108;&#105;&#115;&#116;&#32;&#3649;&#3610;&#3610;&#3585;&#3635;&#3627;&#3609;&#3604;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3657;&#3623;&#32;&#3605;&#3656;&#3629;&#3652;&#3611;&#3648;&#3619;&#3634;&#3592;&#3632;&#3652;&#3611;&#3648;&#3619;&#3637;&#3618;&#3609;&#3619;&#3641;&#3657;&#3648;&#3619;&#3639;&#3656;&#3629;&#3591;&#3585;&#3634;&#3619;&#3648;&#3621;&#3639;&#3629;&#3585;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3610;&#3634;&#3591;&#3626;&#3656;&#3623;&#3609;&#3592;&#3634;&#3585;&#32;&#108;&#105;&#115;&#116;&#32;&#3585;&#3633;&#3609;&#33;"
+# เยี่ยมมาก! ตอนนี้คุณก็รู้วิธีการสร้าง list แบบกำหนดชื่อแล้ว ต่อไปเราจะไปเรียนรู้เรื่องการเลือกข้อมูลบางส่วนจาก list กัน!
+
+test_object("shining_list", incorrect_msg = object_msg_1)
+test_object("shining_list", eq_condition = "equal", incorrect_msg = object_msg_2);
 success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:1ef3278944562caef64b9927dd2ddb6ee52334cd
-## Selecting elements from a list
+## การเลือกส่วนประกอบจาก list
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+list ของคุณมักจะประกอบด้วยส่วนประกอบหลายตัว ในกรณีที่คุณอยากจะดึงส่วนประกอบของมันออกมา ไม่ว่าจะตัวเดียวหรือหลายตัว คุณจะต้องใช้คำสั่งที่แตกต่างไปจากตอนที่ดึงข้อมูลจาก vector, matrix หรือ data frame เล็กน้อย
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+ทางหนึ่งในการเลือกส่วนประกอบจาก list คือการใช้เลขตำแหน่งของส่วนประกอบนั้นๆ ยกตัวอย่างเช่น ในการที่จะนำส่วนประกอบตัวแรกสุดของ `shining_list` ออกมา คุณต้องพิมพ์คำสั่งว่า: 
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+จะเห็นได้ว่าค่อนข้างคล้ายกับตอนที่คุณเลือกข้อมูลออกมาจาก vector คุณสามารถลองตรวจสอบผลลัพธ์ของคำสั่งดังกล่าวได้โดยการพิมพ์มันลงไปบน Console จุดที่แตกต่างกันก็คือ ในการเลือกข้อมูลจาก vector คุณใช้ square bracket (`[ ]`) แค่อันเดียวเท่านั้น
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+นอกจากนี้ คุณยังสามารถเลือกส่วนประกอบออกมาโดยการใช้ชื่อของส่วนประกอบนั้นๆได้ผ่านการใช้คำสั่ง `[[ ]]` หรือเครื่องหมาย `$` เช่นกัน คำสั่งทั้ง 2 คำสั่งต่อไปนี้จะทำการเลือก data frame ที่เก็บ review ของภาพยนตร์ไว้ออกมา: 
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
 ``` 
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+ในบางครั้ง คุณอาจจะต้องการเลือกข้อมูลออกมาจากส่วนประกอบแต่ละตัวอีกที ยกตัวอย่างเช่น ด้วยคำสั่ง `shining_list[[2]][1]` คุณจะทำการเลือกข้อมูลตัวแรก(`[1]`) ออกมาจากส่วนประกอบตัวที่ 2 หรือ `actors` (`shining_list[[2]]`) ถ้าคุณได้ลองพิมพ์คำสั่งนี้ลงไปบน Console คุณจะเห็นค่าที่แสดงออกมาเป็นชื่อ Jack Nicholson
 
 *** =instructions
 - Select from `shining_list` the vector representing the actors. Simply print out this vector.
