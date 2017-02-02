@@ -1,20 +1,20 @@
 --- 
-title_meta  : Chapter 2
+title_meta  : บทที่ 2
 title       : Vectors
-description : "In this free R course, we'll take you on a trip to Vegas, where you will learn how to analyze your gambling results using vectors in R! After completing this chapter, you will be able to create vectors in R, name them, select elements from them and compare different vectors."
+description : "ในบทนี้ เราจะพาคุณไปยัง Las Vegas เพื่อเรียนรู้วิธีการวิเคราะห์ผลกำไร / ขาดทุนจากการพนันโดยใช้ R! เมื่อจบบทนี้แล้ว คุณจะสามารถสร้าง vector, ตั้งชื่อให้มัน, เลือกข้อมูลจาก vector, และทำการเปรียบเทียบค่าของ vector ได้"
 
 --- type:NormalExercise xp:100 skills:1 key:d9b453dbdd
-## Create a vector
+## การสร้าง vector
 
-Feeling lucky? You better, because this chapter takes you on a trip to the City of Sins, also known as *Statisticians Paradise*!
+ในบทนี้ เราจะมาเรียนรู้เรื่อง vector กันที่คาสิโนแห่งหนึ่งในเมือง Las Vegas เมืองคนบาปที่เป็นสวรรค์ของนักสถิติ!
 
-Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next stop, Vegas Baby... VEGAS!!
+คุณจะได้พัฒนาความสามารถในการเล่นพนันและก้าวไปสู่การเป็นนักพนันมืออาชีพ ผ่านการวิเคราะห์ข้อมูลด้วยภาษา R ในบทเรียนนี้เราจะพาคุณไปเรียนรู้วิธีการวิเคราะห์ผลกำไร / ขาดทุนจากการพนันและวิเคราะห์สิ่งที่เกิดขึ้น ถ้าพร้อมแล้วก็ไปกันเลย มุ่งหน้าสู่ Las Vegas!
 
 *** =instructions
-- Do you still remember what you have learned in the first chapter? Assign the value `"Go!"` to the variable `vegas`. Remember: R is case sensitive!
+- ยังจำสิ่งที่ได้เรียนไปในบทที่ 1 ได้ไหม? ให้คุณกำหนดให้ตัวแปร `vegas` มีค่าเป็น `"Go!"` อย่าลืมว่า R เป็นภาษาที่ case sensitive! (ตัวอักษรพิมพ์เล็กและพิมพ์ใหญ่มีค่าไม่เท่ากัน)
 
 *** =hint
-Just type the following line in the editor:
+แค่พิมพ์โค้ดนี้ลงไปใน editor:
 ```
 vegas <- "Go!"
 ```
@@ -38,32 +38,38 @@ vegas <- "Go!"
 
 *** =sct
 ```{r}
-test_object("vegas", incorrect_msg = "Make sure that you assign the correct value to `vegas`. Do not forget that R is case sensitive!")
-success_msg("Great! Head over to the next exercise.")
+incorrect_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`vegas`", "&#40;&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3623;&#3656;&#3634;&#3651;&#3609;&#3616;&#3634;&#3625;&#3634;&#32;&#82;&#32;&#3605;&#3633;&#3623;&#3629;&#3633;&#3585;&#3625;&#3619;&#3614;&#3636;&#3617;&#3614;&#3660;&#3648;&#3621;&#3655;&#3585;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3629;&#3633;&#3585;&#3625;&#3619;&#3614;&#3636;&#3617;&#3614;&#3660;&#3651;&#3627;&#3597;&#3656;&#3609;&#3633;&#3657;&#3609;&#3606;&#3639;&#3629;&#3623;&#3656;&#3634;&#3649;&#3605;&#3585;&#3605;&#3656;&#3634;&#3591;&#3585;&#3633;&#3609;&#41;")
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าที่ถูกต้องให้กับตัวแปร `vegas` (อย่าลืมว่าในภาษา R ตัวอักษรพิมพ์เล็กกับตัวอักษรพิมพ์ใหญ่นั้นถือว่าแตกต่างกัน)
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3612;&#3656;&#3634;&#3609;&#3652;&#3611;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3652;&#3604;&#3657;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! ผ่านไปแบบฝึกหัดต่อไปได้เลย
+
+test_object("vegas", incorrect_msg = incorrect_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:fd427db76f
-## Create a vector (2)
+## การสร้าง vector (2)
 
-Let us focus first! 
+ลองตั้งใจดูให้ดี!
 
-On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. 
+บนเส้นทางสู่มหาเศรษฐีของคุณ คุณจะต้องใช้งาน vector บ่อยมาก! vector คือ ตัวแปรชุดหนึ่งมิติ (one-dimensional array) ซึ่งเป็นการนำข้อมูลชนิดเดียวกันมาร้อยเรียงกันเป็นแถว ไม่ว่าจะเป็น ข้อมูลตัวเลข (numeric) ข้อมูลตัวอักษร (character) หรือข้อมูลแบบตรรกะ (logical) อาจจะพูดได้ว่า vector เป็นเครื่องมือง่ายๆสำหรับการเก็บข้อมูล เช่น ข้อมูลกำไรและขาดทุนประจำวันในคาสิโน
 
-In R, you create a vector with the combine function [`c()`](http://www.rdocumentation.org/packages/base/functions/c). You place the vector elements separated by a comma between the parentheses. For example:
+คุณสามารถสั่งให้ R สร้าง vector ได้โดยใช้คำสั่งรวมข้อมูล (combine) [`c()`](http://www.rdocumentation.org/packages/base/functions/c) (สามารถคลิกเพื่ออ่านคำอธิบายเพิ่มเติมได้) คุณแค่ใส่ข้อมูลที่ต้องการจะนำมารวมเป็น vector ลงไปในวงเล็บ แล้วคั่นแต่ละตัวด้วยเครื่องหมาย comma (`,`) ยกตัวอย่างเช่น:
 
 ```
 numeric_vector <- c(1, 2, 3)
 character_vector <- c("a", "b", "c")
 ```
 
-Once you have created these vectors in R, you can use them to do calculations.
+และเมื่อคุณสร้าง vector ได้สำเร็จ คุณจะสามารถนำ vector เหล่านี้ไปใช้ในการคำนวณต่อๆไปได้
 
 *** =instructions 
-Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
+พิมพ์โค้ดให้เสร็จเรียบร้อย โดยการเก็บข้อมูล 3 ตัวนี้: `TRUE`, `FALSE` และ `TRUE` (เรียงตามลำดับ) ไว้ในตัวแปรชื่อ `boolean_vector` 
 
 *** =hint 
-Assign `c(TRUE, FALSE, TRUE)` to the variable `boolean_vector` with the `<-` operator.
+กำหนดให้ตัวแปร `boolean_vector` มีค่าเท่ากับ `c(TRUE, FALSE, TRUE)` (เราสามารถใช้เครื่องหมาย `<-` ในการเก็บ vector ไว้ในตัวแปรได้เหมือนข้อมูลอื่นๆตามปกติ)
 
 *** =pre_exercise_code
 ```{r}
@@ -90,45 +96,52 @@ boolean_vector <- c(TRUE, FALSE, TRUE)
 
 *** =sct
 ```{r}
-msg <- "Do not change the code that defined `numeric_vector` and `character_vector`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3650;&#3588;&#3657;&#3604;&#3607;&#3637;&#3656;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;", "`numeric_vector`", "&#3649;&#3621;&#3632;", "`character_vector`", "!")
+# อย่าเปลี่ยนโค้ดที่กำหนดค่าให้กับ `numeric_vector` และ `character_vector`!
+
+incorrect_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;", "`boolean_vector`", "&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3588;&#3623;&#3619;&#3648;&#3611;&#3655;&#3609;", "`c(TRUE, FALSE, TRUE)`", "&#3650;&#3604;&#3618;&#3652;&#3617;&#3656;&#3617;&#3637;&#3648;&#3588;&#3619;&#3639;&#3656;&#3629;&#3591;&#3627;&#3617;&#3634;&#3618;", "`\"`", "&#3651;&#3604;&#3654;&#3607;&#3633;&#3657;&#3591;&#3626;&#3636;&#3657;&#3609;&#33;&#32;&#3607;&#3637;&#3656;&#3626;&#3635;&#3588;&#3633;&#3597;&#3588;&#3639;&#3629;&#3585;&#3634;&#3619;&#3648;&#3619;&#3637;&#3618;&#3591;&#3621;&#3635;&#3604;&#3633;&#3610;&#3605;&#3657;&#3629;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3604;&#3657;&#3623;&#3618;")
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าที่ถูกต้องให้กับ `boolean_vector` ค่าที่ถูกต้องควรเป็น `c(TRUE, FALSE, TRUE)` โดยไม่มีเครื่องหมาย `\"` ใดๆทั้งสิ้น! ที่สำคัญคือการเรียงลำดับต้องถูกต้องด้วย
+
+success_msg <- paste("&#3618;&#3629;&#3617;&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3626;&#3640;&#3604;&#3654;&#33;&#32;&#3626;&#3633;&#3591;&#3648;&#3585;&#3605;&#3623;&#3656;&#3634;&#3585;&#3634;&#3619;&#3648;&#3614;&#3636;&#3656;&#3617;&#3648;&#3623;&#3657;&#3609;&#3623;&#3619;&#3619;&#3588;&#3627;&#3621;&#3633;&#3591;", "`,`", "&#3651;&#3609;&#32;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;&#32;", "`c()`", "&#3592;&#3632;&#3594;&#3656;&#3623;&#3618;&#3607;&#3635;&#3651;&#3627;&#3657;&#3650;&#3588;&#3657;&#3604;&#3586;&#3629;&#3591;&#3588;&#3640;&#3603;&#3629;&#3656;&#3634;&#3609;&#3591;&#3656;&#3634;&#3618;&#3586;&#3638;&#3657;&#3609;&#32;&#3648;&#3619;&#3634;&#3617;&#3634;&#3621;&#3629;&#3591;&#3613;&#3638;&#3585;&#3626;&#3619;&#3657;&#3634;&#3591;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3585;&#3633;&#3609;&#3629;&#3637;&#3585;&#3626;&#3633;&#3585;&#3627;&#3609;&#3656;&#3629;&#3618;&#3604;&#3637;&#3652;&#3627;&#3617;&#63;")
+# ยอมเยี่ยมสุดๆ! สังเกตว่าการเพิ่มเว้นวรรคหลัง `,` ใน function `c()` จะช่วยทำให้โค้ดของคุณอ่านง่ายขึ้น เรามาลองฝึกสร้าง vector กันอีกสักหน่อยดีไหม?
+
 test_object("numeric_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("character_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("boolean_vector",
-            incorrect_msg = "Make sure that you assign the correct values to `boolean_vector`. Use `c(TRUE, FALSE, TRUE)`. Don't place quotes around `TRUE` and `FALSE`! Also, make sure to adopt the same order as listed in the instructions.")
-success_msg("Perfect! Notice that adding a space behind the commas in the `c()` function improves the readability of your code. Let's practice some more with vector creation in the next exercise.")
+test_object("boolean_vector", incorrect_msg = incorrect_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:9f41229dbc
-## Create a vector (3)
+## การสร้าง vector (3)
 
-After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers.
+ผ่านไปแล้ว 1 สัปดาห์กับการใช้ชีวิตใน Las Vegas แต่ดูเหมือนคุณจะทำเงินจากการพนันได้ไม่เท่าที่หวังไว้ ถึงเวลาแล้วที่คุณจะต้องใช้พลังในการวิเคราะห์ข้อมูลด้วย R!
 
-Before doing a first analysis, you decide to first collect all the winnings and losses for the last week: 
+ก่อนที่จะเริ่มทำการวิเคราะห์ คุณได้ตัดสินใจเก็บข้อมูลผลกำไร / ขาดทุนตลอด 1 สัปดาห์ที่ผ่านมา:
 
-For `poker_vector`: 
+สำหรับเกม poker `poker_vector`: 
 
-- On Monday you won $140
-- Tuesday you lost $50
-- Wednesday you won $20 
-- Thursday you lost $120
-- Friday you won $240
+- วันจันทร์ คุณกำไร $140
+- วันอังคาร คุณขาดทุน $50
+- วันพุธ คุณกำไร $20 
+- วันพฤหัส คุณขาดทุน $120
+- วันศุกร์ คุณกำไร $240
 
-For `roulette_vector`: 
+สำหรับเกม roulette `roulette_vector`: 
 
-- On Monday you lost $24
-- Tuesday you lost $50
-- Wednesday you won $100
-- Thursday you lost $350
-- Friday you won $10
+- วันจันทร์ คุณขาดทุน $24
+- วันอังคาร คุณขาดทุน $50
+- วันพุธ คุณกำไร $100
+- วันพฤหัส คุณขาดทุน $350
+- วันศุกร์ คุณกำไร $10
 
-You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
+ในการที่จะนำข้อมูลเหล่านี้ไปใช้ใน R คุณจะต้องสร้างตัวแปร `poker_vector` และ `roulette_vector`.
 
 *** =instructions
-Assign the winnings/losses for roulette to the variable `roulette_vector`.
+เก็บ vector ของผลกำไร / ขาดทุนแต่ละครั้งในการเล่นเกม roulette ลงไปในตัวแปร `roulette_vector`.
 
 *** =hint
-To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Do not forget that losses are negative numbers.
+จากตัวอย่างที่ให้ไว้ เรามีผลกำไร / ขาดทุนจากเกม poker เก็บไว้ในตัวแปร `poker_vector` คุณก็แค่ต้องนำตัวอย่างนี้ไปปรับเปลี่ยนให้เหมาะสมกับผลกำไร / ขาดทุนของเกม roulette และตัวแปร `roulette_vector` และอย่าลืมว่าเราต้องให้เครื่องหมายลบกับการแพ้พนันเพราะเราเสียเงินในการพนันครั้งนั้นๆ
 
 *** =sample_code
 ```{r}
@@ -150,29 +163,36 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 
 *** =sct
 ```{r}
-test_object("poker_vector",
-            incorrect_msg = "Make sure that you assign the correct values to `poker_vector`.")
-test_object("roulette_vector",
-            incorrect_msg = "Make sure that you assign the correct values to `roulette_vector`. Make sure to adopt the correct order!")
-success_msg("Very good! To check out the contents of your vectors, remember that you can always simply type the variable in the console and hit Enter. Proceed to the next exercise!")
+poker_incorrect <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3651;&#3627;&#3657;", "`poker_vector`")
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าที่ถูกต้องให้ `poker_vector`
+
+roulette_incorrect <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3651;&#3627;&#3657;", "`roulette_vector`", "&#3649;&#3621;&#3632;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3605;&#3657;&#3629;&#3591;&#3648;&#3619;&#3637;&#3618;&#3591;&#3621;&#3635;&#3604;&#3633;&#3610;&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3604;&#3657;&#3623;&#3618;&#3609;&#3632;")
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าที่ถูกต้องให้ `roulette_vector` และข้อมูลต้องเรียงลำดับอย่างถูกต้องด้วยนะ
+
+success_msg <- "&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3651;&#3609;&#3585;&#3634;&#3619;&#3648;&#3594;&#3655;&#3588;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3651;&#3609;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3592;&#3635;&#3652;&#3623;&#3657;&#3623;&#3656;&#3634;&#3648;&#3619;&#3634;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3614;&#3636;&#3617;&#3614;&#3660;&#3594;&#3639;&#3656;&#3629;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3609;&#3633;&#3657;&#3609;&#3654;&#3621;&#3591;&#3652;&#3611;&#3651;&#3609;&#32;&#67;&#111;&#110;&#115;&#111;&#108;&#101;&#32;&#3649;&#3621;&#3657;&#3623;&#3585;&#3604;&#32;&#69;&#110;&#116;&#101;&#114;&#32;&#3652;&#3604;&#3657;&#3648;&#3621;&#3618;"
+# ดีมาก! จำไว้ว่าเราสามารถพิมพ์ชื่อตัวแปร vector ลงไปใน Console แล้วกด Enter เพื่อเช็คค่าของข้อมูลข้างใน vector นั้นๆได้เลย
+
+test_object("poker_vector", incorrect_msg = poker_incorrect)
+test_object("roulette_vector", incorrect_msg = roulette_incorrect)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:3b0b80b192
-## Naming a vector
+## การตั้งชื่อให้ข้อมูลใน vector
 
-As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is therefore essential. 
+สำหรับนักวิเคราะห์ข้อมูล การเข้าใจและมองเห็นภาพรวมของข้อมูลที่คุณกำลังใช้อยู่เป็นเรื่องสำคัญมาก คุณควรจะเข้าใจด้วยว่าข้อมูลแต่ละตัวใน vector นั้นแสดงถึงอะไร
 
-In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could show that in the vector itself. 
+ในแบบฝึกหัดก่อนหน้านี้ เราได้เรียนรู้การสร้าง vector ที่เก็บข้อมูลผลกำไร / ขาดทุน จากการพนันของคุณเอาไว้ ข้อมูลแต่ละตัว(หรือที่เราเรียกว่า element) ใน vector เป็นตัวแทนของจำนวนเงินที่คุณได้หรือเสียในแต่ละวัน แต่เรายังไม่มีอะไรที่บอกได้ว่าข้อมูลแต่ละตัวเป็นข้อมูลของวันไหน มันน่าจะเป็นเรื่องดีถ้าเราระบุชื่อวันให้กับข้อมูลใน vector ด้วย เพราะนั่นจะช่วยให้เราเข้าใจข้อมูลได้ง่ายขึ้น!
 
-You can give a name to the elements of a vector with the `names()` function. Have a look at this example:
+คุณสามารถตั้งชื่อให้กับข้อมูลแต่ละตัวใน vector ได้โดยการใช้ function `names()` ลองดูโค้ดด้านล่างเป็นตัวอย่าง:
 
 ```
 some_vector <- c("John Doe", "poker player")
 names(some_vector) <- c("Name", "Profession")
 ```
 
-This code first creates a vector `some_vector` and then gives the two elements a name. The first element is assigned the name `Name`, while the second element is labeled `Profession`. Printing the contents to the console yields following output:
+โค้ดเริ่มจากการสร้างตัวแปร `some_vector` เพื่อให้เก็บค่าของ vector ที่มีข้อมูล 2 ตัว จากนั้นเราตั้งชื่อข้อมูลตัวแรกว่า `Name` และตั้งชื่อให้ตัวที่ 2 ว่า `Profession` ถ้าเราสั่งให้ R แสดงค่าของ vector นี้ออกมา Console จะทำการแสดงผลตามด้านล่าง:
 
 ```
           Name     Profession 
@@ -180,10 +200,10 @@ This code first creates a vector `some_vector` and then gives the two elements a
 ```
 
 *** =instructions
-- The code on the right names the elements in `poker_vector` with the days of the week. Add code to do the same thing for `roulette_vector`.
+- โค้ดทางด้านขวามือทำการตั้งชื่อให้กับข้อมูลแต่ละตัวใน `poker_vector` ด้วยชื่อวันในสัปดาห์ ให้คุณลองทำแบบเดียวกันกับ `roulette_vector` ดู
 
 *** =hint
-You can use `names(roulette_vector)` to set the names of the variable `roulette_vector`. Make sure to use the same vector with the days of the week as names. Remember that R is case sensitive!
+คุณสามารถใช้คำสั่ง `names(roulette_vector)` เพื่อตั้งชื่อให้กับข้อมูลแต่ละตัวใน `roulette_vector` ได้ ตรวจสอบให้แน่ใจว่าคุณได้ตั้งชื่อวันอย่างถูกต้อง และอย่าลืมว่า R นั้น case sensitive!
 
 *** =sample_code
 ```{r}
@@ -216,35 +236,44 @@ names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 
 *** =sct
 ```{r}
-test_object("poker_vector",
-            incorrect_msg = "Do not change the values inside `poker_vector`; they were already coded for you.")
-test_object("roulette_vector",
-            incorrect_msg = "Do not change the values inside `roulette_vector`; they were already coded for you.")
-test_object("poker_vector",
-            eq_condition = "equal",
-            incorrect_msg = "Do not change the code that names the elements in `poker_vector`; focus on `roulette_vector`!")
-test_object("roulette_vector",
-            eq_condition = "equal",
-            incorrect_msg = "Make sure that you assign the correct names vector to `roulette_vector`. Use the exact same vector as the one that was used to name `poker_vector`.")
-success_msg("Well done! Continue to the next exercise.")
+poker_incorrect <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3588;&#3656;&#3634;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3607;&#3637;&#3656;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`")
+# อย่าเปลี่ยนค่า vector ที่กำหนดให้กับตัวแปร `poker_vector`
+
+roulette_incorrect <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3588;&#3656;&#3634;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3607;&#3637;&#3656;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`roulette_vector`")
+# อย่าเปลี่ยนค่า vector ที่กำหนดให้กับตัวแปร `roulette_vector`
+
+poker_incorrect_eq <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3650;&#3588;&#3657;&#3604;&#3607;&#3637;&#3656;&#3651;&#3594;&#3657;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#32;&#101;&#108;&#101;&#109;&#101;&#110;&#116;&#32;&#3651;&#3609;", "`poker_vector`!")
+# อย่าเปลี่ยนโค้ดที่ใช้ตั้งชื่อ element ใน `poker_vector`!
+
+roulette_incorrect_eq <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3594;&#3639;&#3656;&#3629;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3651;&#3627;&#3657;&#3649;&#3605;&#3656;&#3621;&#3632;&#32;&#101;&#108;&#101;&#109;&#101;&#110;&#116;&#32;&#3586;&#3629;&#3591;", "`roulette_vector`", "&#3588;&#3640;&#3603;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3651;&#3594;&#3657;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3648;&#3604;&#3637;&#3618;&#3623;&#3585;&#3633;&#3609;&#3585;&#3633;&#3610;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3651;&#3594;&#3657;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3651;&#3627;&#3657;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3651;&#3609;", "`poker_vector`")
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดชื่อที่ถูกต้องให้แต่ละ element ของ `roulette_vector` คุณสามารถใช้ vector เดียวกันกับที่เราใช้ตั้งชื่อให้ข้อมูลใน `poker_vector`
+
+success_msg <- "&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# ดีมาก! ไปแบบฝึกหัดต่อไปกันเลย
+
+test_object("poker_vector", incorrect_msg = poker_incorrect)
+test_object("roulette_vector", incorrect_msg = roulette_incorrect)
+test_object("poker_vector", eq_condition = "equal", incorrect_msg = poker_incorrect_eq)
+test_object("roulette_vector", eq_condition = "equal", incorrect_msg = roulette_incorrect_eq)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:6858c65a4a
-## Naming a vector (2)
+## การตั้งชื่อให้ข้อมูลใน vector (2)
 
-If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.)
+ถ้าคุณอยากเป็นนักสถิติที่ดี บางครั้งคุณก็ต้องทำงานอย่างขี้เกียจบ้าง (แต่ต้องใช้วิธีที่ฉลาดนะ!)
 
-In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when you look at it from a higher perspective, there is a more efficient way to do this, namely, to assign the days of the week vector to a **variable**! 
+ในแบบฝึกหัดก่อนหน้านี้ การต้องมานั่งพิมพ์ชื่อวันทีละวันซ้ำแล้วซ้ำอีกอาจทำให้คุณรู้สึกเบื่อและหงุดหงิด แต่ไม่ต้องห่วง! จริงๆแล้วเรามีวิธีที่สะดวกกว่านั้น ที่คุณต้องทำก็เพียงแค่เก็บรายชื่อวันในสัปดาห์ในรูปแบบ vector เอาไว้ใน**ตัวแปร**! 
 
-Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
+ยังจำตอนที่คุณสร้าง vector สำหรับผลการพนันเกม poker และ roulette ได้ไหม? คุณสามารถสร้างตัวแปรสำหรับเก็บรายชื่อวันในสัปดาห์ได้ด้วยวิธีเดียวกัน เพียงแค่นี้คุณก็จะสามารถเรียกรายชื่อวันในสัปดาห์มาใช้เมื่อไรก็ได้!
 
 *** =instructions
-- A variable `days_vector` that contains the days of the week has already been created for you.
-- Use `days_vector` to set the names of `poker_vector` and `roulette_vector`.
+- เราได้สร้างตัวแปร `days_vector` พร้อมรายชื่อวันในสัปดาห์รอไว้ให้แล้ว
+- ใช้ตัวแปร `days_vector` ในการตั้งชื่อให้กับข้อมูลในตัวแปร `poker_vector` และ `roulette_vector`
 
 *** =hint
-You can use `names(poker_vector) <- days_vector` to set the names of the elements `poker_vector`. Do a similar thing for `roulette_vector`.
+คุณสามารถใช้คำสั่ง `names(poker_vector) <- days_vector` ในการตั้งชื่อให้กับข้อมูลแต่ะตัวที่อยู่ใน `poker_vector` ซึ่งคำสั่งนี้สามารถนำไปประยุกต์ใช้กับ `roulette_vector` ได้เช่นกัน
 
 *** =pre_exercise_code
 ```{r}
@@ -285,35 +314,39 @@ names(roulette_vector) <- days_vector
 
 *** =sct
 ```{r}
-msg <- "Do not changes the predefined variables `poker_vector`, `roulette_vector` or `days_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`, `roulette_vector`", "&#3627;&#3619;&#3639;&#3629;", "`days_vector`")
+# อย่าเปลี่ยนแปลงตัวแปร `poker_vector`, `roulette_vector` หรือ `days_vector`
+
 test_object("poker_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("poker_vector",
-            eq_condition = "equal",
-            incorrect_msg = "Make sure that you assign `days_vector` to the names of `poker_vector`.")
-test_object("roulette_vector",
-            eq_condition = "equal",
-            incorrect_msg = "Make sure that you assign `days_vector` to the names of `roulette_vector`.")
-success_msg("Nice one! A word of advice: try to avoid code duplication at all times. Continue to the next exercise and learn how to do arithmetic with vectors!")
+incorrect_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3594;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`days_vector`", "&#3651;&#3609;&#3585;&#3634;&#3619;&#3605;&#3633;&#3657;&#3591;&#3594;&#3639;&#3656;&#3629;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3651;&#3609;")
+# ตรวจสอบให้แน่ใจว่าคุณได้ใช้ตัวแปร `days_vector` ในการตั้งชื่อให้กับข้อมูลใน
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3652;&#3611;&#3648;&#3621;&#3618;&#33;&#32;&#3592;&#3635;&#3652;&#3623;&#3657;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3588;&#3623;&#3619;&#3627;&#3621;&#3637;&#3585;&#3648;&#3621;&#3637;&#3656;&#3618;&#3591;&#3585;&#3634;&#3619;&#3614;&#3636;&#3617;&#3614;&#3660;&#3650;&#3588;&#3657;&#3604;&#3648;&#3604;&#3636;&#3617;&#3595;&#3657;&#3635;&#3654;&#3650;&#3604;&#3618;&#3652;&#3617;&#3656;&#3592;&#3635;&#3648;&#3611;&#3655;&#3609;&#32;&#3606;&#3657;&#3634;&#3614;&#3619;&#3657;&#3629;&#3617;&#3649;&#3621;&#3657;&#3623;&#3585;&#3655;&#3652;&#3611;&#3648;&#3619;&#3637;&#3618;&#3609;&#3619;&#3641;&#3657;&#3648;&#3619;&#3639;&#3656;&#3629;&#3591;&#3585;&#3634;&#3619;&#3588;&#3635;&#3609;&#3623;&#3603;&#3650;&#3604;&#3618;&#3651;&#3594;&#3657;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3651;&#3609;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3652;&#3604;&#3657;&#3648;&#3621;&#3618;"
+# เยี่ยมไปเลย! จำไว้ว่าคุณควรหลีกเลี่ยงการพิมพ์โค้ดเดิมซ้ำๆโดยไม่จำเป็น ถ้าพร้อมแล้วก็ไปเรียนรู้เรื่องการคำนวณโดยใช้ vector ในแบบฝึกหัดต่อไปได้เลย
+
+test_object("poker_vector", eq_condition = "equal", incorrect_msg = paste(incorrect_msg, "`poker_vector`"))
+test_object("roulette_vector", eq_condition = "equal", incorrect_msg = paste(incorrect_msg, "`roulette_vector`"))
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:da995f099f
-## Calculating total winnings
+## การคำนวณด้วย vector
 
-Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. 
+เมื่อเรามี vector ที่เก็บข้อมูลการเล่น poker และ roulette พร้อมกับตั้งชื่อเรียบร้อยแล้ว ก็ถึงเวลาลงมือวิเคราะห์ข้อมูลกัน!
 
-You want to find out the following type of information:
+ถ้าเกิดคุณอยากจะรู้ว่า:
 
-- How much has been your overall profit or loss per day of the week?
-- Have you lost money over the week in total?
-- Are you winning/losing money on poker or on roulette?
+- โดยรวมแล้ว กำไร / ขาดทุน ต่อวันมากน้อยแค่ไหน?
+- เมื่อรวมยอดตลอดสัปดาห์ที่ผ่านมา คุณขาดทุนหรือไม่?
+- คุณได้กำไรหรือขาดทุนจากเกม poker และ roulette อย่างละเท่าไหร่?
 
-To get the answers, you have to do arithmetic calculations on vectors. 
+ในการหาคำตอบของคำถามเหล่านี้ คุณจะต้องทำการคำนวณทางคณิตศาสตร์ด้วย vector
 
-It is important to know is that if you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:
+ใน R การนำ vector สองตัวมาบวกกันนั้นมีค่าเท่ากับการนำข้อมูลแต่ละตัวใน vector มาบวกกันทีละคู่(element-wise sum) เพื่อให้เห็นภาพได้ง่ายขึ้น คำสั่งที่แสดงอยู่ด้านล่างทั้ง 3 คำสั่งนี้ มีค่าเท่ากันทั้งหมด:
 
 ```
 c(1, 2, 3) + c(4, 5, 6)
@@ -321,7 +354,7 @@ c(1 + 4, 2 + 5, 3 + 6)
 c(5, 7, 9)
 ```
 
-You can also do the calculations with variables that represent vectors:
+คุณสามารถทำการคำนวณโดยใช้ตัวแปรที่มีการเก็บค่า vector เอาไว้ได้เช่นกัน:
 
 ```
 a <- c(1, 2, 3) 
@@ -330,11 +363,11 @@ c <- a + b
 ```
 
 *** =instructions
-- Take the sum of the variables `A_vector` and `B_vector` and it assign to `total_vector`.
-- Inspect the result by printing out `total_vector`.
+- หาผลรวมของตัวแปร `A_vector` และ `B_vector` แล้วเก็บผลลัพธ์ไว้ในตัวแปร `total_vector`
+- ลองดูว่าผลลัพธ์เป็นอย่างไรโดยการสั่งให้ R แสดงค่า `total_vector`
 
 *** =hint
-Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the result to `total_vector`.
+ใช้เครื่องหมาย `+` ในการรวม `A_vector` และ `B_vector` จากนั้นใช้คำสั่ง `<-` เพื่อกำหนดค่าผลลัพธ์ให้กับ `total_vector`
 
 *** =pre_exercise_code
 ```{r}
@@ -367,27 +400,38 @@ total_vector
 
 *** =sct
 ```{r}
-msg <- "Do not change the contents of `A_vector` or `B_vector`!"
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3605;&#3633;&#3657;&#3591;&#3652;&#3623;&#3657;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;", "`A_vector`", "&#3649;&#3621;&#3632;", "`B_vector`!")
+# อย่าเปลี่ยนแปลงค่าที่เราตั้งไว้ให้กับ `A_vector` และ `B_vector`!"
+
+incorrect_msg_obj <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;", "`total_vector`", "&#3617;&#3637;&#3588;&#3656;&#3634;&#3648;&#3607;&#3656;&#3634;&#3585;&#3633;&#3610;&#3612;&#3621;&#3619;&#3623;&#3617;&#3619;&#3632;&#3627;&#3623;&#3656;&#3634;&#3591;", "`A_vector`", "&#3649;&#3621;&#3632;", "`B_vector`")
+# ตรวจสอบให้แน่ใจว่า `total_vector` มีค่าเท่ากับผลรวมระหว่าง `A_vector` และ `B_vector`
+
+incorrect_msg_output <- paste("&#3588;&#3640;&#3603;&#3605;&#3657;&#3629;&#3591;&#3626;&#3633;&#3656;&#3591;&#3651;&#3627;&#3657;&#32;&#82;&#32;&#3649;&#3626;&#3604;&#3591;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;", "`total_vector`", "&#3604;&#3657;&#3623;&#3618;&#33;&#32;&#3649;&#3588;&#3656;&#3614;&#3636;&#3617;&#3614;&#3660;", "`total_vector`", "&#3621;&#3591;&#3652;&#3611;&#3610;&#3609;&#3610;&#3619;&#3619;&#3607;&#3633;&#3604;&#3651;&#3627;&#3617;&#3656;&#3585;&#3655;&#3614;&#3629;")
+# คุณต้องสั่งให้ R แสดงค่าของ `total_vector` ด้วย! แค่พิมพ์ `total_vector` ลงไปบนบรรทัดใหม่ก็พอ
+
+success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# ทำได้ดีมาก! ไปดูแบบฝึกหัดต่อไปกันเลย
+
 test_object("A_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("B_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("total_vector", incorrect_msg = "Make sure that `total_vector` contains the sum of `A_vector` and `B_vector`.")
-test_output_contains("total_vector", incorrect_msg = "Don't forget to print out `total_vector`! Simply write `total_vector` on a new line.")
-success_msg("Good job! Continue to the next exercise.")
+test_object("total_vector", incorrect_msg = incorrect_msg_obj)
+test_output_contains("total_vector", incorrect_msg = incorrect_msg_output)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:2969d8ed65
-## Calculating total winnings (2)
+## การคำนวณด้วย vector (2)
 
-Now you understand how R does arithmetic with vectors, it is time to get those Ferraris in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
+ทีนี้คุณก็น่าจะพอเข้าใจขึ้นมาบ้างแล้วว่า R ทำการบวก vector เข้าด้วยกันได้ยังไง งั้นเราลองมาหาคำตอบให้กับคำถามแรกของเรากัน การจะหาผลกำไร / ขาดทุนทั้งหมดของแต่ละวันได้ คุณจะต้องนำกำไร / ขาดทุนในแต่ละวันของเกม poker และ roulette มารวมกันเสียก่อน!
 
-In R, this is just the sum of `roulette_vector` and `poker_vector`.
+ที่คุณต้องทำไม่ใช่เรื่องยากเลย แค่นำตัวแปร `roulette_vector` กับ `poker_vector` มาบวกกันก็ได้คำตอบแล้ว
 
 *** =instructions
-Assign to the variable `total_daily` how much you won or lost on each day in total (poker and roulette combined).
+กำหนดให้ตัวแปร `total_daily` มีค่าเท่ากับผลกำไร / ขาดทุนทั้งหมดต่อวัน (เกม poker และ roulette รวมกัน)
 
 *** =hint
-Similar to the previous exercise, assign the sum of two vectors to a new variable, `total_daily`.
+สิ่งที่คุณต้องทำก็คล้ายๆกับแบบฝึกหัดที่แล้ว แค่นำ vector มาบวกกันแล้วเก็บค่าผลลัพธ์ไว้ในตัวแปร `total_daily`
 
 *** =pre_exercise_code
 ```{r}
@@ -422,35 +466,43 @@ total_daily <- poker_vector + roulette_vector
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("total_daily", incorrect_msg = "Make sure that you assign the sum of `poker_vector` and `roulette_vector` to `total_daily`.")
+incorrect_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`total_daily`", "&#3651;&#3627;&#3657;&#3648;&#3607;&#3656;&#3634;&#3585;&#3633;&#3610;&#3612;&#3621;&#3619;&#3623;&#3617;&#3619;&#3632;&#3627;&#3623;&#3656;&#3634;&#3591;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`")
+# ตรวจสอบให้แน่ใจว่าได้กำหนดค่าตัวแปร `total_daily` ให้เท่ากับผลรวมระหว่าง `poker_vector` และ `roulette_vector`
 
-success_msg("Great! Continue to the next exercise.")
+success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# ทำได้ดีมาก! ไปดูแบบฝึกหัดต่อไปกันเลย 
+
+test_object("total_daily", incorrect_msg = incorrect_msg)
+
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:e66a56b9f0
-## Calculating total winnings (3)
+## การคำนวณด้วย vector (3)
 
-Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? 
+อ้างอิงจากผลกำไร / ขาดทุนในตัวอย่างที่ผ่านมา บางวันคุณก็มีกำไรแต่บางวันคุณก็ขาดทุน คราวนี้เราจะมาดูที่เงินที่คุณได้ทั้งหมดตลอดสัปดาห์ที่ผ่านมากันบ้าง เผื่อว่าอาจจะทำให้เราเห็นอะไรมากขึ้น
 
-A function that helps you to answer this question is [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum). It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: 
+เราสามารถคำนวณผลรวมของข้อมูลทั้งหมดใน vector ได้ด้วย function [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) ในกรณีที่คุณต้องการหาเงินทั้งหมดที่คุณได้/เสียจากเกม poker คุณสามารถใช้โค้ดด้านล่างนี้ในการหาคำตอบได้: 
 
 ```
 total_poker <- sum(poker_vector)
 ```
 
 *** =instructions
-- Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
-- Now that you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
-- Print out `total_week`.
+- คำนวณจำนวนเงินทั้งหมดที่คุณได้/เสียจากเกม roulette และเก็บค่าของมันไว้ในตัวแปร `total_roulette`
+- เมื่อคุณได้จำนวนเงินที่คุณได้/เสียจากเกม roulette และจากเกม poker มาเรียบร้อยแล้ว คุณก็สามารถคำนวณจำนวนเงินทั้งหมดที่คุณได้หรือเสียไปในสัปดาห์นี้ได้แล้ว อย่าลืมเก็บผลลัพธ์สุดท้ายนี้ไว้ในตัวแปร `total_week` ด้วย
+- สั่งให้ R แสดงค่าของตัวแปร `total_week` ซึ่งเป็นคำตอบที่เรากำลังมองหาอยู่
 
 *** =hint
-Use the [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) function to get the total of the `roulette_vector`. `total_week` is then the sum of `roulette_vector` and `poker_vector`.
+ใช้ function [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) ในการคำนวณจำนวนเงินทั้งหมดที่คุณได้/เสียจาก `roulette_vector` จากนั้นให้ `total_week` มีค่าเท่ากับผลบวกระหว่างจำนวนเงินทั้งหมดที่ได้จาก `roulette_vector` และ `poker_vector`
 
 *** =pre_exercise_code
 ```{r}
@@ -503,36 +555,50 @@ total_week
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+incorrect_part_1 <- "&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;"
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าให้กับ
+
+incorrect_part_2 <- "&#3604;&#3657;&#3623;&#3618;&#3612;&#3621;&#3619;&#3623;&#3617;&#3586;&#3629;&#3591;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3651;&#3609;"
+# ด้วยผลรวมของข้อมูลใน
+
+total_week_msg <- paste("&#3604;&#3657;&#3623;&#3618;&#3612;&#3621;&#3619;&#3623;&#3617;&#3586;&#3629;&#3591;", "`total_roulette`", "&#3649;&#3621;&#3632;", "`total_poker`")
+# ด้วยผลรวมของ `total_roulette` และ `total_poker`
+
+incorrect_print <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3626;&#3633;&#3656;&#3591;&#3651;&#3627;&#3657;&#32;&#82;&#32;&#3649;&#3626;&#3604;&#3591;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`total_week`")
+# อย่าลืมสั่งให้ R แสดงค่าของตัวแปร `total_week`
+
+success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#32;&#3649;&#3605;&#3656;&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3612;&#3621;&#3607;&#3637;&#3656;&#3652;&#3604;&#3657;&#3592;&#3634;&#3585;&#3585;&#3634;&#3619;&#3623;&#3636;&#3648;&#3588;&#3619;&#3634;&#3632;&#3627;&#3660;&#3609;&#3637;&#3657;&#3592;&#3632;&#3648;&#3611;&#3655;&#3609;&#3586;&#3656;&#3634;&#3623;&#3619;&#3657;&#3634;&#3618;&#3626;&#3635;&#3627;&#3619;&#3633;&#3610;&#3588;&#3640;&#3603;&#3609;&#3632;&#46;&#46;&#46;"
+# ทำได้ดี แต่ดูเหมือนผลที่ได้จากการวิเคราะห์นี้จะเป็นข่าวร้ายสำหรับคุณนะ...
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("total_poker", 
-            incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`.")
-test_object("total_roulette",
-            incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`.")
-test_object("total_week",
-            incorrect_msg = "Make sure that you assign to `total_week` the sum of the other two total vectors: `total_roulette` and `total_poker`.")
+test_object("total_poker", incorrect_msg = paste(incorrect_part_1, "`total_poker`", incorrect_part2, "`poker_vector`"))
+test_object("total_roulette", incorrect_msg = paste(incorrect_part_1, "`total_roulette`", incorrect_part2, "`roulette_vector`"))
+test_object("total_week", incorrect_msg = paste(incorrect_part_1, "`total_week`", total_week_msg))
 
-test_output_contains("total_week", incorrect_msg = "Don't forget to write `total_week` on a new line to print out the variable.")
-success_msg("Well done. This is pretty bad news...")
+test_output_contains("total_week", incorrect_msg = incorrect_print)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:f532f5332d
-## Comparing total winnings
+## การเปรียบเทียบตัวแปร
 
-Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
+จากการวิเคราะห์ล่าสุดของเรา ดูเหมือนคุณกำลังขาดทุน งั้นนี่ก็เป็นเวลาที่เราควรจะวิเคราะห์ให้ลึกลงไปอีกเพื่อหาวิธีปรับเปลี่ยนกลยุทธ์ในการพนันกันแล้ว! 
 
-After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
+หลังจากที่ได้ลองคิดหาสาเหตุแล้ว คุณก็เกิดสงสัยขึ้นมาว่า จะเป็นไปได้ไหมที่ความสามารถในการเล่น roulette ของคุณจะยังไม่ดีพอเมื่อเปรียบเทียบกับความสามารถในการเล่น poker ในการที่จะตรวจสอบข้อสงสัยนี้ เราจะต้องดูว่ากำไรทั้งหมดที่คุณได้จากการเล่น poker มากกว่า (`>`) กำไรที่คุณได้จากการเล่น roulette หรือไม่
 
 *** =instructions
-- Calculate `total_poker` and `total_roulette` as in the previous exercise. Use the `sum()` function twice.
-- Check if your total gains in poker are higher than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
+- ใช้ function `sum()` ในการคำนวณ `total_poker` และ `total_roulette` เหมือนกับในแบบฝึกหัดที่แล้ว
+- คราวนี้ลองตรวจสอบดูว่าเงินทั้งหมดที่ได้จากการเล่น poker สูงกว่าจำนวนเงินทั้งหมดที่ได้จากการเล่น roulette หรือไม่โดยการเปรียบเทียบ (ใช้เครื่องหมาย `>`) จากนั้นให้ R แสดงผลการเปรียบเทียบออกมาด้วย คุณได้ข้อสรุปว่าอย่างไร? สุดท้ายแล้วคุณควรเน้นทำเงินจากการเล่น poker หรือ roulette กันแน่?
 
 *** =hint
-- You partly calculated the answer to this question in the previous exercise already!
-- To check if 6 is larger than 5, you type `6 > 5`. This returns a logical value (`TRUE` or `FALSE`).
+- ที่จริงคำตอบของข้อนี้ถูกคำนวณออกมาแล้วบางส่วนตั้งแต่ตัวอย่างที่แล้ว!
+- ในการตรวจสอบว่าเลข 6 มีค่ามากกว่า 5 หรือไม่ คุณต้องพิมพ์คำสั่งว่า `6 > 5` ซึ่งจะให้ผลลัพธ์ออกมาเป็นข้อมูลประเภทตรรกะ (`TRUE` หรือ `FALSE`)
 
 *** =pre_exercise_code
 ```{r}
@@ -575,35 +641,46 @@ total_poker > total_roulette
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+incorrect_part_1 <- "&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3585;&#3635;&#3627;&#3609;&#3604;&#3588;&#3656;&#3634;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;"
+# ตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าให้กับ
+
+incorrect_part_2 <- "&#3604;&#3657;&#3623;&#3618;&#3612;&#3621;&#3619;&#3623;&#3617;&#3586;&#3629;&#3591;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3651;&#3609;"
+# ด้วยผลรวมของข้อมูลใน
+
+incorrect_compare <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3607;&#3635;&#3585;&#3634;&#3619;&#3648;&#3611;&#3619;&#3637;&#3618;&#3610;&#3648;&#3607;&#3637;&#3618;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3656;&#3634;&#63;&#32;&#3651;&#3609;&#3585;&#3634;&#3619;&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3623;&#3656;&#3634;", "`total_poker`", "&#3617;&#3634;&#3585;&#3585;&#3623;&#3656;&#3634;", "`total_roulette`", "&#3627;&#3619;&#3639;&#3629;&#3652;&#3617;&#3656;&#32;&#3588;&#3640;&#3603;&#3588;&#3623;&#3619;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`total_poker > total_roulette`")
+# คุณได้ทำการเปรียบเทียบตัวแปรอย่างถูกต้องหรือเปล่า? ในการตรวจสอบว่า `total_poker` มากกว่า `total_roulette` หรือไม่ คุณควรใช้คำสั่ง `total_poker > total_roulette`
+
+success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# ทำได้ดีมาก! ไปดูแบบฝึกหัดต่อไปกันเลย 
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("total_poker", 
-            incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`. Use `sum()`.")
-test_object("total_roulette",
-            incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`. Use `sum()`.")
-test_output_contains("total_poker > total_roulette",
-                     incorrect_msg = "Have you correctly carried out the comparison? To check if `total_poker` is greater than `total_roulette`, you can use `total_poker > total_roulette`.")
-success_msg("Good job! Continue to the next exercise.")
+test_object("total_poker", incorrect_msg = paste(incorrect_part_1, "`total_poker`", incorrect_part2, "`poker_vector`"))
+test_object("total_roulette", incorrect_msg = paste(incorrect_part_1, "`total_roulette`", incorrect_part2, "`roulette_vector`"))
+test_output_contains("total_poker > total_roulette", incorrect_msg = incorrect_compare)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:8d78be44e9
-## Vector selection: the good times
+## การเลือกข้อมูลจาก vector
 
-Your hunch seemed to be right. It appears that the poker game is more your cup of tea than roulette. 
+เหมือนสัญชาตญาณของคุณจะถูกต้อง คุณทำกำไรจากเกม poker ได้มากกว่าเกม roulette จริงๆ!
 
-Another possible route for investigation is your performance at the beginning of the working week compared to the end of it. You did have a couple of Margarita cocktails at the end of the week... 
+อีกวิธีในการดูว่าคุณเล่นพนันได้ดีแค่ไหนคือการเปรียบเทียบผลกำไร / ขาดทุนของคุณในช่วงเริ่มต้นสัปดาห์กับช่วงปลายสัปดาห์
 
-To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc. Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
+ในการตอบคำถามนี้ คุณจะต้องเลือกข้อมูลบางตัวจาก `total_vector` มาเปรียบเทียบกัน การเลือกข้อมูลแบบเฉพาะเจาะจงออกมาจาก vector คุณสามารถใช้เครื่องหมาย square bracket (`[]`) และระบุลงไปในนั้นว่าข้อมูลที่คุณต้องการอยู่ในลำดับที่เท่าไรของ vector เช่น ถ้าคุณต้องการข้อมูลตัวแรกสุดก็ให้พิมพ์ว่า `poker_vector[1]` ถ้าต้องการตัวที่สองก็ให้พิมพ์ว่า `poker_vector[2]` แทน โดยที่ตำแหน่งของข้อมูลจะเริ่มนับจาก 1 ซึ่งจะแตกต่างจากภาษาอื่นๆหลายภาษาที่เริ่มนับจาก 0 (วิธีการนี้สามารถเอาไปใช้กับข้อมูลในรูปแบบ matrix และ data frame ได้ด้วย ซึ่งจะกล่าวถึงในบทต่อๆไป)
 
 *** =instructions
-Assign the poker results of Wednesday to the variable `poker_wednesday`.
+กำหนดให้ตัวแปร `poker_wednesday` มีค่าเท่ากับผลกำไร / ขาดทุนจากการเล่น poker ในวันพุธ
 
 *** =hint
-Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
+วันพุธจะอยู่ในตำแหน่งที่ 3 ของตัวแปร `poker_vector` นั่นคือคุณสามารถดึงข้อมูลในตำแหน่งนั้นออกมาได้ด้วยคำสั่ง `poker_vector[3]`
 
 *** =pre_exercise_code
 ```{r}
@@ -638,33 +715,42 @@ poker_wednesday <- poker_vector[3]
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+wed_undefined <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_wednesday`")
+# ตรวจสอบให้แน่ใจว่าคุณได้สร้างตัวแปร `poker_wednesday` 
+
+wed_incorrect <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3623;&#3656;&#3634;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_wednesday`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3612;&#3636;&#3604;&#3629;&#3618;&#3641;&#3656;&#3609;&#3632;")
+# ดูเหมือนว่าค่าของตัวแปร `poker_wednesday` จะยังผิดอยู่นะ
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3592;&#3619;&#3636;&#3591;&#3654;&#3649;&#3621;&#3657;&#3623;&#32;&#82;&#32;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3648;&#3621;&#3639;&#3629;&#3585;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3592;&#3634;&#3585;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3629;&#3629;&#3585;&#3617;&#3634;&#3607;&#3637;&#3621;&#3632;&#3627;&#3621;&#3634;&#3618;&#3654;&#3605;&#3633;&#3623;&#3652;&#3604;&#3657;&#3604;&#3657;&#3623;&#3618;&#32;&#3629;&#3618;&#3634;&#3585;&#3619;&#3641;&#3657;&#3623;&#3656;&#3634;&#3607;&#3635;&#3629;&#3618;&#3656;&#3634;&#3591;&#3652;&#3619;&#32;&#3648;&#3619;&#3634;&#3617;&#3634;&#3621;&#3629;&#3591;&#3604;&#3641;&#3585;&#3633;&#3609;&#3651;&#3609;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#33;"
+# เยี่ยมมาก! จริงๆแล้ว R สามารถเลือกข้อมูลจาก vector ออกมาทีละหลายๆตัวได้ด้วย อยากรู้ว่าทำอย่างไร เรามาลองดูกันในแบบฝึกหัดต่อไป!
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("poker_wednesday", 
-            undefined_msg = "Please make sure to define a variable `poker_wednesday`.",
-            incorrect_msg = "It looks like `poker_wednesday` does not contain the correct value of the `poker_vector`.")
-success_msg("Great! R also makes it possible to select multiple elements from a vector at once. Learn how in the next exercise!")
+test_object("poker_wednesday", undefined_msg = wed_undefined, incorrect_msg = wed_incorrect)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:1351521670
-## Vector selection: the good times (2)
+## การเลือกข้อมูลจาก vector (2)
+ 
+แล้วถ้าเราต้องการจะวิเคราะห์ผลกำไร / ขาดทุนระหว่างสัปดาห์แทนล่ะ?
 
-How about analyzing your midweek results? 
-
-To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what elements should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1, 5)` between the square brackets. For example, the code below selects the first and fifth element of `poker_vector`:
+ในการเลือกข้อมูลทีละหลายๆตัว เราจะต้องเปลี่ยนแปลงค่าที่ใส่ลงไปใน square bracket เล็กน้อย สมมติว่าคุณต้องการเลือกข้อมูลกำไร / ขาดทุนวันที่ 1 และ 5 ออกมา ให้ใส่ vector `c(1,5)` ลงไปข้างใน square bracket ลองดูตัวอย่างโค้ดได้ด้านล่าง:
 
 ```
 poker_vector[c(1, 5)]
 ```
 
 *** =instructions
-Assign the poker results of Tuesday, Wednesday and Thursday to the variable `poker_midweek`.
+กำหนดให้ตัวแปร `poker_midweek` มีค่าเป็นผลกำไร / ขาดทุนของเกม poker ในวันอังคาร พุธ และพฤหัส
 
 *** =hint
-Use the vector `c(2, 3, 4)` between square brackets to select the correct elements of `poker_vector`.
+คุณต้องใช้ vector `c(2, 3, 4)` ในการระบุตำแหน่งของข้อมูลที่เราจะเลือกจาก `poker_vector`
 
 *** =pre_exercise_code
 ```{r}
@@ -699,28 +785,35 @@ poker_midweek <- poker_vector[c(2, 3, 4)]
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+incorrect_msg <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3623;&#3656;&#3634;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_midweek` ", "&#3592;&#3632;&#3617;&#3637;&#3588;&#3656;&#3634;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#32;&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3604;&#3641;&#3629;&#3637;&#3585;&#3607;&#3637;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3651;&#3626;&#3656;&#32;&#118;&#101;&#99;&#116;&#111;&#114;", "`c(2, 3, 4)`", "&#3621;&#3591;&#3651;&#3609;&#3652;&#3611;&#32;&#115;&#113;&#117;&#97;&#114;&#101;&#32;&#98;&#114;&#97;&#99;&#107;&#101;&#116;&#32;&#3627;&#3619;&#3639;&#3629;&#3652;&#3617;&#3656;")
+# ดูเหมือนว่าตัวแปร `poker_midweek` จะมีค่าไม่ถูกต้อง ตรวจสอบดูอีกทีว่าคุณได้ใส่ vector `c(2, 3, 4)` ลงในไป square bracket หรือไม่
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3651;&#3609;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3648;&#3619;&#3634;&#3592;&#3632;&#3651;&#3627;&#3657;&#3588;&#3640;&#3603;&#3648;&#3619;&#3637;&#3618;&#3609;&#3619;&#3641;&#3657;&#3648;&#3619;&#3639;&#3656;&#3629;&#3591;&#3585;&#3634;&#3619;&#3648;&#3621;&#3639;&#3629;&#3585;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3592;&#3634;&#3585;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3629;&#3637;&#3585;&#3626;&#3633;&#3585;&#3627;&#3609;&#3656;&#3629;&#3618;"
+# เยี่ยมมาก! ในแบบฝึกหัดต่อไปเราจะให้คุณเรียนรู้เรื่องการเลือกข้อมูลจาก vector อีกสักหน่อย
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("poker_midweek", 
-            incorrect_msg = "It looks like `poker_midweek` does not contain the correct values from `poker_vector`. You can use the vector `c(2, 3, 4)` inside square brackets.")
-success_msg("Well done! Continue to the next exercise to specialize in vector selection some more!");
+test_object("poker_midweek", incorrect_msg = incorrect_msg)
+success_msg(success_msg);
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:27976b79f4
-## Vector selection: the good times (3)
+## การเลือกข้อมูลจาก vector (3)
 
-Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very convenient. Many statisticians are lazy people by nature, so they created an easier way to do this: `c(2, 3, 4)` can be abbreviated to`2:4`, which generates a vector with all natural numbers from 2 up to 4.
+การเลือกข้อมูลหลายๆตัวจาก `poker_vector` ด้วย vector `c(2, 3, 4)` ดูจะเป็นวิธีที่ไม่ค่อยสะดวกเท่าไร จริงๆแล้วใน R เรามีวิธีที่ง่ายกว่านั้นอีกคือการใช้เครื่องหมาย colon (`:`) เราสามารถแทน `c(2, 3, 4)` ใน square bracket ได้ด้วย `2:4` ซึ่งหมายถึงการเลือกข้อมูลลำดับที่ 2 ถึง 4 ออกมาจาก vector
 
-So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
+ดังนั้น อีกวิธีหนึ่งในการหาผลกำไร / ขาดทุนระหว่างสัปดาห์คือการใช้คำสั่ง `poker_vector[2:4]` นั่นเอง
 
 *** =instructions
-Assign to `roulette_selection_vector` the roulette results from Tuesday up to Friday; make use of `:` if it makes things easier for you.
+กำหนดให้ตัวแปร `roulette_selection_vector` มีค่าเป็นผลกำไร / ขาดทุนจากเกม roulette ตั้งแต่วันอังคารถึงวันศุกร์ พยายามลองใช้เครื่องหมาย colon (`:`) ดู มันอาจช่วยให้คุณทำงานได้ง่ายขึ้น
 
 *** =hint
-Assign a selection of `roulette_vector` to `roulette_selection_vector` by placing `2:5` between square brackets.
+คุณต้องเลือกข้อมูลบางส่วนออกมาจาก `roulette_vector` เพื่อใช้ในการกำหนดค่าของตัวแปร `roulette_selection_vector` โดยการใส่ `2:5` ลงไปใน square bracket (`[]`)
 
 *** =sample_code
 ```{r}
@@ -751,41 +844,50 @@ roulette_selection_vector <- roulette_vector[2:5]
 *** =sct
 
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+undefined_msg <- paste("&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3651;&#3627;&#3657;&#3649;&#3609;&#3656;&#3651;&#3592;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`roulette_selection_vector`")
+# ตรวจสอบให้แน่ใจว่าคุณได้สร้างตัวแปร `roulette_selection_vector` 
+
+incorrect_msg <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3623;&#3656;&#3634;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`roulette_selection_vector`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3617;&#3637;&#3588;&#3656;&#3634;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#32;&#3621;&#3629;&#3591;&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3604;&#3641;&#3629;&#3637;&#3585;&#3607;&#3637;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3648;&#3621;&#3639;&#3629;&#3585;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3607;&#3637;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3592;&#3634;&#3585;", "`roulette_vector`")
+# ดูเหมือนว่าตัวแปร `roulette_selection_vector` จะยังมีค่าไม่ถูกต้อง ลองตรวจสอบดูอีกทีว่าคุณได้เลือกข้อมูลที่ถูกต้องจาก `roulette_vector`
+
+success_msg <- "&#3626;&#3640;&#3604;&#3618;&#3629;&#3604;&#3652;&#3611;&#3648;&#3621;&#3618;&#33;&#32;&#3648;&#3627;&#3655;&#3609;&#3652;&#3627;&#3617;&#3623;&#3656;&#3634;&#3585;&#3634;&#3619;&#3651;&#3594;&#3657;&#32;&#99;&#111;&#108;&#111;&#110;&#32;&#3617;&#3637;&#3611;&#3619;&#3632;&#3650;&#3618;&#3594;&#3609;&#3660;&#3617;&#3634;&#3585;&#3651;&#3609;&#32;&#82;&#32;&#3648;&#3619;&#3634;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3604;&#3637;&#3585;&#3623;&#3656;&#3634;"
+# สุดยอดไปเลย! เห็นไหมว่าการใช้ colon มีประโยชน์มากใน R เราไปดูแบบฝึกหัดต่อไปกันดีกว่า
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("roulette_selection_vector", 
-            undefined_msg = "Please make sure to define a variable `roulette_selection_vector`.",
-            incorrect_msg = "It looks like `roulette_selection_vector` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indexes.")
-success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
+test_object("roulette_selection_vector", undefined_msg = undefined_msg, incorrect_msg = incorrect_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:e6c263ddee
-## Vector selection: the good times (4)
+## การเลือกข้อมูลจาก vector (4)
 
-Another way to tackle the previous exercise is by using the names of the vector elements (Monday, Tuesday, ...) instead of their numeric positions. For example, 
+นอกจากการเลือกข้อมูลแบบที่คุณได้เรียนรู้ไปในแบบฝึกหัดก่อนๆ เรายังมีอีกวิธีหนึ่งในการเลือกข้อมูลจาก vector โดยการเรียกชื่อของข้อมูลนั้นๆแทน (เช่น Monday, Tuesday, ...) ยกตัวอย่างเช่น:  
 
 ```
 poker_vector["Monday"]
 ```
 
-will select the first element of `poker_vector` since `"Monday"` is the name of that first element.
+จะทำการเลือกข้อมูลลำดับแรกใน `poker_vector` ออกมา เพราะ `"Monday"` คือชื่อของข้อมูลลำดับแรกสุด
 
-Just like you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: 
+ซึ่งการเลือกข้อมูลจาก vector โดยใช้ชื่อ ก็สามารถเลือกทีละหลายๆตัวได้เหมือนการใช้เลขลำดับ ยกตัวอย่างเช่น: 
 
 ```
 poker_vector[c("Monday","Tuesday")]
 ```
 
 *** =instructions
-- Select the first three elements in `poker_vector` by using their names: `"Monday"`, `"Tuesday"` and `"Wednesday"`. Assign the result of the selection to `poker_start`.
-- Calculate the average of the values in `poker_start` with the [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) function. Simply print out the result so you can inspect it.
+- เลือกข้อมูล 3 ตัวแรกจาก `poker_vector` โดยการใช้ชื่อ: `"Monday"`, `"Tuesday"` and `"Wednesday"` จากนั้นเก็บข้อมูลที่เลือกมาไว้ใน `poker_start`.
+- คำนวณค่าเฉลี่ยของข้อมูลทั้งหมดใน `poker_start` ด้วย function [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) จากนั้นลองแสดงผลค่าเฉลี่ยออกมาดูเพื่อคุณจะได้รู้ว่าค่าเฉลี่ยของกำไร / ขาดทุนจากเกม poker ในวันดังกล่าวเป็นอย่างไร
 
 *** =hint
-- You can use `c("Monday", "Tuesday", "Wednesday")` inside square brackets to subset `poker_vector` appropriately.
-- You can use `mean(poker_start)` to get the mean of the elements in `poker_start`. You do not need the mean of all poker elements, but only of the first three days.
+- คุณสามารถใส่ `c("Monday", "Tuesday", "Wednesday")` ลงไปใน square brackets เพื่อเลือกข้อมูลตัวที่ต้องการจาก `poker_vector`
+- จากนั้นใช้คำสั่ง `mean(poker_start)` เพื่อหาค่าเฉลี่ยของข้อมูลใน `poker_start` และแสดงผลลัพธ์ออกมาบน Console
 
 *** =pre_exercise_code
 ```{r}
@@ -826,46 +928,56 @@ mean(poker_start)
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+object_incorrect <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3623;&#3656;&#3634;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3607;&#3637;&#3656;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_start`", "&#3592;&#3632;&#3652;&#3617;&#3656;&#3651;&#3594;&#3656;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#32;&#51;&#32;&#3621;&#3635;&#3604;&#3633;&#3610;&#3649;&#3619;&#3585;&#3592;&#3634;&#3585;", "`poker_vector`", "&#3588;&#3640;&#3603;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`c(\"Monday\", \"Tuesday\", \"Wednesday\")`", "&#3651;&#3626;&#3656;&#3621;&#3591;&#3652;&#3611;&#3651;&#3609;&#32;&#115;&#113;&#117;&#97;&#114;&#101;&#32;&#98;&#114;&#97;&#99;&#107;&#101;&#116;&#32;&#3648;&#3614;&#3639;&#3656;&#3629;&#3604;&#3638;&#3591;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3605;&#3633;&#3623;&#3607;&#3637;&#3656;&#3605;&#3657;&#3629;&#3591;&#3585;&#3634;&#3619;")
+# ดูเหมือนว่าข้อมูลที่อยู่ในตัวแปร `poker_start` จะไม่ใช่ข้อมูล 3 ลำดับแรกจาก `poker_vector` คุณสามารถใช้คำสั่ง `c(\"Monday\", \"Tuesday\", \"Wednesday\")` ใส่ลงไปใน square bracket เพื่อดึงข้อมูลตัวที่ต้องการ
+
+output_incorrect <- paste("&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3588;&#3635;&#3609;&#3623;&#3603;&#3588;&#3656;&#3634;&#3648;&#3593;&#3621;&#3637;&#3656;&#3618;&#3586;&#3629;&#3591;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3651;&#3609;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_start`", "&#3649;&#3621;&#3632;&#3626;&#3633;&#3656;&#3591;&#3651;&#3627;&#3657;&#32;&#82;&#32;&#3649;&#3626;&#3604;&#3591;&#3612;&#3621;&#3621;&#3633;&#3614;&#3608;&#3660;&#3629;&#3629;&#3585;&#3617;&#3634;&#3649;&#3621;&#3657;&#3623;&#3627;&#3619;&#3639;&#3629;&#3618;&#3633;&#3591;&#63;&#32;&#3588;&#3640;&#3603;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`mean(poker_start)`", "&#3652;&#3604;&#3657;&#3648;&#3621;&#3618;")
+# คุณได้คำนวณค่าเฉลี่ยของข้อมูลในตัวแปร `poker_start` และสั่งให้ R แสดงผลลัพธ์ออกมาแล้วหรือยัง? คุณสามารถใช้คำสั่ง `mean(poker_start)` ได้เลย
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3609;&#3629;&#3585;&#3592;&#3634;&#3585;&#3588;&#3640;&#3603;&#3592;&#3632;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3648;&#3621;&#3639;&#3629;&#3585;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3592;&#3634;&#3585;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3650;&#3604;&#3618;&#3585;&#3634;&#3619;&#3651;&#3594;&#3657;&#3594;&#3639;&#3656;&#3629;&#3652;&#3604;&#3657;&#3649;&#3621;&#3657;&#3623;&#32;&#3588;&#3640;&#3603;&#3618;&#3633;&#3591;&#3626;&#3634;&#3617;&#3634;&#3619;&#3606;&#3648;&#3621;&#3639;&#3629;&#3585;&#3586;&#3657;&#3629;&#3617;&#3641;&#3621;&#3629;&#3629;&#3585;&#3617;&#3634;&#3650;&#3604;&#3618;&#3651;&#3594;&#3657;&#3585;&#3634;&#3619;&#3648;&#3611;&#3619;&#3637;&#3618;&#3610;&#3648;&#3607;&#3637;&#3618;&#3610;&#3652;&#3604;&#3657;&#3604;&#3657;&#3623;&#3618;&#32;&#3629;&#3634;&#3592;&#3592;&#3632;&#3615;&#3633;&#3591;&#3604;&#3641;&#3648;&#3586;&#3657;&#3634;&#3651;&#3592;&#3618;&#3634;&#3585;&#32;&#3649;&#3605;&#3656;&#3605;&#3633;&#3623;&#3629;&#3618;&#3656;&#3634;&#3591;&#3605;&#3656;&#3629;&#3652;&#3611;&#3592;&#3632;&#3607;&#3635;&#3651;&#3627;&#3657;&#3588;&#3640;&#3603;&#3648;&#3627;&#3655;&#3609;&#3616;&#3634;&#3614;&#3617;&#3634;&#3585;&#3586;&#3638;&#3657;&#3609;&#33;"
+# เยี่ยมมาก! นอกจากคุณจะสามารถเลือกข้อมูลจาก vector โดยการใช้ชื่อได้แล้ว คุณยังสามารถเลือกข้อมูลออกมาโดยใช้การเปรียบเทียบได้ด้วย อาจจะฟังดูเข้าใจยาก แต่ตัวอย่างต่อไปจะทำให้คุณเห็นภาพมากขึ้น!
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("poker_start", 
-            incorrect_msg = "It looks like `poker_start` does not contain the first three values of `poker_vector`. You can use `c(\"Monday\", \"Tuesday\", \"Wednesday\")` inside square brackets to do this.")
-test_output_contains("mean(poker_start)", incorrect_msg = "Have you correctly calculated the average of the values in `poker_start` and printed it out? Use `mean(poker_start)`.")
-success_msg("Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!");
+test_object("poker_start", incorrect_msg = object_incorrect)
+test_output_contains("mean(poker_start)", incorrect_msg = output_incorrect)
+success_msg(success_msg);
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:f0f619c901
-## Selection by comparison - Step 1
+## การเลือกข้อมูลโดยใช้การเปรียบเทียบ - ขั้นที่ 1
 
-By making use of comparison operators, we can approach the previous question in a more proactive way. 
+เราสามารถเลือกข้อมูลจาก vector โดยการใช้ตัวดำเนินการเปรียบเทียบต่างๆได้เช่นกัน
 
-The (logical) comparison operators known to R are:
+ตัวดำเนินการเปรียบเทียบ(ในเชิงตรรกะ) ใน R มีดังนี้:
 
-- `<` for less than
-- `>` for greater than
-- `<=` for less than or equal to
-- `>=` for greater than or equal to
-- `==` for equal to each other
-- `!=` not equal to each other
+- `<` น้อยกว่า
+- `>` มากกว่า
+- `<=` น้อยกว่าหรือเท่ากับ
+- `>=` มากกว่าหรือเท่ากับ
+- `==` เท่ากับ (เป็นเครื่องหมายสำหรับเปรียบเทียบเท่านั้น ไม่ใช่เครื่องหมายกำหนดค่า `=`)
+- `!=` ไม่เท่ากับ
 
-As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing about R is that you can use these comparison operators also on vectors. For example:
+จากที่เราเห็นในตัวอย่างก่อนๆ การเปรียบเทียบ `6 > 5` ให้ผลลัพธ์เป็น `TRUE` (คือเป็นความจริง) ซึ่ง R สามารถนำการเปรียบเทียบเหล่านี้ไปใช้เลือกข้อมูลได้ ตัวอย่างเช่น:
 
 ```
 > c(4, 5, 6) > 5
 [1] FALSE FALSE TRUE
 ```
 
-This command tests for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`.
+คำสั่งดังกล่าวจะทำการเปรียบเทียบว่าข้อมูลแต่ละตัวใน vector มีค่ามากกว่า 5 หรือไม่ ซึ่งผลของการเปรียบเทียบจะให้ค่าเป็นแบบตรรกะ จริง (`TRUE`) หรือ เท็จ (`FALSE`)
 
 *** =instructions
-- Check which elements in `poker_vector` are positive (i.e. > 0) and assign this to `selection_vector`. 
-- Print out `selection_vector` so you can inspect it. The printout tells you whether you won (`TRUE`) or lost (`FALSE`) any money for each day.
+- ลองเปรียบเทียบดูว่าข้อมูลใน `poker_vector` ตัวใดบ้างที่มีค่าเป็นบวก (คือ > 0) และกำหนดค่าของผลการเปรียบเทียบให้กับตัวแปร `selection_vector`
+- สั่งให้ R แสดงค่า `selection_vector` ซึ่งผลการเปรียบเทียบจะแสดงให้คุณเห็นว่าคุณได้กำไร (`TRUE`) หรือขาดทุน (`FALSE`) จากการเล่น pokerในแต่ละวัน
 
 *** =hint
-In order to check for which days your poker gains are positive, R should check for each element of `poker_vector` whether it is larger than zero. `some_vector > 0` is the way to tell R what you are after.
+ในการจะตรวจสอบว่าคุณได้กำไรในวันไหนบ้าง คุณจะต้องให้ R ทำการเปรียบเทียบข้อมูลแต่ละตัวใน `poker_vector` ว่ามีค่ามากกว่า 0 หรือไม่ (> 0) คุณสามารถใช้คำสั่ง `some_vector > 0` เป็นตัวอย่างแล้วนำไปปรับใช้กับการเปรียบเทียบข้อมูลใน `poker_vector`
 
 *** =pre_exercise_code
 ```{r}
@@ -906,37 +1018,48 @@ selection_vector
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+object_incorrect <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3623;&#3656;&#3634;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;", "`selection_vector`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3612;&#3636;&#3604;&#3629;&#3618;&#3641;&#3656;&#32;&#3621;&#3629;&#3591;&#3605;&#3619;&#3623;&#3592;&#3626;&#3629;&#3610;&#3604;&#3641;&#3629;&#3637;&#3585;&#3588;&#3619;&#3633;&#3657;&#3591;&#3623;&#3656;&#3634;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3607;&#3635;&#3585;&#3634;&#3619;&#3648;&#3611;&#3619;&#3637;&#3618;&#3610;&#3648;&#3607;&#3637;&#3618;&#3610;&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3652;&#3627;&#3617;")
+# ดูเหมือนว่าค่าของ `selection_vector` จะยังผิดอยู่ ลองตรวจสอบดูอีกครั้งว่าคุณได้ทำการเปรียบเทียบอย่างถูกต้องไหม
+
+output_incorrect <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3639;&#3617;&#3626;&#3633;&#3656;&#3591;&#3651;&#3627;&#3657;&#32;&#82;&#32;&#3649;&#3626;&#3604;&#3591;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`selection_vector`", "&#3604;&#3657;&#3623;&#3618;&#32;&#3649;&#3588;&#3656;&#3614;&#3636;&#3617;&#3614;&#3660;&#3594;&#3639;&#3656;&#3629;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;&#3621;&#3591;&#3652;&#3611;&#3648;&#3607;&#3656;&#3634;&#3609;&#3633;&#3657;&#3609;&#3648;&#3629;&#3591;")
+# อย่าลืมสั่งให้ R แสดงค่าของตัวแปร `selection_vector` ด้วย แค่พิมพ์ชื่อตัวแปรลงไปเท่านั้นเอง
+
+success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#3617;&#3634;&#3585;&#33;"
+# ทำได้ดีมาก!
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("selection_vector", incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Remember that R uses element wise operations for vectors.")
-test_output_contains("selection_vector", incorrect_msg = "Don't forget to print out `selection_vector` by writing the variable name on a new line.")
-success_msg("Great!")
+test_object("selection_vector", incorrect_msg = object_incorrect)
+test_output_contains("selection_vector", incorrect_msg = output_incorrect)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:2754fc5cd4
-## Selection by comparison - Step 2
+## การเลือกข้อมูลโดยใช้การเปรียบเทียบ - ขั้นที่ 2
 
-Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. 
+การเปรียบเทียบช่วยให้การวิเคราะห์ข้อมูลของคุณทำได้ง่ายขึ้นมาก แทนที่คุณจะต้องมาเลือกข้อมูลทีละวันๆเหมือนที่ทำมาก่อนหน้านี้ คุณสามารถบอกให้ R เลือกข้อมูลเฉพาะในวันที่คุณได้กำไรจากการเล่นเกมได้ 
 
-In the previous exercises you used `selection_vector <- poker_vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
+ในแบบฝึกหัดที่แล้วเราให้คุณลองใช้คำสั่ง `selection_vector <- poker_vector > 0` เพื่อช่วยหาว่าวันไหนบ้างที่คุณได้กำไรจากเกม poker คราวนี้เราอยากให้คุณบอกเพิ่มด้วยว่าในแต่ละวันที่คุณได้กำไร คุณได้กำไรเท่าไหร่ 
 
-You can select the desired elements, by putting `selection_vector` between the square brackets that follow `poker_vector`:
+ซึ่งคุณสามารถเลือกข้อมูลวันที่ได้กำไรจากเกม poker ได้โดยการใส่ `selection_vector` ลงไปใน square brackets ต่อท้ายตัวแปร `poker_vector` ตัวอย่างเช่น:
 
 ```
 poker_vector[selection_vector]
 ```
 
-R knows what to do when you pass a logical vector in square brackets: it will only select the elements that correspond to `TRUE` in `selection_vector`.
+เวลาคุณใส่ vector ของข้อมูลแบบตรรกะ อย่างเช่น `selection_vector` ลงไปใน square brackets (`[]`) ภาษา R จะเลือกแต่ข้อมูลที่มีค่าความจริงเป็น `TRUE` ใน `selection_vector`
 
 *** =instructions
-Use `selection_vector` in square brackets to assign the amounts that you won on the profitable days to the variable `poker_winning_days`.
+ใส่ `selection_vector` ลงไปใน square brackets เพื่อให้ R ดึงข้อมูลเฉพาะวันที่คุณได้กำไรออกมา จากนั้นเก็บข้อมูลดังกล่าวไว้ในตัวแปร `poker_winning_days`
 
 *** =hint
-Use `poker_vector[selection_vector]` to select the desired elements from `poker_vector`, and assign the result to `poker_winning_days`.
+ใช้คำสั่ง `poker_vector[selection_vector]` ในการเลือกข้อมูลตัวที่คุณต้องการจาก `poker_vector` แล้วเก็บผลลัพธ์ไว้ในตัวแปร `poker_winning_days`
 
 *** =pre_exercise_code
 ```{r}
@@ -977,28 +1100,38 @@ poker_winning_days <- poker_vector[selection_vector]
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+selection_msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3623;&#3636;&#3608;&#3637;&#3588;&#3635;&#3609;&#3623;&#3603;", "`selection_vector`")
+# อย่าเปลี่ยนแปลงวิธีคำนวณ `selection_vector`
+
+poker_msg <- paste("&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_winning_days`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#32;&#3621;&#3629;&#3591;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`poker_vector[selection_vector]`", "&#3604;&#3641;")
+# เหมือนค่าของตัวแปร `poker_winning_days` จะยังไม่ถูก ลองใช้คำสั่ง `poker_vector[selection_vector]` ดู
+
+success_msg <- "&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#3617;&#3634;&#3585;&#33;&#32;&#3652;&#3611;&#3604;&#3641;&#3649;&#3610;&#3610;&#3613;&#3638;&#3585;&#3627;&#3633;&#3604;&#3605;&#3656;&#3629;&#3652;&#3611;&#3585;&#3633;&#3609;&#3648;&#3621;&#3618;"
+# เยี่ยมมาก! ไปดูแบบฝึกหัดต่อไปกันเลย
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("selection_vector", incorrect_msg = "Don't change the way `selection_vector` is calculated.")
-test_object("poker_winning_days",
-            incorrect_msg =  "It looks like `poker_winning_days` does not contain the correct result. Use `poker_vector[selection_vector]`.")
-success_msg("Good job! Continue to the next exercise.")
+test_object("selection_vector", incorrect_msg = selection_msg)
+test_object("poker_winning_days", incorrect_msg = poker_msg)
+success_msg(success_msg)
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:59e8dcbbd5
-## Advanced selection
+## การเลือกข้อมูลโดยใช้การเปรียบเทียบ - ลองดูอีกครั้ง
 
-Just like you did for poker, you also want to know those days where you realized a positive return for roulette.
+คล้ายๆกับที่คุณทำกับเกม poker คราวนี้ลองเปลี่ยนมาหาวันที่คุณได้กำไรจากเกม roulette บ้าง
 
 *** =instructions
-- Create the variable `selection_vector`, this time to see if you made profit with roulette for different days.
-- Assign the amounts that you made on the days that you ended positively for roulette to the variable `roulette_winning_days`. This vector thus contains the positive winnings of `roulette_vector`.
+- สร้างตัวแปร `selection_vector` เพื่อเก็บ vector ที่บอกว่าคุณได้กำไรจากเกม roulette ในวันใดบ้าง
+- กำหนดให้ตัวแปร `roulette_winning_days` มีค่าเท่ากับกำไรที่คุณทำได้จากเกม roulette (เฉพาะในวันที่คุณได้กำไร) vector นี้ควรจะเก็บข้อมูลที่มีค่าเป็นบวกจาก `roulette_vector` เอาไว้
 
 *** =hint
-Once you've correctly calculated `selection_vector`, you can again use `roulette_vector[selection_vector]` to select the positive results from `roulette_vector`.
+หลังจากที่คุณสามารถหา `selection_vector` ได้แล้ว คุณสามารถใช้คำสั่ง `roulette_vector[selection_vector]` ในการเลือกข้อมูลของวันที่ได้กำไรจากตัวแปร `roulette_vector` ได้
 
 *** =pre_exercise_code
 ```{r}
@@ -1039,16 +1172,24 @@ roulette_winning_days <- roulette_vector[selection_vector]
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3594;&#3639;&#3656;&#3629;&#3649;&#3621;&#3632;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3585;&#3633;&#3610;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`poker_vector`", "&#3649;&#3621;&#3632;", "`roulette_vector`") 
+# อย่าเปลี่ยนแปลงชื่อและค่าที่เรากำหนดให้กับตัวแปร `poker_vector` และ `roulette_vector`
+
+selection_msg <- paste("&#3604;&#3641;&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;", "`selection_vector`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3617;&#3637;&#3588;&#3656;&#3634;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#32;&#3621;&#3629;&#3591;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`roulette_vector > 0`)", "&#3604;&#3641;")
+# ดูเหมือน `selection_vector` จะยังมีค่าไม่ถูกต้อง ลองใช้คำสั่ง `roulette_vector > 0` ดู
+
+roulette_msg <- paste("&#3648;&#3627;&#3617;&#3639;&#3629;&#3609;&#3588;&#3656;&#3634;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`roulette_winning_days`", "&#3592;&#3632;&#3618;&#3633;&#3591;&#3652;&#3617;&#3656;&#3606;&#3641;&#3585;&#32;&#3621;&#3629;&#3591;&#3651;&#3594;&#3657;&#3588;&#3635;&#3626;&#3633;&#3656;&#3591;", "`roulette_vector[selection_vector]`", "&#3604;&#3641;")
+# เหมือนค่าของตัวแปร `roulette_winning_days` จะยังไม่ถูก ลองใช้คำสั่ง `roulette_vector[selection_vector]` ดู
+
+success_msg <- "&#3618;&#3629;&#3604;&#3648;&#3618;&#3637;&#3656;&#3618;&#3617;&#33;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3607;&#3637;&#3656;&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3648;&#3619;&#3637;&#3618;&#3609;&#3619;&#3641;&#3657;&#3652;&#3611;&#3607;&#3633;&#3657;&#3591;&#3627;&#3617;&#3604;&#3651;&#3609;&#3610;&#3607;&#3609;&#3637;&#3657;&#3588;&#3639;&#3629;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#49;&#32;&#3617;&#3636;&#3605;&#3636;&#32;&#3651;&#3609;&#3610;&#3607;&#3605;&#3656;&#3629;&#3652;&#3611;&#32;&#3648;&#3619;&#3634;&#3592;&#3632;&#3614;&#3634;&#3588;&#3640;&#3603;&#3652;&#3611;&#3619;&#3641;&#3657;&#3592;&#3633;&#3585;&#3585;&#3633;&#3610;&#32;&#118;&#101;&#99;&#116;&#111;&#114;&#32;&#3607;&#3637;&#3656;&#3617;&#3637;&#32;&#50;&#32;&#3617;&#3636;&#3605;&#3636;&#3627;&#3619;&#3639;&#3629;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3648;&#3619;&#3637;&#3618;&#3585;&#3585;&#3633;&#3609;&#3623;&#3656;&#3634;&#32;&#109;&#97;&#116;&#114;&#105;&#120;&#33;"
+# ยอดเยี่ยม! vector ที่คุณได้เรียนรู้ไปทั้งหมดในบทนี้คือ vector 1 มิติ ในบทต่อไป เราจะพาคุณไปรู้จักกับ vector ที่มี 2 มิติหรือที่เราเรียกกันว่า matrix!
+
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("selection_vector", 
-            incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Use `roulette_vector > 0`.")
-test_object("roulette_winning_days",
-            incorrect_msg = "It looks like `roulette_winning_days` does not contain the correct result. Use `roulette_vector[selection_vector]`.")
-
-success_msg("Great! This exercise concludes the chapter on vectors. The next chapter will introduce you to the two-dimensional version of vectors: matrices.")
+test_object("selection_vector", incorrect_msg = selection_msg)
+test_object("roulette_winning_days", incorrect_msg = roulette_msg)
+success_msg(success_msg)
 ```
 
 
