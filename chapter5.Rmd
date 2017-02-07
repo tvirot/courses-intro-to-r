@@ -6,18 +6,18 @@ description : Data set ส่วนใหญ่ที่คุณจะใช้
 --- type:NormalExercise xp:100 skills:1 key:7f95849020a2563168920409022ce7bed20835b5
 ## Data Frame คืออะไร?
 
-ถ้าคุณยังจำเนื้อหาจากบทที่ 3 (matrix) ได้ ข้อมูลทุกตัวที่ใส่ลงไปใน matrix ควรเป็นประเภทเดียวกัน ในตอนนั้นข้อมูลเกี่ยวกับภาพยนตร์ Star Wars ของคุณจึงมีแต่ตัวเลขรายได้
+ถ้าคุณยังจำเนื้อหาจากบทที่ 3 (เรื่อง matrix) ได้ ข้อมูลทุกตัวที่ใส่ลงไปใน matrix ควรเป็นประเภทเดียวกัน ในตอนนั้นข้อมูลเกี่ยวกับภาพยนตร์ Star Wars ของคุณจึงมีแต่ตัวเลขรายได้ (numeric)
 
 แต่ในเวลาที่คุณต้องการวิเคราะห์ข้อมูลทางการตลาด บ่อยครั้งที่คุณจะต้องเจอกับคำถามเช่น:
 
-- 'คุณแต่งงานหรือยัง?' หรือพวกคำถามที่ให้ตอบ 'ใช่/ไม่' ทั้งหลาย (เป็นข้อมูลแบบ `logical`)
+- 'คุณแต่งงานหรือยัง?' หรือคำถามที่ให้ตอบ 'ใช่/ไม่' ทั้งหลาย (เป็นข้อมูลแบบ `logical`)
 - 'คุณอายุเท่าไร?' (เป็นข้อมูลแบบ `numeric`)
 - 'คุณมีความเห็นอย่างไรกับผลิตภัณฑ์นี้?' หรือ 'คำถามปลายเปิด' อื่นๆ (เป็นข้อมูลแบบ `character`)
 - ...
 
-จะเห็นได้ว่า data set ที่เราได้มานั้นจะประกอบไปด้วยข้อมูลหลากหลายประเภทมากๆ ซึ่งทำให้ Data frame เป็นสิ่งจำเป็นสำหรับการทำงานของคุณ 
+จะเห็นได้ว่า data set ที่เราได้มานั้นจะประกอบไปด้วยข้อมูลหลากหลายประเภทมากๆ ซึ่งทำให้เราจำเป็นต้องใช้ Data frame เข้ามาช่วยในการทำงาน 
 
-Data frame จะเก็บค่าแค่ละตัวแปรของ data set ไว้ในรูปของคอลัมน์ และเก็บแต่ละตัวอย่าง(observation) ไว้ในรูปของแถว นี่คือ concept หลักที่ใช้กันทั่วไปไม่ว่าคุณจะทำงานบน R หรือโปรแกรมวิเคราะห์ทางสถิติอื่นๆ เช่น SAS หรือ SPSS
+Data frame จะเก็บตัวแปรแต่ละตัวใน data set ไว้ในรูปของคอลัมน์ และเก็บแต่ละตัวอย่าง(observation) ไว้ในรูปของแถว นี่คือ concept หลักที่ใช้กันทั่วไปไม่ว่าคุณจะทำงานบน R หรือโปรแกรมวิเคราะห์ทางสถิติอื่นๆ เช่น SAS หรือ SPSS
 
 *** =instructions
 กดปุ่ม 'Submit Answer' ข้อมูลจาก data frame ตัวอย่าง [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) จะถูกแสดงออกมาบน Console
@@ -58,13 +58,13 @@ success_msg("Great! Continue to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:3d0e64ecf5f69521ee538ecc713caa02b8b0ec46
 ## ลองมองดู Data Set
 
-โอ้โห! นี่มันข้อมูลของรถเต็มไปหมด 
+โอ้โห! นี่มันข้อมูลของรถจำนวนมาก!
 
 การทำงานกับ data set ขนาดใหญ่ถือเป็นเรื่องธรรมดามากกับงานวิเคราะห์ข้อมูล สิ่งแรกที่คุณต้องทำคือการทำความเข้าใจข้อมูลเหล่านั้นเสียก่อน ดังนั้นการสั่งให้ R แสดงค่าข้อมูลแค่ส่วนเล็กๆบางส่วนออกมาจึงมักมีประโยชน์ในการทำความเข้าใจข้อมูล
 
-คุณสามารถใช้ function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) ในการแสดงตัวอย่างข้อมูลที่อยู่ด้านบนของ data frame ของคุณ หรือใช้ function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) ในการแสดงตัวอย่างข้อมูลที่อยู่ด้านล่างก็ได้
+คุณสามารถใช้ function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) ในการแสดงตัวอย่างข้อมูลที่อยู่ด้านบนสุดของ data frame ของคุณ หรือใช้ function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) ในการแสดงตัวอย่างข้อมูลที่อยู่ด้านล่างสุดก็ได้
 
-ทั้ง function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) และ [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) จะแสดงชื่อคอลัมน์หรือที่เรียกว่า 'header' ออกมาด้วย ซึ่ง 'header' จะบอกคุณได้ว่าแต่ละตัวแปรในข้อมูลคืออะไร (ถ้าได้มีการกำหนดไว้)
+ทั้ง function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) และ [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) จะแสดงชื่อคอลัมน์หรือที่เรียกว่า 'header' ออกมาด้วย ซึ่ง 'header' จะบอกคุณได้ว่าแต่ละตัวแปรในข้อมูลคืออะไร (ถ้าได้มีการกำหนดชื่อคอลัมน์ไว้)
 
 *** =instructions
 ลองใช้ [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) กับ [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) และลองดูตัวอย่างข้อมูลที่ถูกแสดงออกมา
@@ -115,9 +115,9 @@ success_msg(success_msg);
 - จำนวนตัวแปรทั้งหมด (เช่น มี features ทั้งหมด 11 features)
 - พร้อมด้วยชื่อของตัวแปรทั้งหมด (เช่น `mpg`, `cyl` ... )
 - ประเภทของข้อมูลของตัวแปรแต่ละตัว (เช่น `num` แสดงว่าเป็นตัวแปรประเภทตัวเลข)
-- ตัวอย่างแรกสุดใน data frame
+- ตัวอย่างแรกสุดใน data frame มีหน้าตาเป็นอย่างไร
 
-การใช้ function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) กับข้อมูลอาจจะเป็นสิ่งแรกที่คุณทำเมื่อคุณได้ข้อมูลมา มันเป็นวิธีที่ดีที่จะทำความเข้าใจ data set ก่อนจะเริ่มทำการวิเคราะห์จริงๆ
+การใช้ function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) กับข้อมูลอาจจะเป็นสิ่งแรกที่คุณทำเมื่อคุณได้ข้อมูลมา มันเป็นวิธีที่ดีที่จะทำความเข้าใจภาพรวมของ data set ก่อนจะเริ่มทำการวิเคราะห์จริงๆ
 
 *** =instructions
 ลองดูโครงสร้างของ [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) ตรวจสอบให้แน่ใจว่าคุณเห็นตัวเลขเดียวกับที่เขียนไว้ด้านบนในตัวอย่าง
