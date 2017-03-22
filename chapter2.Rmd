@@ -576,8 +576,8 @@ success_msg <- "&#3607;&#3635;&#3652;&#3604;&#3657;&#3604;&#3637;&#32;&#3649;&#3
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("total_poker", incorrect_msg = paste(incorrect_part_1, "`total_poker`", incorrect_part2, "`poker_vector`"))
-test_object("total_roulette", incorrect_msg = paste(incorrect_part_1, "`total_roulette`", incorrect_part2, "`roulette_vector`"))
+test_object("total_poker", incorrect_msg = paste(incorrect_part_1, "`total_poker`", incorrect_part_2, "`poker_vector`"))
+test_object("total_roulette", incorrect_msg = paste(incorrect_part_1, "`total_roulette`", incorrect_part_2, "`roulette_vector`"))
 test_object("total_week", incorrect_msg = paste(incorrect_part_1, "`total_week`", total_week_msg))
 
 test_output_contains("total_week", incorrect_msg = incorrect_print)
