@@ -660,8 +660,8 @@ test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("total_poker", incorrect_msg = paste(incorrect_part_1, "`total_poker`", incorrect_part2, "`poker_vector`"))
-test_object("total_roulette", incorrect_msg = paste(incorrect_part_1, "`total_roulette`", incorrect_part2, "`roulette_vector`"))
+test_object("total_poker", incorrect_msg = paste(incorrect_part_1, "`total_poker`", incorrect_part_2, "`poker_vector`"))
+test_object("total_roulette", incorrect_msg = paste(incorrect_part_1, "`total_roulette`", incorrect_part_2, "`roulette_vector`"))
 test_output_contains("total_poker > total_roulette", incorrect_msg = incorrect_compare)
 success_msg(success_msg)
 ```
