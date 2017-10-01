@@ -1,3 +1,4 @@
+id: 2589
 title: "ภาษา R เบื้องต้น"
 instructors:
 - virot.ch@gmail.com
@@ -17,7 +18,7 @@ author_bio: Ta is a co-founder of <a href='//www.skooldio.com'>Skooldio</a>, whe
   Facebook. <br/><br/>  Ta holds a PhD in Operations Research from MIT and a Bachelor's
   degree in Computer Engineering (First-Class Honors, Gold Medal) from Chulalongkorn
   University.
-from: r-base-prod:10
+from: r-base-prod:27
 datasets:
   all_wars_matrix.RData: All wars matrix
   chapter3.R: Chapter3
@@ -25,4 +26,5 @@ datasets:
   chapter6.R: Chapter6
   planets.RData: Planets
   shining_list.RData: Shining list
+runtime_config: minimal  
 practice_pool_id: 106
