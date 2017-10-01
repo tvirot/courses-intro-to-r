@@ -1,14 +1,27 @@
-title: ภาษา R เบื้องต้น
+title: "ภาษา R เบื้องต้น"
 instructors:
- - virot.ch@gmail.com
- - kittipon.sarn@gmail.com
+- virot.ch@gmail.com
+- kittipon.sarn@gmail.com
 time_needed: 4 hours
 difficulty_level: 1
-description: "
-  ด้วยจำนวนผู้ใช้งานกว่าสองล้านคนทั่วโลก ทำให้ R กลายเป็นภาษาสำหรับงานสถิติและวิทยาศาสตร์ข้อมูล (data science) ที่ได้รับความนิยมสูงสุดอย่างรวดเร็ว  
-  ในทุกๆปีจำนวนผู้ใช้งานภาษา R เพิ่มขึ้นกว่า 40% และองค์กรจำนวนมากก็เริ่มนำมาใช้กันแพร่หลายมากขึ้น <br/><br/>
-  ในบทเรียนภาษา R เบื้องต้นนี้ คุณจะได้ฝึกฝนการใช้งานภาษา R ขั้นพื้นฐาน รวมไปถึงการใช้งาน factors, lists และ data frames อีกด้วย
-  ความรู้ที่ได้จากบทเรียนนี้จะเตรียมคุณให้พร้อมสำหรับการวิเคราะห์ข้อมูลด้วยตัวเอง <br/><br/>
-  บทเรียนนี้แปลมาจากคอร์ส <a href='https://www.datacamp.com/courses/free-introduction-to-r' target='_blank'>Introduction to R</a> โดย DataCamp"
-author_bio: "Ta is a co-founder of <a href='//www.skooldio.com'>Skooldio</a>, where he teaches Data Science. He is also a lecturer at Chulalongkorn Business School. Previously, he was a data scientist in Core Data Science  and News Feed teams at Facebook. <br/><br/>  Ta holds a PhD in Operations Research from MIT and a Bachelor's degree in Computer Engineering (First-Class Honors, Gold Medal) from Chulalongkorn University."
-from: "r-base-prod:10"
+description: " ด้วยจำนวนผู้ใช้งานกว่าสองล้านคนทั่วโลก ทำให้ R กลายเป็นภาษาสำหรับงานสถิติและวิทยาศาสตร์ข้อมูล
+  (data science) ที่ได้รับความนิยมสูงสุดอย่างรวดเร็ว ในทุกๆปีจำนวนผู้ใช้งานภาษา R
+  เพิ่มขึ้นกว่า 40% และองค์กรจำนวนมากก็เริ่มนำมาใช้กันแพร่หลายมากขึ้น <br/><br/> ในบทเรียนภาษา
+  R เบื้องต้นนี้ คุณจะได้ฝึกฝนการใช้งานภาษา R ขั้นพื้นฐาน รวมไปถึงการใช้งาน factors,
+  lists และ data frames อีกด้วย ความรู้ที่ได้จากบทเรียนนี้จะเตรียมคุณให้พร้อมสำหรับการวิเคราะห์ข้อมูลด้วยตัวเอง
+  <br/><br/> บทเรียนนี้แปลมาจากคอร์ส <a href='https://www.datacamp.com/courses/free-introduction-to-r'
+  target='_blank'>Introduction to R</a> โดย DataCamp"
+author_bio: Ta is a co-founder of <a href='//www.skooldio.com'>Skooldio</a>, where
+  he teaches Data Science. He is also a lecturer at Chulalongkorn Business School.
+  Previously, he was a data scientist in Core Data Science  and News Feed teams at
+  Facebook. <br/><br/>  Ta holds a PhD in Operations Research from MIT and a Bachelor's
+  degree in Computer Engineering (First-Class Honors, Gold Medal) from Chulalongkorn
+  University.
+from: r-base-prod:10
+datasets:
+  all_wars_matrix.RData: All wars matrix
+  chapter3.R: Chapter3
+  chapter5.R: Chapter5
+  chapter6.R: Chapter6
+  planets.RData: Planets
+  shining_list.RData: Shining list
