@@ -3,15 +3,8 @@ title_meta  : บทที่ 1
 title       : แนะนำการใช้งานเบื้องต้น
 description : "ในบทเรียนนี้คุณจะได้เริ่มต้นใช้งานภาษา R คุณจะได้เรียนรู้การใช้งาน console เป็นเครื่องคิดเลข และการใส่ค่าให้กับตัวแปร นอกจากนี้คุณจะได้รู้จักกับชนิดของข้อมูลพื้นฐานในภาษา R เรามาเริ่มเรียนกันเถอะ!"
 
----
+--- type:NormalExercise xp:100 skills:1 key:15d729634a
 ## เริ่มต้นใช้งาน
-
-```yaml
-type: NormalExercise
-xp: 100
-skills: 1
-key: 15d729634a
-```
 
 คุณจะต้องพิมพ์โค้ดภาษา R ลงใน editor ทางด้านขวาเพื่อตอบแบบฝึกหัด เมื่อคุณกดปุ่ม 'Submit Answer' โค้ดทุกๆบรรทัดจะถูกประมวลผล และคุณจะได้รับข้อความว่าโค้ดของคุณนั้นถูกต้องหรือไม่ ผลลัพธ์ของโค้ดจะถูกแสดงอยู่ใน console ที่มุมขวาล่าง
 
@@ -62,15 +55,8 @@ test_output_contains("18", incorrect_msg = incorrect_msg)
 success_msg(success_msg)
 ```
 
----
+--- type:NormalExercise xp:100 skills:1 key:720745eda5
 ## การคำนวณทางคณิตศาสตร์ด้วย R 
-
-```yaml
-type: NormalExercise
-xp: 100
-skills: 1
-key: 720745eda5
-```
 
 R สามารถนำมาใช้เป็นเครื่องคิดเลขอย่างง่ายๆได้ พิจารณาตัวดำเนินการทางคณิตศาสตร์ (arithmetic operators) ดังต่อไปนี้:
 
@@ -104,22 +90,22 @@ R สามารถนำมาใช้เป็นเครื่องคิ
 
 `@sample_code`
 ```{r}
-# บวก
+# addition
 5 + 5 
 
-# ลบ
+# subtraction
 5 - 5 
 
-# คูณ
+# multiplication
 3 * 5
 
-# หาร
+# division
 (5 + 5) / 2 
 
-# ยกกำลัง
+# exponentiation
 
 
-# มอดุโล
+# modulo
 
 ```
 
@@ -164,7 +150,7 @@ test_output_contains("28 %% 6", incorrect_msg = modulo_msg)
 success_msg(success_msg)
 ```
 
---- 
+--- type:NormalExercise xp:100 skills:1 key:5f200ffd43
 ## การกำหนดค่าตัวแปร
 
 ในการเขียนโปรแกรม เรามี concept พื้นฐานที่เรียกว่า **ตัวแปร (variable)**
