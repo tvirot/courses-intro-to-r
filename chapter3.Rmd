@@ -20,18 +20,18 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 - Argument `byrow` ใช้ในการระบุว่าจะสร้าง matrix นี้โดยการเรียงข้อมูลตามแนวแถว(คือเรียงข้อมูลไล่จากซ้ายไปขวา) หรือไม่ ถ้าคุณต้องการให้เรียงตามแนวคอลัมน์(คือเรียงข้อมูลไล่จากบนลงล่าง) ให้คุณใส่ `byrow = FALSE` แทน 
 - Argument `nrow` ใช้ระบุว่าเราต้องการ matrix ที่มีขนาดกี่แถว (R จะทำการคำนวณจำนวนคอลัมน์ให้เองโดยอ้างอิงจากจำนวนแถว แล้วจัดเรียงข้อมูลให้มีขนาดตามนั้น)
 
-*** =instructions
+`@instructions`
 ลองสร้าง matrix ขนาด 3 แถว ที่มีตัวเลข 1 ถึง 9 เรียงตามแนวแถว
 
-*** =hint
+`@hint`
 ลองอ่านตัวอย่างโค้ดด้านซ้ายมือดูดีๆ คำตอบอยู่ในนั้นแล้ว!
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Construct a matrix with 3 rows that contain the numbers 1 up to 9
 ```
@@ -42,7 +42,7 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 function_msg <- "&#3588;&#3640;&#3603;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#32;&#109;&#97;&#116;&#114;&#105;&#120;&#32;&#3629;&#3618;&#3656;&#3634;&#3591;&#3606;&#3641;&#3585;&#3605;&#3657;&#3629;&#3591;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3656;&#3634;&#63;&#32;&#3621;&#3629;&#3591;&#3604;&#3641;&#3605;&#3633;&#3623;&#3629;&#3618;&#3656;&#3634;&#3591;&#3650;&#3588;&#3657;&#3604;&#3604;&#3657;&#3634;&#3609;&#3595;&#3657;&#3634;&#3618;&#3617;&#3639;&#3629;&#3629;&#3637;&#3585;&#3588;&#3619;&#3633;&#3657;&#3591;&#32;&#3588;&#3635;&#3605;&#3629;&#3610;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#3609;&#3633;&#3657;&#3609;&#3649;&#3621;&#3657;&#3623;"
 # คุณได้สร้าง matrix อย่างถูกต้องหรือเปล่า? ลองดูตัวอย่างโค้ดด้านซ้ายมืออีกครั้ง คำตอบอยู่ในนั้นแล้ว
@@ -68,20 +68,20 @@ success_msg(success_msg)
 
 ในแบบฝึกหัดนี้ ให้คุณนำข้อมูลใน vector แต่ละตัวมาต่อเข้าด้วยกันเป็น vector เดียว จากนั้นสร้าง matrix ขึ้นมาจาก vector ดังกล่าว
 
-*** =instructions
+`@instructions`
 - ใช้คำสั่ง combine `c(new_hope, empire_strikes, return_jedi)` ในการรวม vector ทั้งสามเข้าด้วยกันเป็นหนึ่ง แล้วเก็บ vector ใหม่นี้ไว้ในตัวแปร `box_office`
 - ใช้ function `matrix()` ในการสร้าง matrix ที่มี 3 แถว แต่ละแถวแทนข้อมูลของภาพยนตร์แต่ละภาค โดยให้ argument ตัวแรกเป็น `box_office` ซึ่งเก็บข้อมูลรายได้ภาพยนตร์ทั้งหมดไว้ จากนั้นคุณต้องระบุจำนวนแถว `nrow = 3` และกำหนดให้เรียงข้อมูลตามแนวแถว `byrow = TRUE` สุดท้ายเก็บ matrix นี้ไว้ในตัวแปร `star_wars_matrix`
 
-*** =hint
+`@hint`
 - คำสั่ง `box_office <- c(new_hope, empire_strikes, return_jedi)` จะทำการรวม vector ต่างๆเข้าด้วยกันเป็น vector เดียว ซึ่ง vector ใหม่นี้จะมีข้อมูลทั้งหมด 6 ตัว
 - ลองดูคำสั่ง `matrix(box_office, nrow = ..., by_row ...)` แล้วนำไปปรับใช้ คุณต้องเติมรายละเอียดลงไปในช่องว่างให้ถูกต้อง!
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Box office Star Wars (in millions!)
 new_hope <- c(460.998, 314.4)
@@ -109,7 +109,7 @@ box_office <- c(new_hope, empire_strikes, return_jedi)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE) 
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`new_hope`", "`empire_strikes`", "&#3649;&#3621;&#3632;", "`return_jedi`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าที่เรากำหนดให้ตัวแปร `new_hope`, `empire_strikes` และ `return_jedi`!
@@ -151,20 +151,20 @@ colnames(my_matrix) <- col_names_vector
 
 เราได้เตรียม vectors พื้นที่ (`region`) และ ชื่อหนัง (`titles`) ไว้ให้คุณแล้ว ให้คุณใช้ตัวแปรเหล่านี้ในการตั้งชื่อให้กับคอลัมน์และแถวของ `star_wars_matrix` ตามลำดับ
 
-*** =instructions
+`@instructions`
 - ใช้คำสั่ง `colnames()` ในการตั้งชื่อแต่ละคอลัมน์ของ `star_wars_matrix` ด้วยตัวแปร `region`
 - ใช้คำสั่ง `rownames()` ในการตั้งชื่อแต่ละแถวของ `star_wars_matrix` ด้วยตัวแปร `titles`
 - ลองสั่งแสดงค่า `star_wars_matrix` แล้วดูว่าผลลัพธ์เป็นอย่างไร
 
-*** =hint
+`@hint`
 คุณสามารถใช้คำสั่ง `colnames(star_wars_matrix) <- region` ในการตั้งชื่อให้กับแต่ละคอลัมน์ของ `star_wars_matrix` ลองปรับเปลี่ยนคำสั่งนี้และนำไปตั้งชื่อให้กับแต่ละแถวดูบ้าง
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Box office Star Wars (in millions!)
 new_hope <- c(460.998, 314.4)
@@ -211,7 +211,7 @@ rownames(star_wars_matrix) <- titles
 star_wars_matrix
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`new_hope`", "`empire_strikes`", "&#3649;&#3621;&#3632;", "`return_jedi`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าที่เรากำหนดให้ตัวแปร `new_hope`, `empire_strikes` และ `return_jedi`!
@@ -258,18 +258,18 @@ success_msg(success_msg)
 rowSums(my_matrix)
 ```
 
-*** =instructions
+`@instructions`
 คำนวณรายได้รวมจาก box office ของภาพยนตร์ทั้ง 3 ภาคแล้วเก็บผลลัพธ์ไว้ในตัวแปร `worldwide_vector`
 
-*** =hint
+`@hint`
 คำสั่ง `rowSums(star_wars_matrix)` จะช่วยคำนวณผลรวมรายได้ในแต่ละแถวซึ่งนั่นก็คือรายได้รวมจาก box office ของภาพยนตร์แต่ละภาค
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
@@ -293,7 +293,7 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
 worldwide_vector <- rowSums(star_wars_matrix)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`box_office_all`", "&#3649;&#3621;&#3632;", "`star_wars_marix`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าที่เรากำหนดให้ตัวแปร `box_office_all` และ `star_wars_marix`!
@@ -322,18 +322,18 @@ success_msg(success_msg)
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ```
 
-*** =instructions
+`@instructions`
 ใช้ function [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) เพื่อเพิ่มคอลัมน์ `worldwide_vector` ลงไปใน `star_wars_matrix` จากนั้นเก็บค่าผลลัพธ์ไว้ใน `all_wars_matrix`
 
-*** =hint
+`@hint`
 ในแบบฝึกหัดนี้ คุณควรใส่ตัวแปร `star_wars_matrix` และ `worldwide_vector` ลงไปใน function `cbind()` ตามลำดับ จากนั้นให้เก็บผลลัพธ์ไว้ในตัวแปร `all_wars_matrix`
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
@@ -363,7 +363,7 @@ worldwide_vector <- rowSums(star_wars_matrix)
 all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`box_office_all`", "&#3649;&#3621;&#3632;", "`star_wars_marix`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าที่เรากำหนดให้ตัวแปร `box_office_all` และ `star_wars_marix`!
@@ -398,10 +398,10 @@ success_msg("success_msg");
 
 คุณสามารถพิมพ์ชื่อของ matrix ทั้ง 2 ลงไปใน Console แล้วกด Enter เพื่อดูว่า matrix ทั้งสองหน้าตาเป็นอย่างไร นอกจากนี้คุณยังสามารถใช้คำสั่ง `ls()` ในการดูได้ด้วยว่าในขณะนี้มีอะไรอยู่ใน workspace ของคุณบ้าง
 
-*** =instructions
+`@instructions`
 ใช้คำสั่ง `rbind()` ในการต่อ `star_wars_matrix` และ `star_wars_matrix2` เข้าด้วยกัน(อย่าสลับลำดับ) จากนั้นเก็บผลลัพธ์จากการต่อกันไว้ในตัวแปร `all_wars_matrix`
 
-*** =hint
+`@hint`
 คุณสามารถดูตัวอย่างจากโค้ดด้านล่าง และนำไปปรับใช้ในการนำ matrix มาต่อกัน:
 ```
 rbind(matrix1, matrix2)
@@ -409,7 +409,7 @@ rbind(matrix1, matrix2)
 จากนั้นให้เก็บผลลัพธ์ไว้ในตัวแปร `all_wars_matrix`
 
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # Construct matrix
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
@@ -430,7 +430,7 @@ rm(box_office_all2)
 rm(movie_names2)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # star_wars_matrix and star_wars_matrix2 are available in your workspace
 star_wars_matrix  
@@ -450,7 +450,7 @@ star_wars_matrix2
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`star_wars_matrix`", "&#3649;&#3621;&#3632;", "`star_wars_matrix2`",  "&#3607;&#3637;&#3656;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#32;&#119;&#111;&#114;&#107;&#115;&#112;&#97;&#99;&#101;")
 # อย่าลบหรือเปลี่ยนแปลงค่าที่เรากำหนดให้ตัวแปร `star_wars_matrix` และ `star_wars_matrix2` ใน workspace
@@ -474,19 +474,19 @@ success_msg(success_msg)
 
 เรามี function [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) คู่กันกับ function [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) กันไปแล้ว แน่นอนว่าเราก็มี function [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) คู่กับ function [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) ด้วยเช่นกัน ใน workspace ของคุณตอนนี้มีตัวแปร `all_wars_matrix` จากแบบฝึกหัดที่แล้วอยู่ ลองพิมพ์ `all_wars_matrix` ลงไปเพื่อดูค่าของมันอีกครั้ง ในแบบฝึกหัดนี้เราจะมาคำนวณรายได้ box office ทั้งหมดของ Star Wars ทุกภาครวมกัน!
 
-*** =instructions
+`@instructions`
 - ใช้ function [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) เพื่อคำนวณรายได้รวมของ Star Wars ทุกภาคจากทั้งในและนอกสหรัฐอเมริกา จากนั้นเก็บผลลัพธ์ไว้ในตัวแปร `total_revenue_vector`
 - แสดงค่า `total_revenue_vector` เพื่อดูผล
 
-*** =hint
+`@hint`
 คุณควรใช้ function [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) กับ `star_wars_matrix` เพื่อหารายได้ box office รวมของภาพยนตร์ Star Wars ในแต่ละภูมิภาค (ทั้งในและนอกสหรัฐอเมริกา)
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # all_wars_matrix is available in your workspace
 all_wars_matrix
@@ -509,7 +509,7 @@ total_revenue_vector <- colSums(all_wars_matrix)
 total_revenue_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`all_wars_matrix`", "&#3607;&#3637;&#3656;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#32;&#119;&#111;&#114;&#107;&#115;&#112;&#97;&#99;&#101;")
 # อย่าลบหรือเปลี่ยนแปลงค่าของตัวแปร `all_wars_matrix` ที่อยู่ใน workspace
@@ -549,21 +549,21 @@ success_msg(success_msg)
 
 ทีนี้ลองกลับมาดูที่แบบฝึกหัดของเรา จากแบบฝึกหัดที่แล้ว คุณมีตัวแปร `all_wars_matrix` อยู่ใน workspace ของคุณ พร้อมที่จะให้คุณลองทำการเลือกข้อมูลจาก matrix แล้ว!
 
-*** =instructions
+`@instructions`
 - ให้คุณเลือกข้อมูลรายได้จากนอกอเมริกา ของภาพยนตร์แต่ละภาคออกมา (คอลัมน์ที่ 2 ทั้งคอลัมน์ของตัวแปร `all_wars_matrix`) จากนั้นเก็บผลลัพธ์ไว้ในตัวแปร `non_us_all`
 - ใช้ function `mean()` กับ `non_us_all` เพื่อหาค่าเฉลี่ยรายได้จากนอกอเมริกา และให้แสดงค่าผลลัพธ์ด้วย
 - คราวนี้ ให้คุณลองเลือกข้อมูลรายได้จากนอกอเมริกา จากตัวแปร `all_wars_matrix` แต่ให้เอามาแค่ภาพยนตร์ 2 ภาคแรก แล้วเก็บผลลัพธ์ไว้ในตัวแปร `non_us_some`
 - ใช้ function `mean()` อีกครั้งเพื่อแสดงผลค่าเฉลี่ยของข้อมูลรายได้ในตัวแปร `non_us_some`
 
-*** =hint
+`@hint`
 คำสั่งสำหรับเลือกข้อมูลคอลัมน์ที่ 2 ทั้งคอลัมน์จาก `my_matrix` คือคำสั่ง `my_matrix[,2]` ลองนำไปปรับใช้กับแบบฝึกหัดดู
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # all_wars_matrix is available in your workspace
 all_wars_matrix
@@ -599,7 +599,7 @@ non_us_some <- all_wars_matrix[1:2,2]
 mean(non_us_some)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`all_wars_matrix`", "&#3607;&#3637;&#3656;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#32;&#119;&#111;&#114;&#107;&#115;&#112;&#97;&#99;&#101;")
 # อย่าลบหรือเปลี่ยนแปลงค่าของตัวแปร `all_wars_matrix` ที่อยู่ใน workspace
@@ -637,19 +637,19 @@ success_msg(success_msg)
 
 ในฐานะนักวิเคราะห์ข้อมูลคนใหม่ของ Lucasfilm งานต่อไปของคุณคือการหาว่ามีผู้ชมภาพยนตร์ Star Wars กี่คนในแต่ละภูมิภาค ตอนนี้คุณมีตัวเลขรายได้อยู่แล้วในตัวแปร `all_wars_matrix` ถ้าเราสมมติให้ตั๋วเข้าชมภาพยนตร์แต่ละใบมีราคา 5 dollars แค่คุณนำรายได้ box office ทั้งหมดมาหารด้วย 5 คุณก็จะได้จำนวนผู้ชมภาพยนตร์แล้ว!
 
-*** =instructions
+`@instructions`
 - หารตัวแปร `all_wars_matrix` ด้วย 5 คุณจะได้ตัวเลขจำนวนผู้ชมภาพยนตร์ในแต่ละภูมิภาค จากนั้นเก็บผลลัพธ์ดังกล่าวไว้ในตัวแปร `visitors`
 - แสดงค่า `visitors` แล้วดูว่าเป็นอย่างไร
 
-*** =hint
+`@hint`
 จำนวนผู้ชมภาพยนตร์มีค่าเท่ากับ `all_wars_matrix` หารด้วย 5
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 ``` 
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # all_wars_matrix is available in your workspace
 all_wars_matrix
@@ -673,7 +673,7 @@ visitors <- all_wars_matrix / 5
 visitors
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`all_wars_matrix`", "&#3607;&#3637;&#3656;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#32;&#119;&#111;&#114;&#107;&#115;&#112;&#97;&#99;&#101;")
 # อย่าลบหรือเปลี่ยนแปลงค่าของตัวแปร `all_wars_matrix` ที่อยู่ใน workspace
@@ -704,16 +704,16 @@ success_msg(success_msg)
 
 _(สำหรับคนที่คุ้ยเคยกับการคำนวณด้วย matrix ให้สังเกตว่านี่ไม่ใช่การคูณ matrix (matrix multiplication) แบบที่คุณเห็นในทฤษฎีคณิตศาสตร์ ซึ่งจะใช้ตัวดำเนินการ `%*%` แทน)_
 
-*** =instructions
+`@instructions`
 - หาร `all_wars_matrix` ด้วย `ticket_prices_matrix` เพื่อหาค่าประมาณของจำนวนผู้ชมของภาพยนตร์ทั้ง 6 ภาคในแต่ละภูมิภาค จากนั้นเก็บผลลัพธ์ไว้ในตัวแปรชื่อ `visitors`
 - จากตัวแปร `visitors` ให้เลือกคอลัมน์แรกออกมาทั้งคอลัมน์ (ซึ่งแสดงถึงจำนวนผู้ชมจากอเมริกา) แล้วเก็บผลลัพธ์นี้ไว้ในตัวแปร `us_visitors`
 - คำนวณจำนวนผู้ชมเฉลี่ยจากอเมริกา และแสดงค่าผลลัพธ์
 
-*** =hint
+`@hint`
 - คุณสามารถใช้ function `mean()` ในการคำนวณค่าเฉลี่ยได้
 - ในการหาจำนวนผู้ชมจากอเมริกา ให้คุณเลือกคอลัมน์แรกออกมาจาก `visitors` โดยใช้คำสั่ง `visitors[ ,1]`
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi", "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
@@ -721,7 +721,7 @@ col_titles <- c("US","non-US")
 ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7, 4, 4, 4.5, 4.5, 4.9, 4.9), nrow = 6, byrow = TRUE, dimnames = list(movie_names,col_titles))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # all_wars_matrix and ticket_prices_matrix are available in your workspace
 all_wars_matrix
@@ -753,7 +753,7 @@ us_visitors <- visitors[ ,1]
 mean(us_visitors)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("&#3629;&#3618;&#3656;&#3634;&#3621;&#3610;&#3627;&#3619;&#3639;&#3629;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3649;&#3611;&#3621;&#3591;&#3588;&#3656;&#3634;&#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3585;&#3635;&#3627;&#3609;&#3604;&#3651;&#3627;&#3657;&#3605;&#3633;&#3623;&#3649;&#3611;&#3619;", "`all_wars_matrix`", "&#3649;&#3621;&#3632;", "`ticket_prices_matrix`", "&#3607;&#3637;&#3656;&#3629;&#3618;&#3641;&#3656;&#3651;&#3609;&#32;&#119;&#111;&#114;&#107;&#115;&#112;&#97;&#99;&#101;")
 # อย่าลบหรือเปลี่ยนแปลงค่าของตัวแปร `all_wars_matrix` และ `ticket_prices_matrix` ที่อยู่ใน workspace

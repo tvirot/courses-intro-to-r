@@ -19,18 +19,18 @@ description : ชุดข้อมูลส่วนใหญ่ที่คุ
 
 ใน data frame ตัวแปรแต่ละตัวจะถูกเก็บไว้ในรูปของคอลัมน์ และค่าของตัวแปรแต่ละชุด(observation) จะถูกเก็บไว้ในรูปของแถว นี่คือ concept ที่ใช้กันทั่วไปไม่ว่าคุณจะทำงานบน R หรือโปรแกรมวิเคราะห์ทางสถิติอื่นๆ เช่น SAS หรือ SPSS
 
-*** =instructions
+`@instructions`
 กดปุ่ม 'Submit Answer' เพื่อแสดงข้อมูลจาก data frame ตัวอย่าง [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) บน Console
 
-*** =hint
+`@hint`
 แค่กดปุ่ม 'Submit Answer' ก็พอ!
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Print out built-in R data frame
 mtcars 
@@ -42,7 +42,7 @@ mtcars
 mtcars 
 ```
 
-*** =sct
+`@sct`
 ```{r}
 incorrect_msg <- "อย่าเปลี่ยนแปลงโค้ด แค่กดปุ่ม 'Submit Answer' ก็พอแล้ว"
 # อย่าเปลี่ยนแปลงโค้ด แค่กดปุ่ม 'Submit Answer' ก็พอแล้ว
@@ -66,18 +66,18 @@ success_msg(success_msg)
 
 ทั้ง function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) และ [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) จะแสดงชื่อคอลัมน์หรือที่เรียกว่า 'header' ออกมาด้วย
 
-*** =instructions
+`@instructions`
 ลองใช้ [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) กับ [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) และลองดูตัวอย่างข้อมูลที่ถูกแสดงออกมา
 
-*** =hint
+`@hint`
 `head(mtcars)` จะแสดงข้อมูลแถวแรกๆจาก `mtcars` ออกมา 
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Call head() on mtcars
 
@@ -89,7 +89,7 @@ success_msg(success_msg)
 head(mtcars)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 function_msg <- paste("คุณได้ใช้ function", "`head()`", "กับ", "`mtcars`", "หรือยัง?")
 # คุณได้ใช้ function `head()` กับ `mtcars` หรือยัง?
@@ -119,18 +119,18 @@ success_msg(success_msg);
 
 การเรียกใช้ function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) มักจะเป็นสิ่งแรกที่คุณทำเมื่อคุณได้ข้อมูลมา เพื่อทำความเข้าใจภาพรวมของชุดข้อมูลก่อนจะเริ่มทำการวิเคราะห์จริงๆ
 
-*** =instructions
+`@instructions`
 ลองดูโครงสร้างของ [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) ตรวจสอบให้แน่ใจว่าคุณเห็นจำนวน ตัวแปร และประเภทข้อมูล ตามที่เขียนไว้ในตัวอย่างด้านบน
 
-*** =hint
+`@hint`
 ใช้ function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) กับ [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Investigate the structure of mtcars
 ```
@@ -141,7 +141,7 @@ success_msg(success_msg);
 str(mtcars)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 output_msg <- paste("คุณได้ใช้ function", "`str()`", "กับ", "`mtcars`", "หรือยัง?")
 # คุณได้ใช้ function `str()` กับ `mtcars` หรือยัง?
@@ -170,22 +170,22 @@ success_msg(success_msg)
 
 คุณสามารถสร้าง data frame ได้ด้วย function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) โดยระบุค่า argument เป็น vectors ทั้งหมดที่ได้เตรียมไว้ก่อนหน้านี้ ซึ่ง vectors เหล่านี้จะถูกเปลี่ยนให้เป็นคอลัมน์ใน data frame นอกจากนี้ vectors ที่ใช้ในการสร้าง data frame ควรจะยาวเท่ากันทั้งหมด แต่ไม่จำเป็นต้องเป็นข้อมูลประเภทเดียวกัน
 
-*** =instructions
+`@instructions`
 ใช้ function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) ในการสร้าง data frame โดยใส่ vectors `name`, `type`, `diameter`, `rotation` และ `rings` เป็น arguments ของ `data.frame()` ตามลำดับ จากนั้นเก็บ data frame ที่สร้างมาไว้ในตัวแปร `planets_df`
 
-*** =hint
+`@hint`
 ใช้ function `data.frame()` โดยการเริ่มต้นตามโค้ดตัวอย่างด้านล่าง:
 ```
 data.frame(planets, type, diameter)
 ```
 ที่คุณต้องทำก็แค่ใส่ vector เพิ่มจนครบทุกคอลัมน์
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Definition of vectors
 name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
@@ -214,7 +214,7 @@ rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าเปลี่ยนแปลงข้อมูลใน vector แต่ละตัว แค่ใช้ function", "`data.frame()`", "ในการสร้างตัวแปร", "`planets_df`", "ก็พอ")
 # อย่าเปลี่ยนแปลงข้อมูลใน vector แต่ละตัว แค่ใช้ function `data.frame()` ในการสร้างตัวแปร `planets_df` ก็พอ
@@ -241,18 +241,18 @@ success_msg(success_msg);
 
 Data frame `planets_df` มีข้อมูลจำนวน 8 ตัวอย่าง(แถว) และ 5 ตัวแปร(คอลัมน์) และตอนนี้มันถูกสร้างไว้ใน workspace แล้ว คุณสามารถใช้มันได้เลย
 
-*** =instructions
+`@instructions`
 ใช้ function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) เพื่อดูโครงสร้างของ data frame `planets_df`
 
-*** =hint
+`@hint`
 `planets_df` อยู่ใน workspace ของคุณแล้ว ดังนั้นคุณจะสามารถใช้คำสั่ง `str(planets_df)` ได้ทันที
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Check the structure of planets_df
 ```
@@ -263,7 +263,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 str(planets_df)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าลบหรือเปลี่ยนแปลงค่าใน data frame", "`planets_df`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าใน data frame `planets_df`!
@@ -290,19 +290,19 @@ success_msg(success_msg)
 
 ถ้าคุณต้องการที่จะเลือกข้อมูลทุกแถวหรือทุกคอลัมน์ ก็ไม่ต้องระบุเลขแถวหรือเลขคอลัมน์ เช่น `my_df[1, ]` จะเป็นการเลือกข้อมูลทุกคอลัมน์ของแถวที่ 1 (หรือเลือกข้อมูลแถวแรกทั้งแถวนั่นเอง) คราวนี้เราลองมาใช้เทคนิคนี้กับ data frame `planets_df` กันดูบ้าง!
 
-*** =instructions
+`@instructions`
 - ให้คุณเลือกเส้นผ่านศูนย์กลางของดาวพุธออกมาจาก `planets_df` (แถวที่ 1 คอลัมน์ที่ 3) พร้อมแสดงค่าผลลัพธ์
 - ให้คุณเลือกข้อมูลทั้งหมดของดาวอังคารออกมาจาก `planets_df` (แถวที่ 4 ทั้งแถว) พร้อมแสดงค่าผลลัพธ์
 
-*** =hint
+`@hint`
 ในการแสดงค่าเส้นผ่านศูนย์กลางของดาวศุกร์ (แถวที่ 2) คุณจะต้องใช้คำสั่ง `planets_df[2,3]` ทีนี้หากคุณต้องการข้อมูลของดาวพุธ จะต้องทำอย่างไร?
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
@@ -324,7 +324,7 @@ planets_df[1,3]
 planets_df[4, ]
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าลบหรือเปลี่ยนแปลงค่าใน data frame", "`planets_df`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าใน data frame `planets_df`!
@@ -363,18 +363,18 @@ planets_df[1:3,1]
 planets_df[1:3,"type"]
 ```
 
-*** =instructions
+`@instructions`
 เลือกและแสดงค่าข้อมูล 5 ตัวแรกจากคอลัมน์ `"diameter"` ใน data frame `planets_df`
 
-*** =hint
+`@hint`
 คุณสามารถเลือกข้อมูล 5 ตัวแรกได้โดยใช้คำสั่ง `planets_df[1:5, ...]` แต่คุณต้องแทนที่ `...` ด้วยอะไร เพื่อเลือกข้อมูลจากคอลัมน์ `"diameter"` เท่านั้น?
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
@@ -390,7 +390,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 planets_df[1:5, "diameter"]
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าลบหรือเปลี่ยนแปลงค่าใน data frame", "`planets_df`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าใน data frame `planets_df`!
@@ -423,19 +423,19 @@ planets_df[,"diameter"]
 planets_df$diameter
 ```
 
-*** =instructions
+`@instructions`
 - ใช้เครื่องหมาย `$` ในการเลือกตัวแปร `rings` จาก `planets_df` และเก็บ vector ผลลัพธ์ที่ได้ไว้ในตัวแปร `rings_vector`
 - สั่งให้ R แสดงค่า `rings_vector` และดูว่าคุณได้สิ่งที่ต้องการหรือไม่
 
-*** =hint
+`@hint`
 คำสั่ง `planets_df$diameter` จะทำการเลือกคอลัมน์ `diameter` จาก `planets_df` ทีนี้หากคุณต้องการเลือกคอลัมน์ `rings` คุณจะต้องทำอย่างไร?
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df is pre-loaded in your workspace
 
@@ -456,7 +456,7 @@ rings_vector <- planets_df$rings
 rings_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าลบหรือเปลี่ยนแปลงค่าใน data frame", "`planets_df`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าใน data frame `planets_df`!
@@ -492,19 +492,19 @@ R จะช่วยคุณได้หรือไม่?
 
 นั่นหมายความว่าข้อมูล 4 แถวแรกของเรา (หรือก็คือดาว 4 ดวงแรก) เป็นดาวที่ไม่มีวงแหวน (`FALSE`) แต่ที่เหลืออีก 4 ดวงมีวงแหวน (`TRUE`) อย่างไรก็ตาม ไม่มีอะไรที่บ่งบอกถึงชื่อของดาวเลย หรือแม้กระทั่งข้อมูลอื่นๆก็ไม่มี ดังนั้นเราจะมาลองใช้ `rings_vector` ในการเลือกข้อมูลเฉพาะดาว 4 ดวงที่มีวงแหวนกัน 
 
-*** =instructions
+`@instructions`
 โค้ดทางด้านขวามือจะทำการเลือกคอลัมน์ `name` เฉพาะดาวที่มีวงแหวน ลองเปลี่ยนแปลงโค้ดจากการเลือกคอลัมน์ `name` ไปเป็นการเลือกทุกคอลัมน์ของดาวที่มีวงแหวนแทน
 
-*** =hint
+`@hint`
 จำไว้ว่าในการเลือกคอลัมน์ทั้งหมด คุณจะต้องเว้นตำแหน่งคอลัมน์ใน `[ ]` เอาไว้! นั่นแปลว่าคำสั่งที่คุณต้องการก็คือ `[rings_vector, ]`
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 rings_vector <- planets_df$rings
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df and rings_vector are pre-loaded in your workspace
 
@@ -520,7 +520,7 @@ planets_df[rings_vector, "name"]
 planets_df[rings_vector, ]
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าลบหรือเปลี่ยนแปลงค่าใน data frame", "`planets_df`", "หรือ", "`rings_vector`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าใน data frame `planets_df` หรือ `rings_vector`!
@@ -557,18 +557,18 @@ Argument แรกของ function [`subset()`](http://www.rdocumentation.org/
 subset(planets_df, subset = rings)
 ``` 
 
-*** =instructions
+`@instructions`
 ใช้ function `subset()` กับ `planets_df` เก็บค่าเส้นผ่านศูนย์กลางของดาวนั้นๆเทียบกับโลก เงื่อนไขที่คุณต้องการคือ  `diameter < 1`
 
-*** =hint
+`@hint`
 คำสั่ง `subset(planets_df, subset = ...)` เกือบจะทำให้คุณได้คำตอบแล้ว แต่คุณต้องทำการเติมคำลงในช่องว่าง (`...`) นิดหน่อย
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df is pre-loaded in your workspace
 
@@ -584,7 +584,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 subset(planets_df, subset = diameter < 1)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าลบหรือเปลี่ยนแปลงค่าใน data frame", "`planets_df`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าใน data frame `planets_df`!
@@ -635,18 +635,18 @@ Function [`order()`](http://www.rdocumentation.org/packages/base/functions/order
 [1]   10  100 1000
 ``` 
 
-*** =instructions
+`@instructions`
 ลองใช้ function [`order()`](http://www.rdocumentation.org/packages/base/functions/order) ใน Console ดู แล้วกดปุ่ม 'Submit Answer' ได้เลยเมื่อคุณพร้อมไปที่แบบฝึกหัดต่อไป
 
-*** =hint
+`@hint`
 แค่ลองเล่นกับ function [`order()`](http://www.rdocumentation.org/packages/base/functions/order) ดูใน Console!
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Play around with the order function in the console
 ```
@@ -656,7 +656,7 @@ Function [`order()`](http://www.rdocumentation.org/packages/base/functions/order
 # Play around with the order function in the console
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("เยี่ยม! ในแบบฝึกหัดต่อไปเราจะให้คุณได้ลองนำ function", "`order()`", "มาใช้กับ data frame ดู!")
 # เยี่ยม! ในแบบฝึกหัดต่อไปเราจะให้คุณได้ลองนำ function `order()` มาใช้กับ data frame ดู!
@@ -669,20 +669,20 @@ success_msg(msg)
 
 หลังจากที่คุณเข้าใจแล้วว่า function [`order()`](http://www.rdocumentation.org/packages/base/functions/order) ทำงานอย่างไร เรามาลองใช้ประโยชน์จากมันกันดีกว่า ให้คุณเรียงลำดับข้อมูลใน data frame ตามขนาดของดาวเคราะห์จากเล็กไปใหญ่ (ใช้คอลัมน์ `diameter` ในการเรียงลำดับ)
 
-*** =instructions
+`@instructions`
 - เรียกใช้ function `order()` กับ `planets_df$diameter` (คอลัมน์ `diameter` จาก data frame `planets_df`) จากนั้นเก็บผลลัพธ์ไว้ในตัวแปร `positions`
 - เรียงลำดับข้อมูลใน `planets_df` ใหม่โดยใช้ตัวแปร `positions` ในการระบุลำดับแถวใน `[]` เก็บทุกคอลัมน์ไว้ และแสดงผลลัพธ์ด้วย
 
-*** =hint
+`@hint`
 - ใช้คำสั่ง `order(planets_df$diameter)` ในการสร้างตัวแปร `positions`
 - จากนั้นให้คุณใส่ `positions` ลงไปใน square brackets: `planets_df[...]` คุณสามารถเติมคำตอบลงในช่องว่าง (`...`) ได้ใช่ไหม?
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # planets_df is pre-loaded in your workspace
 
@@ -704,7 +704,7 @@ positions <- order(planets_df$diameter)
 planets_df[positions, ]
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าลบหรือเปลี่ยนแปลงค่าใน data frame", "`planets_df`!")
 # อย่าลบหรือเปลี่ยนแปลงค่าใน data frame `planets_df`!

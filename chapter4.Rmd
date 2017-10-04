@@ -14,18 +14,18 @@ description : บ่อยครั้งที่ข้อมูลของเ
 
 ตัวอย่างที่ดีของตัวแปรที่ใช้แบ่งกลุ่มคือ "เพศ" เนื่องจากมนุษย์ทุกคนสามารถถูกแบ่งเป็นกลุ่มตามเพศได้แค่ "ชาย" หรือ "หญิง" เท่านั้น ตัวแปร "เพศ" จึงมีได้เพียงแค่สองค่า คือ "ชาย" หรือ "หญิง"
 
-*** =instructions
+`@instructions`
 กำหนดให้ตัวแปร `theory` มีค่าเป็น `"factors for categorical variables"`
 
-*** =hint
+`@hint`
 แค่ใช้คำสั่งกำหนดค่า (`<-`) และตรวจสอบให้แน่ใจว่าคุณได้พิมพ์เป็นตัวพิมพ์เล็กทั้งหมด
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Assign to the variable theory what this chapter is about!
 ```
@@ -36,7 +36,7 @@ description : บ่อยครั้งที่ข้อมูลของเ
 theory <- "factors for categorical variables"
 ```
 
-*** =sct
+`@sct`
 ```{r}
 # MC-note: ideally, we could check for commonly mistyped variable names
 #test_or({
@@ -81,19 +81,19 @@ gender_vector <- c("Male","Female","Female","Male","Male")
 factor_gender_vector <- factor(gender_vector)
 ```
 
-*** =instructions
+`@instructions`
 - แปลง vector ของข้อมูลแบบตัวอักษร `gender_vector` ให้เป็นข้อมูลแบบ factor ด้วย function `factor()` จากนั้นเก็บผลลัพธ์ไว้ในตัวแปร `factor_gender_vector`
 - แสดงค่า `factor_gender_vector` และสังเกตดูว่า R จะพิมพ์ค่า factor levels ออกมาต่อท้ายข้อมูลให้เราด้วย
 
-*** =hint
+`@hint`
 แค่ใช้ function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) กับ `gender_vector` เท่านั้น ลองดูที่แบบฝึกหัดให้ดีๆอีกครั้ง คำตอบอยู่ในนั้นแล้ว...
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Gender vector
 gender_vector <- c("Male", "Female", "Female", "Male", "Male")
@@ -117,7 +117,7 @@ factor_gender_vector <- factor(gender_vector)
 factor_gender_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 object_msg <- paste("คุณได้กำหนดให้ตัวแปร", "`factor_gender_vector`", "มีค่าเท่ากับ factor ของ", "`gender_vector`", "หรือยัง?")
 # คุณได้กำหนดให้ตัวแปร `factor_gender_vector` มีค่าเท่ากับ factor ของ `gender_vector` หรือยัง?
@@ -143,18 +143,18 @@ success_msg(success_msg);
 
 ในทางตรงกันข้าม เราสามารถเรียงลำดับตัวแปรแบบ ordinal ได้ ยกตัวอย่างเช่น ข้อมูลอุณหภูมิในตัวแปร `temperature_vector` ซึ่งประกอบด้วย `"Low"`, `"Medium"` และ `"High"` ซึ่งจากข้อมูลชุดนี้เราเห็นได้ชัดเจนว่า `"Medium"` มีค่ามากกว่า `"Low"` และ `"High"` มีค่ามากกว่า `"Medium"` เราจึงสามารถเรียงลำดับข้อมูลชุดนี้ได้
 
-*** =instructions
+`@instructions`
 กดปุ่ม 'Submit Answer' เพื่อดูว่า R สร้างและแสดงค่าตัวแปรแบบ nominal และ ordinal อย่างไร ไม่ต้องห่วงถ้าคุณยังไม่เข้าใจโค้ดทั้งหมด เดี๋ยวคุณจะเข้าใจมากขึ้นในแบบฝึกหัดต่อๆไป
 
-*** =hint
+`@hint`
 แค่กดปุ่ม 'Submit Answer' แล้วดูที่ Console แล้วลองดูว่า R แสดงการเรียงลำดับของ factor levels สำหรับตัวแปรแบบ ordinal อย่างไร
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Animals
 animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
@@ -180,7 +180,7 @@ factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c
 factor_temperature_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- "อย่าเปลี่ยนโค้ดตัวอย่างที่เตรียมไว้ให้ แค่กดปุ่ม 'Submit Answer' ก็พอ!"
 # อย่าเปลี่ยนโค้ดตัวอย่างที่เตรียมไว้ให้ แค่กดปุ่ม 'Submit Answer' ก็พอ!
@@ -217,21 +217,21 @@ survey_vector <- c("M", "F", "F", "M", "M")
 
 **ข้อควรระวัง:** ลำดับของการกำหนด factor levels ใหม่มีความสำคัญ ถ้าคุณลองพิมพ์คำสั่ง `levels(factor_survey_vector)` ลงไปใน Console คุณจะเห็นค่าที่แสดงออกมาเป็น `[1] "F" "M"` นั่นเป็นเพราะเมื่อคุณสร้าง factor โดยไม่ได้กำหนดลำดับให้กับ factor levels `R` จะทำการเรียงลำดับ factor levels ตามตัวอักษร และในการที่จะเปลี่ยน `"F"` เป็น `"Female"` และ `"M"` เป็น `"Male"` ได้อย่างถูกต้อง คุณจะต้องเรียงลำดับ factor levels ที่กำหนดขึ้นใหม่ให้เป็น `c("Female", "Male")` ตามลำดับเดิมของ `"F"` และ `"M"`
 
-*** =instructions
+`@instructions`
 - ลองดูโค้ดที่ใช้สร้าง vector ของข้อมูล factor จากตัวแปร `survey_vector`
 - เปลี่ยน factor levels ของ `factor_survey_vector` ให้เป็น `c("Female", "Male")` อย่าลืมว่าคุณต้องเรียงตามลำดับค่าให้ถูกต้องด้วย
 
-*** =hint
+`@hint`
 ลำดับของ factor levels นั้นเป็นเรื่องสำคัญ ลองดูลำดับของ factor levels โดยการพิมพ์ `levels(factor_survey_vector)` ลงไปใน Console
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Code to build factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -255,7 +255,7 @@ levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "อย่าลบหรือเปลี่ยนแปลงโค้ดที่ใช้ในการสร้าง vector ของข้อมูล factor"
 # อย่าลบหรือเปลี่ยนแปลงโค้ดที่ใช้ในการสร้าง vector ของข้อมูล factor
@@ -292,18 +292,18 @@ summary(my_var)
 
 จากแบบฝึกหัดที่แล้ว ถ้าคุณอยากรู้ว่ามีผู้ตอบแบบสอบถามเป็นผู้ชาย(`"Male"`) และผู้หญิง(`"Female"`) กี่คน function [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) สามารถช่วยคุณได้!
 
-*** =instructions
+`@instructions`
 ลองใช้ function [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) กับตัวแปร `survey_vector` และ `factor_survey_vector` แล้วลองดูว่า R แสดงผลลัพธ์จากตัวแปรที่เป็น factor และไม่ใช่ factor แตกต่างกันอย่างไร? และอันไหนมีประโยชน์มากกว่ากัน?
 
-*** =hint
+`@hint`
 เรียกใช้ function [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) กับตัวแปร `survey_vector` และ `factor_survey_vector` นั่นคือทั้งหมดที่คุณต้องทำ
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -333,7 +333,7 @@ summary(survey_vector)
 summary(factor_survey_vector)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าเปลี่ยนแปลงค่าของ", "`survey_vector`", "และ", "`factor_survey_factor`")
 # อย่าเปลี่ยนแปลงค่าของ `survey_vector` และ `factor_survey_factor`
@@ -360,18 +360,18 @@ success_msg(success_msg)
 
 ในตัวแปร `factor_survey_vector` เรามี factor levels อยู่ 2 ค่า คือ Male และ Female แต่ว่า R ให้ความสำคัญกับ 2 ค่านี้แตกต่างกันหรือไม่?
 
-*** =instructions
+`@instructions`
 ลองอ่านโค้ดใน editor แล้วกดปุ่ม 'Submit Answer' เพื่อดูว่า R ให้ค่าผู้ชายมากกว่าผู้หญิงหรือไม่
 
-*** =hint
+`@hint`
 แค่กดปุ่ม 'Submit Answer' แล้วดูผลลัพธ์บน Console ก็พอ
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -405,7 +405,7 @@ female <- factor_survey_vector[2]
 male > female
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "อย่าเปลี่ยนแปลงโค้ด แค่กดปุ่ม 'Submit Answer' แล้วรอดูผลลัพธ์"
 # อย่าเปลี่ยนแปลงโค้ด แค่กดปุ่ม 'Submit Answer' แล้วรอดูผลลัพธ์
@@ -432,7 +432,7 @@ success_msg(success_msg)
 
 สมมติว่าคุณเป็นหัวหน้าทีมที่มีนักวิเคราะห์ข้อมูล 5 คน และคุณต้องการที่จะประเมินความเร็วในการทำงานของแต่ละคน คุณจึงแบ่งระดับความเร็วออกเป็น `"slow"`, `"fast"` หรือ `"insane"` และเก็บผลลัพธ์ไว้ในตัวแปร `speed_vector`
 
-*** =instructions
+`@instructions`
 ขั้นแรก ให้คุณกำหนดให้ตัวแปร `speed_vector` เป็น vector ที่มีข้อมูล 5 ตัวสำหรับนักวิเคราะห์ข้อมูลแต่ละคน ข้อมูลแต่ละตัวควรมีค่าเป็น `"slow"`(ช้า), `"fast"`(เร็ว) หรือ `"insane"`(บ้าไปแล้ว!) เท่านั้น โดยอ้างอิงตามข้อมูลด้านล่าง:
 
 - นักวิเคราะห์คนที่ 1 ให้เป็น fast
@@ -443,15 +443,15 @@ success_msg(success_msg)
 
 โดยที่ยังไม่จำเป็นต้องระบุว่าข้อมูลเหล่านี้เป็น factor
 
-*** =hint
+`@hint`
 กำหนดให้ `speed_vector` เป็น vector ของข้อมูลตัวอักษรที่มีค่าเป็น `"fast"`, `"slow"` ...
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Create speed_vector
 speed_vector <-
@@ -463,7 +463,7 @@ speed_vector <-
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 ```
 
-*** =sct
+`@sct`
 ```{r}
 incorrect_msg <- paste("`speed_vector`", "ควรมีค่าเป็น vector ที่มีข้อมูล 5 ตัว แต่ละตัวแทนระดับความเร็วในการทำงานของนักวิเคราะห์แต่ละคน และอย่าใช้ภาษาอังกฤษตัวพิมพ์ใหญ่ (R เป็นภาษาที่ case sensitive!)")
 # `speed_vector` ควรมีค่าเป็น vector ที่มีข้อมูล 5 ตัว แต่ละตัวแทนระดับความเร็วในการทำงานของนักวิเคราะห์แต่ละคน และอย่าใช้ภาษาอังกฤษตัวพิมพ์ใหญ่ (R เป็นภาษาที่ case sensitive!)
@@ -489,18 +489,18 @@ factor(some_vector,
 
 การกำหนดให้ `ordered` มีค่าเป็น `TRUE` ใน function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) เป็นการระบุว่า factor ที่กำลังจะสร้างนั้นเป็นแบบที่สามารถเรียงลำดับได้ และคุณสามารถกำหนดลำดับที่ถูกต้องของ factor นั้นผ่าน argument ชื่อ `levels`
 
-*** =instructions
+`@instructions`
 ลองสร้างตัวแปร `factor_speed_vector` ซึ่งเป็น factor แบบมีลำดับ จากตัวแปร `speed_vector` คุณจะต้องตั้งค่า arguments `ordered` เป็น `TRUE` และ `levels` ให้เป็น `c("slow", "fast", "insane")`
 
-*** =hint
+`@hint`
 ใช้ function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) ในการสร้างตัวแปร `factor_speed_vector` จาก `speed_character_vector` โดย argument `ordered` ควรมีค่าเป็น `TRUE` เพื่อเป็นการบอก R ว่า factor นี้มีลำดับ นอกจากนี้คุณต้องระบุลำดับของ factor ผ่าน argument `levels = c("slow", "fast", "insane")`
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Create speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
@@ -526,7 +526,7 @@ factor_speed_vector
 summary(factor_speed_vector)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าเปลี่ยนแปลงค่าของ", "`speed_vector`")
 # อย่าเปลี่ยนแปลงค่าของ `speed_vector`
@@ -560,21 +560,21 @@ success_msg(success_msg)
 
 ทีนี้เมื่อเรามี `factor_speed_vector` ซึ่งเป็น factor แบบมีลำดับแล้ว เราก็สามารถเปรียบเทียบ factor ที่บ่งบอกถึงระดับความเร็วในการทำงานของนักวิเคราะห์แต่ละคนได้ โดยคุณสามารถทำการเปรียบเทียบได้โดยใช้คำสั่งเปรียบเทียบทั่วๆไป (`>`, `<`, `>=`, `<=`, `==` หรือ `!=`)
 
-*** =instructions
+`@instructions`
 - ใช้ `[2]` เพื่อเลือกความเร็วในการทำงานของนักวิเคราะห์คนที่ 2 จาก `factor_speed_vector` แล้วเก็บค่าไว้ในตัวแปร `da2`
 - ใช้ `[5]` เพื่อเลือกความเร็วในการทำงานของนักวิเคราะห์คนที่ 5 จาก `factor_speed_vector` แล้วเก็บค่าไว้ในตัวแปร `da5`
 - ลองเปรียบเทียบและแสดงผลลัพธ์ดูว่า `da2` มากกว่า `da5` หรือไม่ คุณสามารถใช้เครื่องหมาย `>` ในการเปรียบเทียบ factor ทั้ง 2 ตัวได้เลย
 
-*** =hint
+`@hint`
 - ในการจะดึงข้อมูลความเร็วในการทำงานของนักวิเคราะห์คนที่ 3 คุณต้องใช้คำสั่ง `factor_speed_vector[3]`
 - ในการเปรียบเทียบค่า คุณสามารถใช้คำสั่ง `>` ได้ เช่น: `da3 > da4`
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Create factor_speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
@@ -606,7 +606,7 @@ da5 <- factor_speed_vector[5]
 da2 > da5
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- paste("อย่าเปลี่ยนแปลงค่าของ", "`speed_vector`", "และ", "`factor_speed_vector`")
 # อย่าเปลี่ยนแปลงค่าของ `speed_vector` และ `factor_speed_vector`
